@@ -1,0 +1,106 @@
+.select
+  position: relative
+  width: 300px
+
+  .label
+    margin-bottom: 4px
+
+  &-input
+    margin-bottom: 0
+    min-height: 47px
+    text-align: left
+
+    &:after
+      position: absolute
+      top: 10px
+      right: 5px
+      display: block
+      margin: 7px
+      width: 0
+      height: 0
+      border-width: 4px 4px 0 4px
+      border-style: solid
+      border-color: $black transparent transparent transparent
+      content: ''
+      transition: 0.5s
+
+    &.is-active
+      border-radius: $borderRadius $borderRadius 0 0
+
+      :after
+        border-width: 0 4px 4px 4px
+        border-color: transparent transparent $black transparent
+
+  &-search
+    padding: 10px
+    width: 100%
+
+  &-menu
+    position: absolute
+    z-index: 999
+    width: 100%
+    border-width: 0 2px 2px 2px
+    border-style: solid
+    border-color: $black
+    border-radius: 0 0 $borderRadius $borderRadius
+    background: $white
+    font-size: $fontSmall
+
+  &-list
+    overflow: auto
+    margin: 0
+    padding: 0
+    max-height: 40vh
+    list-style: none
+
+  &-labels
+    display: inline-flex
+    flex-wrap: wrap
+    margin: -10px 5px -14px -17px
+    padding: 0
+
+  &-item
+    padding: 0
+    width: 100%
+    font-size: $fontSmall
+
+    &.is-selected
+      background-color: $black
+      color: $white
+
+    &:not(.is-group)
+      padding: $padding
+
+      &:hover
+        background-color: $black
+        color: $white
+        cursor: pointer
+
+  &-childMenu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &-childTitle
+    display: block
+    padding: $padding
+    color: $gray
+
+  &-childItem
+    padding: $padding $padding $padding multiple($padding, 2)
+    color: $black
+    cursor: pointer
+
+    &.is-selected
+      background-color: $black
+      color: $white
+
+    &:hover
+      background-color: $black
+      color: $white
+
+  .is-visiable
+    display: block
+
+  .is-hidden
+    display: none

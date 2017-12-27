@@ -1,0 +1,53 @@
+/**
+ * Device Breakpoint
+ */
+$mobile ?= 0
+$tablet ?= 768px
+$desktop ?= 991px
+$widescreen ?= 1360px
+$ultrawide ?= 1920px
+
+/**
+ * typography
+ */
+$margin ?= 10px
+$padding ?= 0.75em
+$paddingPx ?= 20px
+$borderRadius ?= 4px
+
+$fontTiny ?= 12px
+$fontSmall ?= 14px
+$font ?= 16px
+$fontLarge ?= 24px
+$fontMassive ?= 30px
+
+$lineheight ?= 1.1875
+
+$header1 ?= 80px
+$header2 ?= 60px
+$header3 ?= 48px
+$header4 ?= 36px
+$header5 ?= $fontMassive
+$header6 ?= $fontLarge
+
+$responsiveMin ?= $desktop
+$responsiveRatio ?= 5120 - 991
+
+/**
+ * grid
+ */
+$columns ?= 12
+$direction ?= ltr
+$startDir ?= setDirection('start')
+$endDir ?= setDirection('end')
+$gutter ?= 16px
+$container-mobile ?= calc(100% - 22px)
+$container-tablet ?= $tablet - (22 * 2)
+$container-desktop ?= $desktop - (22 * 3)
+$container-widescreen ?= $widescreen - (22 * 4)
+$container-ultrawide ?= $ultrawide - (22 * 5)
+
+/**
+ * Enable/Disable css variables
+ */
+$cssVar ?= false

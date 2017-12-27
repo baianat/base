@@ -1,0 +1,64 @@
+.calendar
+  position: absolute
+  top: 50px
+  left: 0
+  padding: 20px
+  border: 2px solid $black
+  border-radius: $borderRadius
+  background-color: $white
+
+  &.is-hidden
+    display: none
+
+  &-control
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+    select,
+    input
+      padding: 5px 10px
+      width: 50%
+      border-width: 0 0 2px 0
+      border-color: $white
+      border-radius: 0
+      background-color: transparent
+      text-align: center
+      font-size: 15px
+      -webkit-appearance: none
+
+      &:hover,
+      &:focus
+        outline: 0
+        border-color: $black
+
+  &-table
+    border-spacing: 0
+    text-align: center
+
+    td
+      padding: 10px 5px
+      border-width: 2px
+      border-style: solid
+      border-color: $white
+      border-radius: $borderRadius
+      cursor: pointer
+
+      &.is-previous,
+      &.is-following
+        color: $gray
+
+      &.is-active
+        border-color: $black
+        background-color: $black
+        color: $white
+
+      &:hover,
+      &:focus
+        border-color: $black
+
+    th
+      padding: 10px 5px
+      color: $black
+      font-size: $fontTiny

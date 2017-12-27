@@ -1,0 +1,38 @@
+.pagination
+  display: flex
+  justify-content: space-between
+  margin: $margin 0
+
+  &-item,
+  &-next,
+  &-prev
+    position: relative
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: $padding
+    outline-width: 2px
+    outline-offset: 1px
+    border: 2px solid $black
+    border-radius: $borderRadius
+    color: $black
+    text-align: center
+    text-decoration: none
+    font-size: $font
+    cursor: pointer
+    _icon-color: $black
+
+    &.is-active,
+    &:active,
+    &:hover:not(.is-disabled)
+      background-color: $black
+      color: $white
+      _icon-color: $white
+
+    &.is-disabled
+      border-color: $gray
+      color: $gray
+      _icon-color: $gray
+
+    &:focus
+      outline-color: $blue

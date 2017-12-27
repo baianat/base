@@ -1,0 +1,40 @@
+.switcher
+  display: inline-block
+  margin: multiple($margin, (1 / 2))
+  vertical-align: middle
+
+  &-input
+    display: none
+
+    &:checked
+      + .switcher-body
+        background-color: $green
+
+        .switcher-handle
+          transform: translate3d(30px, 0, 0)
+
+  &-body
+    position: relative
+    display: inline-block
+    padding: 0
+    width: 60px
+    height: 30px
+    border-radius: 30px
+    background-color: $gray
+    cursor: pointer
+    transition: 0.4s
+
+  &-handle
+    position: absolute
+    left: 0
+    display: block
+    margin: 3px
+    width: 24px
+    height: 24px
+    border-radius: 24px
+    background-color: $white
+    content: ''
+    transition: 0.4s
+
+    &.is-dragging
+      transition: 0

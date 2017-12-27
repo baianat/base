@@ -1,0 +1,97 @@
+.table
+  overflow: hidden
+  width: 100%
+  border: 2px solid $black
+  border-spacing: 0
+  border-collapse: separate
+  border-radius: $borderRadius
+  color: $black
+  text-align: left
+  font-size: $font
+
+  &:not(:last-child)
+    margin-bottom: $margin
+
+  th,
+  td    
+
+    &:not(:last-child)
+      border-{$endDir}: 2px solid $black
+
+      +mobile()
+        border-right: 0
+
+    +mobile()
+      display: block
+      width: 100%
+
+  thead
+    background-color: $white
+    th
+      border-bottom: 2px solid $black
+      padding: multiple($padding, 2) $padding
+      font-weight: bold
+
+      +mobile()
+        border-bottom: 0
+
+  tfoot
+    th
+      padding: $padding
+
+  tr
+    +mobile()
+      display: block
+      border-bottom: 2px solid $black
+
+  td
+    padding: $padding
+    border-bottom: 2px solid $black
+    +mobile()
+      border: 0
+
+  &-wrapper
+    position: relative
+    display: table
+    overflow-x: auto
+    margin: $margin auto
+    padding: $padding
+    border: 2px solid $white
+    border-radius: $borderRadius
+    background-color: $white
+
+  &-sort
+    float: right
+    border: 2px solid $black
+    border-radius: 50%
+    padding: 0
+    outline: 0
+
+    &.is-active
+      background-color: $black
+      fill: $white
+      stroke: $white
+
+    &.is-desc
+      transform: scaleY(-1)
+
+  &.is-striped
+    tr:nth-child(2n)
+      td
+        background-color: $gray
+
+  &.is-relaxed
+    border: 0
+    th,
+    td
+      border-right: 0
+
+  &.is-center
+    text-align: center
+
+  &.is-small td
+    padding: multiple($padding, (1 / 2)) $padding
+
+  &.is-large td
+    padding: multiple($padding, 2) $padding
+

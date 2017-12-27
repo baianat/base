@@ -1,0 +1,107 @@
+.buttons
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin-bottom: $margin
+  >.label
+    z-index: 2
+    margin: 0 -18.5px
+
+  +mobile()
+    flex-direction: column
+
+  .button
+    margin-bottom: 0
+    &:not(:first-child):not(:last-child)
+      border-width: 2px 0
+      border-radius: 0
+
+    &:first-child
+      border-top-{$endDir}-radius: 0
+      border-bottom-{$endDir}-radius: 0
+
+    &:last-child
+      border-top-{$startDir}-radius: 0
+      border-bottom-{$startDir}-radius: 0
+
+    +mobile()
+      width: 100%
+
+      &:not(:first-child):not(:last-child)
+        border-width: 0 2px
+
+      &:first-child
+        border-radius: $borderRadius
+        border-bottom-right-radius: 0
+        border-bottom-left-radius: 0
+
+      &:last-child
+        border-radius: $borderRadius
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+
+  &.is-block
+    >.button
+      @extend .button.is-block
+
+  &.is-tiny
+    >.button
+      @extend .button.is-tiny
+
+  &.is-small
+    >.button
+      @extend .button.is-small
+
+  &.is-large
+    >.button
+      @extend .button.is-large
+
+  &.is-rounded
+    >.button
+      @extend .button.is-rounded
+  
+  &,
+  &.is-black
+    >.button
+      @extend .button.is-black
+
+  &.is-inverse
+    >.button
+      @extend .button.is-inverse
+
+  &.is-white
+    >.button
+      @extend .button.is-white
+  
+  &.is-white.is-inverse
+    >.button
+      @extend .button.is-white.is-inverse
+
+  &.is-blue
+    >.button
+      @extend .button.is-blue
+
+  &.is-blue.is-inverse
+    >.button
+      @extend .button.is-blue.is-inverse
+
+  &.is-red
+    >.button
+      @extend .button.is-red
+
+  &.is-red.is-inverse
+    >.button
+      @extend .button.is-red.is-inverse
+
+  &.is-green
+    >.button
+      @extend .button.is-green
+
+  &.is-green.is-inverse
+    >.button
+      @extend .button.is-green.is-inverse
+
+  &.is-disabled,
+  &[disabled]
+    >.button
+      @extend .button.is-disabled

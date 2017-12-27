@@ -1,0 +1,64 @@
+.label
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  min-width: 37px
+  margin: 0 2px
+  margin-bottom: $margin
+  padding: $padding
+  border-radius: $borderRadius
+  background-color: $gray
+  color: $black
+  vertical-align: center
+  font-size: $fontSmall
+  _icon-color: $black
+
+  img
+    margin: -7px -10px
+    height: 27px
+    vertical-align: top
+
+  .icon:first-child:not(:last-child),
+  img:first-child:not(:last-child)
+    margin-{$endDir}: multiple($padding, (1 / 2))
+
+  .icon:last-child:not(:first-child),
+  img:last-child:not(:first-child)
+    margin-{$startDir}: multiple($padding, (1 / 2))
+
+  &.is-green
+    background-color: $green
+    color: $white
+    _icon-color: $white
+
+  &.is-red
+    background-color: $red
+    color: $white
+    _icon-color: $white
+
+  &.is-blue
+    background-color: $mainColor
+    color: $white
+    _icon-color: $white
+
+  &.is-white
+    background-color: $white
+    color: $black
+    _icon-color: $black
+
+  &.is-black
+    background-color: $black
+    color: $white
+    _icon-color: $white
+
+  &.is-rounded
+    border-radius: 10em
+
+  &.is-float
+    position: absolute
+    top: 0
+    margin: 0
+    margin-top: multiple($padding, -2)
+    {$endDir}: 0
+    margin-{$endDir}: multiple($padding, -2)

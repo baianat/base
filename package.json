@@ -1,0 +1,33 @@
+{
+  "name": "@baianat/base-framework",
+  "version": "0.0.1",
+  "description": "CSS framework based on Base design language",
+  "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
+  "main": "base.styl",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-stylus": "^2.6.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "CSS",
+    "framework",
+    "flex-box",
+    "grid"
+  ],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
+}

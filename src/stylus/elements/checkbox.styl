@@ -1,0 +1,40 @@
+.checkbox
+  margin: multiple($margin, (1 / 2)) 0
+
+  &-input
+    display: none
+
+    &:checked
+      + .checkbox-label .checkbox-box:before
+        opacity: 1
+        background-color: $black
+
+  &-label
+    display: inline-flex
+    color: $black
+    font-size: $font
+    line-height: 24px
+
+    &:hover
+      color: $mainColor
+
+  &-box
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    width: 24px
+    height: 24px
+    border-radius: $borderRadius
+    border: 2px solid $black
+    cursor: pointer
+    margin-{$endDir}: 12px
+
+    &:before
+      display: block
+      width: 100%
+      height: 100%
+      text-align: center
+      color: $white
+      content: '✔'
+      opacity: 0

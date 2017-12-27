@@ -1,0 +1,52 @@
+/**
+ * media queries mixins
+ */
+responsive(breakpoint)
+    @media screen and (min-width: breakpoint)
+        {block}
+
+ultrawide()
+    @media screen and (min-width: $ultrawide)
+        {block}
+
+widescreen()
+    @media screen and (min-width: $widescreen)
+        {block}
+
+desktop()
+    @media screen and (min-width: $desktop)
+        {block}
+
+tablet()
+    @media screen and (min-width: $tablet)
+        {block}
+
+mobile()
+    @media screen and (max-width: ($tablet - 1))
+        {block}
+
+
+/**
+ * styling mixins
+ */
+_icon-color(color)
+  fill: color
+  stroke-width: 0
+
+_button-color(main, secondary, mode = 'default')
+  border-color: main
+  background-color: mode == 'inverse' ? transparent : main
+  color: mode == 'inverse' ? main : secondary
+  _icon-color: mode == 'inverse' ? main : secondary
+
+  &:hover:not(.is-disabled):not([disabled]),
+  &:active:not(.is-disabled):not([disabled]),
+  &.is-active:not(.is-disabled):not([disabled])
+    background-color: mode == 'inverse' ? main : transparent
+    color: mode == 'inverse' ? secondary : main
+    _icon-color: mode == 'inverse' ? secondary : main
+
+flexCenter()
+  display: flex
+  justify-content: center
+  align-items: center

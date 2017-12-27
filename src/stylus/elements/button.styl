@@ -1,0 +1,97 @@
+.button
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  margin-bottom: $margin
+  padding: $padding multiple($padding, 1.5)
+  outline-width: 2px
+  outline-offset: 1px
+  border-width: 2px
+  border-style: solid
+  border-radius: $borderRadius
+  background-clip: border-box
+  vertical-align: top
+  text-align: center
+  text-decoration: none
+  font-size: $font
+  cursor: pointer
+  _icon-color: $white
+
+  .icon:first-child:not(:last-child)
+    margin-{$endDir}: multiple($padding, (1 / 2))
+
+  .icon:last-child:not(:first-child)
+    margin-{$startDir}: multiple($padding, (1 / 2))
+
+  .icon:only-child
+    margin: 0 multiple($padding, (-1 / 2))
+
+  .label
+    margin: multiple($padding, -1) 0
+
+  &:hover
+    text-decoration: none
+
+  &:focus
+    outline-color: $blue
+
+  /**
+   * modiffers
+   */
+
+  &.is-block
+    width: 100%
+
+  &.is-tiny
+    font-size: $fontTiny
+
+  &.is-small
+    font-size: $fontSmall
+
+  &.is-large
+    font-size: $fontLarge
+
+  &.is-rounded
+    border-width: 2px
+    border-radius: 10em
+
+  &,
+  &.is-black
+    _button-color: $mainColor $white
+
+  &.is-inverse
+    _button-color: $mainColor $white inverse
+
+  &.is-white
+    _button-color: $white $black
+
+  &.is-white.is-inverse
+    _button-color: $white $black inverse
+
+  &.is-blue
+    _button-color: $blue $white
+
+  &.is-blue.is-inverse
+    _button-color: $blue $white inverse
+
+  &.is-red
+    _button-color: $red $white
+
+  &.is-red.is-inverse
+    _button-color: $red $white inverse
+
+  &.is-green
+    _button-color: $green $white
+
+  &.is-green.is-inverse
+    _button-color: $green $white inverse
+
+  &.is-disabled,
+  &[disabled]
+    opacity: 0.5
+    cursor: not-allowed
+
+  &.is-clean
+    border: 0
+    margin: 0

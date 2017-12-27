@@ -1,0 +1,87 @@
+.dropdown
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+  &.is-right
+    justify-content: flex-end
+
+  &.is-center
+    justify-content: center
+
+  &-menu
+    position: absolute
+    top: 70px
+    left: 0
+    padding: $padding
+    width: 300px
+    border: 2px solid $black
+    border-radius: $borderRadius
+    box-shadow: 0 2px 10px $shadow
+    background-color: $white
+    color: $black
+    list-style: none
+    transform-origin: top left
+    user-select: none
+    li
+      padding: 0
+      font-size: $font
+    .dropdown-menu &
+      position: static
+    &:empty
+      display: none
+
+    &.is-hidden
+      margin: 0
+      padding: 0
+      height: 0
+      transform: scale(0)
+
+    &.is-visiable
+      transform: scale(1)
+
+    &:before
+      position: absolute
+      top: -7px
+      left: $padding
+      display: block
+      width: 0
+      height: 0
+      border-width: 0 7px 7px 7px
+      border-style: solid
+      border-color: transparent transparent $black transparent
+      content: ''
+
+    &:after
+      position: absolute
+      top: -5px
+      left: $padding
+      display: block
+      width: 0
+      height: 0
+      border-width: 0 7px 7px 7px
+      border-style: solid
+      border-color: transparent transparent $white transparent
+      content: ''
+
+    .is-right &
+      right: 0
+      left: auto
+      left: initial
+      transform-origin: top right
+
+      &:before,
+      &:after
+        right: $padding
+        left: auto
+        left: initial
+
+    .is-center &
+      left: calc(50% - 150px)
+      transform-origin: top center
+
+      &:before,
+      &:after
+        left: calc(50% - 7px)
+

@@ -1,0 +1,66 @@
+.column
+    flex: 1 0
+    padding-left: $gutter
+    padding-right: $gutter
+
+    &[class*="is-tablet-"]
+    &[class*="is-desktop-"]
+    &[class*="is-widescreen-"]
+    &[class*="is-ultrawide-"]
+        flex: 1 0 100%
+        width: 100%
+
+    for $n in (0..$columns)
+        &.is-{$n}
+        &.is-mobile-{$n}
+            flex: 0 0 ($n / $columns * 100)%
+            width: ($n / $columns * 100)%
+        &.is-offset-{$n}
+        &.is-offset-mobile-{$n}
+            margin-{$startDir}: ($n / $columns * 100)%
+
+    +tablet()
+        for $n in (0..$columns)
+            &.is-tablet-{$n}
+                flex: 0 0 ($n / $columns * 100)%
+                width: ($n / $columns * 100)%
+            &.is-offset-tablet-{$n}
+                margin-{$startDir}: ($n / $columns * 100)%
+
+    +desktop()
+        for $n in (0..$columns)
+            &.is-desktop-{$n}
+                flex: 0 0 ($n / $columns * 100)%
+                width: ($n / $columns * 100)%
+            &.is-offset-desktop-{$n}
+                margin-{$startDir}: ($n / $columns * 100)%
+
+    +widescreen()
+        for $n in (0..$columns)
+            &.is-widescreen-{$n}
+                flex: 0 0 ($n / $columns * 100)%
+                width: ($n / $columns * 100)%
+            &.is-offset-widescreen-{$n}
+                margin-{$startDir}: ($n / $columns * 100)%
+
+    +ultrawide()
+        for $n in (0..$columns)
+            &.is-ultrawide-{$n}
+                flex: 0 0 ($n / $columns * 100)%
+                width: ($n / $columns * 100)%
+            &.is-offset-ultrawide-{$n}
+                margin-{$startDir}: ($n / $columns * 100)%
+
+
+    &.is-middle
+        align-self: center
+
+    &.is-top
+        align-self: flex-start
+
+    &.is-bottom
+        align-self: flex-end
+
+    >.row
+        margin: 0 multiple($gutter, -1)
+        width: "calc(100% + %s)" % multiple($gutter, 2)

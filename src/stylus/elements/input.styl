@@ -1,0 +1,41 @@
+.input
+  margin-bottom: $margin
+  padding: $padding multiple($padding, 1.5)
+  width: 100%
+  border: 2px solid $mainColor
+  border-radius: $borderRadius
+  font-size: $font
+  -webkit-appearance: none
+  -moz-appearance: none
+
+  /**
+    * modiffers
+    */
+  &.is-block
+    width: 100%
+
+  &.is-tiny
+    font-size: $fontTiny
+
+  &.is-small
+    font-size: $fontSmall
+
+  &.is-large
+    font-size: $fontLarge
+
+  &.is-rounded
+    border-width: 2px
+    border-radius: 10em
+
+  &.is-blue
+    border-color: $blue
+
+  &.is-green
+    border-color: $green
+
+  &.is-red
+    border-color: $red
+
+  &:focus
+    outline: none
+    border-color: $blue

@@ -1,0 +1,17 @@
+$headers = $header1 $header2 $header3 $header4 $header5 $header6
+
+for $header, $n in $headers
+  h{$n}
+    font-size: $header
+    &.is-responsive
+      font-size: unitRes(remove-unit($header), remove-unit($header * 2))
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin: 0.67em 0
+  line-height: $lineheight

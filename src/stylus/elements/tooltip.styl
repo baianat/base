@@ -1,0 +1,87 @@
+[tooltip]
+  position: relative
+
+  &:hover
+    &:before,
+    &:after
+      visibility: visible
+      opacity: 1
+
+  &:before
+    position: absolute
+    top: -13px
+    left: 50%
+    z-index: 99999
+    display: block
+    visibility: hidden
+    width: 0
+    height: 0
+    border-width: 7px 7px 0 7px
+    border-style: solid
+    border-color: $black transparent transparent transparent
+    content: ''
+    opacity: 0
+    transition: 0.4s
+    transform: translate(-50%, 0)
+
+  &:after
+    position: absolute
+    top: -44px
+    left: 50%
+    color: $white
+    z-index: 99999
+    display: block
+    visibility: hidden
+    padding: $padding
+    border-radius: $borderRadius
+    background-color: $black
+    content: attr(tooltip)
+    white-space: nowrap
+    font-size: $fontSmall
+    line-height: $fontSmall
+    opacity: 0
+    transition: 0.4s
+    transform: translate(-50%, 0)
+
+[tooltip-position='bottom']
+  &:before
+    top: auto
+    top: initial
+    bottom: -13px
+    border-width: 0 7px 7px 7px
+    border-color: transparent transparent $black transparent
+
+  &:after
+    top: auto
+    top: initial
+    bottom: -44px
+
+[tooltip-position='left']
+  &:before
+    top: 50%
+    left: -13px
+    border-width: 7px 0 7px 7px
+    border-color: transparent transparent transparent $black
+    transform: translate(0, -50%)
+
+  &:after
+    top: 50%
+    left: -12px
+    transform: translate(-100%, -50%)
+
+[tooltip-position='right']
+  &:before
+    top: 50%
+    right: -13px
+    left: auto
+    left: initial
+    border-width: 7px 7px 7px 0
+    border-color: transparent $black transparent transparent
+    transform: translate(0, -50%)
+
+  &:after
+    top: 50%
+    right: -12px
+    left: auto
+    left: initial
+    transform: translate(100%, -50%)

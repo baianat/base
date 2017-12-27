@@ -1,0 +1,108 @@
+.modal
+  position: relative
+  z-index: 999
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: stretch
+  margin: $margin 0
+  width: 100%
+  border: 0
+  border-radius: $borderRadius
+  background-color: $white
+  font-size: $font
+
+  p
+    margin: 0
+
+  &-header
+    position: relative
+    padding: multiple($paddingPx, 2)
+
+  &-title
+    margin: 0
+
+  &-body
+    position: relative
+    overflow: auto
+    padding: $paddingPx multiple($paddingPx, 2)
+
+  &-footer
+    display: flex
+    flex-direction: row-reverse
+    justify-content: space-between
+    padding: $paddingPx
+
+  &-dismiss
+    position: absolute
+    top: 0
+    z-index: 9999
+    padding: $paddingPx
+    {$endDir}: 0
+
+    &:hover
+      _icon-color: $red
+
+  &,
+  &.is-black
+    border-color: $black
+    background-color: $black
+    color: $white
+    _icon-color: $white
+
+  &.is-inverse
+    border: 2px solid $black
+    background-color: $white
+    color: $black
+    _icon-color: $black
+
+  &.is-blue
+    background-color: $lightBlue
+    color: $blue
+    _icon-color: $blue
+
+    &.is-inverse
+      border-color: $blue
+
+  &.is-red
+    background-color: $lightRed
+    color: $red
+    _icon-color: $red
+
+    &.is-inverse
+      border-color: $red
+
+  &.is-green
+    background-color: $lightGreen
+    color: $green
+    _icon-color: $green
+
+    &.is-inverse
+      border-color: $green
+
+  &.is-inverse[class*='is-']
+    background-color: $white
+
+  &.is-hidden
+    display: none
+
+  &.is-visable
+    display: flex
+
+  &-container
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100vh
+    background-color: $shadow
+
+    &.is-hidden
+      display: none
+
+    &.is-visable
+      display: flex

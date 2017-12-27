@@ -1,0 +1,24 @@
+/**
+ * set the start and end direction based on
+ * $direction variable
+ */
+setDirection(state)
+  if ($direction == 'ltr')
+    return state == 'start' ? left : right
+
+  return state == 'start' ? right : left
+
+multiple(value, times)
+  if ($cssVar == true)
+    return 'calc(%s * %s)' % (value times)
+
+  return value * times
+
+_calc()
+  if ($cssVar == true)
+    return arguments[1]
+  return convert(arguments)
+  
+
+unitRes(min, max)
+  'calc( %spx + (%s - %s) * (100vw - %s) / %s )' % (min max min $responsiveMin $responsiveRatio)
