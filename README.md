@@ -7,16 +7,18 @@ CSS framework based on Base design language
 ### installation
 
 ```bash
-npm install @baiant/base-framewrok
+npm install @baianat/base-framework
 
 #or using yarn
-yarn add @baiant/base-framework
+yarn add @baianat/base-framework
 ```
 
 ### include stylesheet file
 
 ``` html
 <head>
-  <link rel="stylesheet" href="./@baiant/framework/dist/css/base.css">
+  <link rel="stylesheet" href="./@baianat/framework/dist/css/base.css">
+  <!-->or if you want to use cssVar version <-->
+  <link rel="stylesheet" href="./@baianat/framework/dist/css/base-cssvar.css">
 </head>
 ```

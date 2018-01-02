@@ -15,20 +15,22 @@
 
   &-wheel
     position: relative
-    margin: 10px 20px
+    margin: 10px auto 20px auto
+    user-select: none
 
   &-menu
     position: absolute
     top: 30px
-    width: 600px
+    width: 300px
     &.is-hidden
       display: none
     &:focus
       outline: none
-    +mobile()
-      width: 300px
-      top: 20px
-      left: 20px
+    >div
+      display: flex
+      justify-content: center
+      align-items: stretch
+      flex-direction: column
 
   &-recent
     display: flex
@@ -37,8 +39,8 @@
     width: 100%
 
   &-color
-    width: 30px
-    height: 30px
+    width: 28px
+    height: 28px
     border-radius: 50%
     margin: 0 5px
     background-color: $black
