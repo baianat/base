@@ -2224,17 +2224,18 @@ h6 {
   }
 }
 .table tfoot th {
+  border-top: 2px solid var(--black);
   padding: var(--padding);
 }
 @media screen and (max-width: 767px) {
   .table tr {
     display: block;
-    border-bottom: 2px solid var(--black);
+    border-top: 2px solid var(--black);
   }
 }
 .table td {
   padding: var(--padding);
-  border-bottom: 2px solid var(--black);
+  border-top: 2px solid var(--black);
 }
 @media screen and (max-width: 767px) {
   .table td {

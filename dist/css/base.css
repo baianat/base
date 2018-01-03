@@ -2196,17 +2196,18 @@ h6 {
   }
 }
 .table tfoot th {
+  border-top: 2px solid #000;
   padding: 0.75em;
 }
 @media screen and (max-width: 767px) {
   .table tr {
     display: block;
-    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
   }
 }
 .table td {
   padding: 0.75em;
-  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
 }
 @media screen and (max-width: 767px) {
   .table td {
