@@ -2010,24 +2010,13 @@ h6 {
 .checkbox {
   margin: calc(var(--margin) * 0.5) 0;
 }
-.checkbox-input {
-  display: none;
-}
-.checkbox-input:checked + .checkbox-label .checkbox-box:before {
-  opacity: 1;
-  background-color: var(--black);
-}
 .checkbox-label {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   color: var(--black);
   font-size: var(--font);
   line-height: 24px;
+  vertical-align: middle;
 }
-.checkbox-label:hover {
-  color: var(--mainColor);
-}
-.checkbox-box {
+.checkbox-input {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-pack: center;
@@ -2037,19 +2026,34 @@ h6 {
   padding: 0;
   width: 24px;
   height: 24px;
-  border-radius: var(--borderRadius);
+  outline-width: 2px;
+  outline-offset: 1px;
   border: 2px solid var(--black);
+  border-radius: var(--borderRadius);
   cursor: pointer;
   margin-right: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
-.checkbox-box:before {
+.checkbox-input:focus {
+  outline-color: var(--blue);
+}
+.checkbox-input:checked {
+  background-color: var(--black);
+}
+.checkbox-input:checked:after {
+  opacity: 1;
+}
+.checkbox-input:after {
   display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  color: var(--white);
-  content: '✔';
   opacity: 0;
+  width: 3px;
+  height: 7px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  content: '';
+  transform: translate3d(0, -1px, 0) rotate(45deg);
 }
 .icon {
   display: inline;
@@ -2093,12 +2097,6 @@ h6 {
 .radio {
   margin: calc(var(--margin) * 0.5) 0;
 }
-.radio-input {
-  display: none;
-}
-.radio-input:checked + .radio-label .radio-circle:before {
-  opacity: 1;
-}
 .radio-label {
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2109,7 +2107,7 @@ h6 {
 .radio-label:hover {
   color: var(--mainColor);
 }
-.radio-circle {
+.radio-input {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-pack: center;
@@ -2122,8 +2120,17 @@ h6 {
   border-radius: 50%;
   cursor: pointer;
   margin-right: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
-.radio-circle:before {
+.radio-input:focus {
+  outline-color: var(--blue);
+}
+.radio-input:checked:after {
+  opacity: 1;
+}
+.radio-input:after {
   display: block;
   width: 8px;
   height: 8px;

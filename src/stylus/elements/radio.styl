@@ -1,13 +1,6 @@
 .radio
   margin: multiple($margin, (1 / 2)) 0
 
-  &-input
-    display: none
-
-    &:checked
-      + .radio-label .radio-circle:before
-        opacity: 1
-
   &-label
     display: inline-flex
     color: $black
@@ -17,7 +10,7 @@
     &:hover
       color: $mainColor
 
-  &-circle
+  &-input
     display: inline-flex
     justify-content: center
     align-items: center
@@ -27,8 +20,17 @@
     border-radius: 50%
     cursor: pointer
     margin-{$endDir}: 12px
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
 
-    &:before
+    &:focus
+      outline-color: $blue
+
+    &:checked:after
+      opacity: 1
+
+    &:after
       display: block
       width: 8px
       height: 8px

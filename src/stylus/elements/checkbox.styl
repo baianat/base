@@ -1,40 +1,41 @@
 .checkbox
   margin: multiple($margin, (1 / 2)) 0
 
-  &-input
-    display: none
-
-    &:checked
-      + .checkbox-label .checkbox-box:before
-        opacity: 1
-        background-color: $black
-
   &-label
-    display: inline-flex
     color: $black
     font-size: $font
     line-height: 24px
+    vertical-align: middle
 
-    &:hover
-      color: $mainColor
-
-  &-box
+  &-input
     display: inline-flex
     justify-content: center
     align-items: center
     padding: 0
     width: 24px
     height: 24px
-    border-radius: $borderRadius
+    outline-width: 2px
+    outline-offset: 1px
     border: 2px solid $black
+    border-radius: $borderRadius
     cursor: pointer
     margin-{$endDir}: 12px
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    &:focus
+      outline-color: $blue
+    &:checked
+      background-color: $black
+      &:after
+        opacity: 1
 
-    &:before
+    &:after
       display: block
-      width: 100%
-      height: 100%
-      text-align: center
-      color: $white
-      content: '✔'
       opacity: 0
+      width: 3px
+      height: 7px
+      border: solid $white
+      border-width: 0 2px 2px 0
+      content: ''
+      transform:  translate3d(0, -1px, 0) rotate(45deg)
