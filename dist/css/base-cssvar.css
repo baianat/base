@@ -1448,8 +1448,8 @@ h6 {
 }
 .button,
 .button.is-black,
-.buttons >.button,
-.buttons.is-black >.button {
+.buttons.is-black >.button,
+.form.is-black >.button {
   border-color: var(--mainColor);
   background-color: var(--mainColor);
   color: var(--white);
@@ -1458,23 +1458,24 @@ h6 {
 }
 .button:hover:not(.is-disabled):not([disabled]),
 .button.is-black:hover:not(.is-disabled):not([disabled]),
-.buttons >.button:hover:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-black >.button:hover:not(.is-disabled):not([disabled]),
 .button:active:not(.is-disabled):not([disabled]),
 .button.is-black:active:not(.is-disabled):not([disabled]),
-.buttons >.button:active:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button:active:not(.is-disabled):not([disabled]),
+.form.is-black >.button:active:not(.is-disabled):not([disabled]),
 .button.is-active:not(.is-disabled):not([disabled]),
 .button.is-black.is-active:not(.is-disabled):not([disabled]),
-.buttons >.button.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-black >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--mainColor);
   fill: var(--mainColor);
   stroke-width: 0;
 }
 .button.is-inverse,
-.buttons.is-inverse >.button {
+.buttons.is-inverse >.button,
+.form.is-inverse >.button {
   border-color: var(--mainColor);
   background-color: transparent;
   color: var(--mainColor);
@@ -1483,17 +1484,21 @@ h6 {
 }
 .button.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.form.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-inverse.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--mainColor);
   color: var(--white);
   fill: var(--white);
   stroke-width: 0;
 }
 .button.is-white,
-.buttons.is-white >.button {
+.buttons.is-white >.button,
+.form.is-white >.button {
   border-color: var(--white);
   background-color: var(--white);
   color: var(--black);
@@ -1502,17 +1507,21 @@ h6 {
 }
 .button.is-white:hover:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-white >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-white:active:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button:active:not(.is-disabled):not([disabled]),
+.form.is-white >.button:active:not(.is-disabled):not([disabled]),
 .button.is-white.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-white >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-white >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-white >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--white);
   fill: var(--white);
   stroke-width: 0;
 }
 .button.is-white.is-inverse,
-.buttons.is-white.is-inverse >.button {
+.buttons.is-white.is-inverse >.button,
+.form.is-white.is-inverse >.button {
   border-color: var(--white);
   background-color: transparent;
   color: var(--white);
@@ -1521,17 +1530,21 @@ h6 {
 }
 .button.is-white.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-white.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.form.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-white.is-inverse.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--white);
   color: var(--black);
   fill: var(--black);
   stroke-width: 0;
 }
 .button.is-blue,
-.buttons.is-blue >.button {
+.buttons.is-blue >.button,
+.form.is-blue >.button {
   border-color: var(--blue);
   background-color: var(--blue);
   color: var(--white);
@@ -1540,17 +1553,21 @@ h6 {
 }
 .button.is-blue:hover:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-blue >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-blue:active:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button:active:not(.is-disabled):not([disabled]),
+.form.is-blue >.button:active:not(.is-disabled):not([disabled]),
 .button.is-blue.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-blue >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-blue >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-blue >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--blue);
   fill: var(--blue);
   stroke-width: 0;
 }
 .button.is-blue.is-inverse,
-.buttons.is-blue.is-inverse >.button {
+.buttons.is-blue.is-inverse >.button,
+.form.is-blue.is-inverse >.button {
   border-color: var(--blue);
   background-color: transparent;
   color: var(--blue);
@@ -1559,17 +1576,21 @@ h6 {
 }
 .button.is-blue.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-blue.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.form.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-blue.is-inverse.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--blue);
   color: var(--white);
   fill: var(--white);
   stroke-width: 0;
 }
 .button.is-red,
-.buttons.is-red >.button {
+.buttons.is-red >.button,
+.form.is-red >.button {
   border-color: var(--red);
   background-color: var(--red);
   color: var(--white);
@@ -1578,17 +1599,21 @@ h6 {
 }
 .button.is-red:hover:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-red >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-red:active:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button:active:not(.is-disabled):not([disabled]),
+.form.is-red >.button:active:not(.is-disabled):not([disabled]),
 .button.is-red.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-red >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-red >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-red >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--red);
   fill: var(--red);
   stroke-width: 0;
 }
 .button.is-red.is-inverse,
-.buttons.is-red.is-inverse >.button {
+.buttons.is-red.is-inverse >.button,
+.form.is-red.is-inverse >.button {
   border-color: var(--red);
   background-color: transparent;
   color: var(--red);
@@ -1597,17 +1622,21 @@ h6 {
 }
 .button.is-red.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-red.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.form.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-red.is-inverse.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--red);
   color: var(--white);
   fill: var(--white);
   stroke-width: 0;
 }
 .button.is-green,
-.buttons.is-green >.button {
+.buttons.is-green >.button,
+.form.is-green >.button {
   border-color: var(--green);
   background-color: var(--green);
   color: var(--white);
@@ -1616,17 +1645,21 @@ h6 {
 }
 .button.is-green:hover:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-green >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-green:active:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button:active:not(.is-disabled):not([disabled]),
+.form.is-green >.button:active:not(.is-disabled):not([disabled]),
 .button.is-green.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-green >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-green >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-green >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--green);
   fill: var(--green);
   stroke-width: 0;
 }
 .button.is-green.is-inverse,
-.buttons.is-green.is-inverse >.button {
+.buttons.is-green.is-inverse >.button,
+.form.is-green.is-inverse >.button {
   border-color: var(--green);
   background-color: transparent;
   color: var(--green);
@@ -1635,10 +1668,13 @@ h6 {
 }
 .button.is-green.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.form.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-green.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.form.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-green.is-inverse.is-active:not(.is-disabled):not([disabled]),
-.buttons.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.buttons.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
+.form.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--green);
   color: var(--white);
   fill: var(--white);
@@ -1647,13 +1683,22 @@ h6 {
 .button.is-disabled,
 .button[disabled],
 .buttons.is-disabled >.button,
-.buttons[disabled] >.button {
+.buttons[disabled] >.button,
+.form.is-disabled >.button {
   opacity: 0.5;
   cursor: not-allowed;
 }
 .button.is-clean {
-  border: 0;
   margin: 0;
+  border: 0;
+  color: var(--black);
+  fill: var(--black);
+  stroke-width: 0;
+}
+.button.is-clean:hover {
+  color: var(--black);
+  fill: var(--black);
+  stroke-width: 0;
 }
 .buttons {
   display: -ms-flexbox;
@@ -1814,14 +1859,31 @@ h6 {
   border-width: 2px;
   border-radius: 10em;
 }
-.input.is-blue {
+.input.is-black,
+.form.is-black >.input {
+  border-color: var(--black);
+}
+.input.is-blue,
+.form.is-blue >.input {
   border-color: var(--blue);
 }
-.input.is-green {
+.input.is-green,
+.form.is-green >.input {
   border-color: var(--green);
 }
-.input.is-red {
+.input.is-red,
+.form.is-red >.input {
   border-color: var(--red);
+}
+.input.is-white,
+.form.is-white >.input {
+  border-color: var(--white);
+}
+.input.is-disabled,
+.input[disabled],
+.form.is-disabled >.input {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .input:focus {
   outline: none;
@@ -1844,7 +1906,6 @@ h6 {
   border: 2px solid var(--black);
   border-radius: var(--borderRadius);
   background-color: var(--black);
-  color: var(--white);
   vertical-align: top;
   text-align: center;
   font-size: var(--font);
@@ -1860,17 +1921,75 @@ h6 {
 .form-addon .icon:only-child {
   margin: 0 calc(var(--padding) * -0.5);
 }
-.form-addon.is-blue {
+.form-addon.is-rounded,
+.form.is-rounded >.form-addon {
+  border-radius: 10em;
+}
+.form-addon.is-black,
+.form.is-black >.form-addon {
+  border-color: var(--black);
+  background-color: var(--black);
+  color: var(--black);
+  fill: var(--black);
+  stroke-width: 0;
+}
+.form-addon.is-white,
+.form.is-white >.form-addon {
+  border-color: var(--white);
+  background-color: var(--white);
+  color: var(--white);
+  fill: var(--white);
+  stroke-width: 0;
+}
+.form-addon.is-blue,
+.form.is-blue >.form-addon {
   background-color: var(--blue);
   border-color: var(--blue);
+  color: var(--blue);
+  fill: var(--blue);
+  stroke-width: 0;
 }
-.form-addon.is-green {
+.form-addon.is-green,
+.form.is-green >.form-addon {
   background-color: var(--green);
   border-color: var(--green);
+  color: var(--green);
+  fill: var(--green);
+  stroke-width: 0;
 }
-.form-addon.is-red {
+.form-addon.is-red,
+.form.is-red >.form-addon {
   background-color: var(--red);
   border-color: var(--red);
+  color: var(--red);
+  fill: var(--red);
+  stroke-width: 0;
+}
+.form-addon.is-inverse,
+.form.is-inverse >.form-addon {
+  background-color: transparent;
+}
+.form-addon:not(.is-inverse) {
+  color: var(--white);
+  fill: var(--white);
+  stroke-width: 0;
+}
+.form-addon.is-disabled,
+.form.is-disabled >.form-addon {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.form-addon.is-tiny,
+.form.is-tiny >.form-addon {
+  font-size: var(--fontTiny);
+}
+.form-addon.is-small,
+.form.is-small >.form-addon {
+  font-size: var(--fontSmall);
+}
+.form-addon.is-large,
+.form.is-large >.form-addon {
+  font-size: var(--fontLarge);
 }
 .form.has-itemAfter .button {
   border-top-left-radius: 0;

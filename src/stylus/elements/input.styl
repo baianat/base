@@ -27,14 +27,21 @@
     border-width: 2px
     border-radius: 10em
 
+  &.is-black
+    border-color: $black
   &.is-blue
     border-color: $blue
-
   &.is-green
     border-color: $green
-
   &.is-red
     border-color: $red
+  &.is-white
+    border-color: $white
+
+  &.is-disabled,
+  &[disabled]
+    opacity: 0.5
+    cursor: not-allowed
 
   &:focus
     outline: none

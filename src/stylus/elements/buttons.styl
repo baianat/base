@@ -1,3 +1,5 @@
+$modifiers = 'block' 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue' 'blue.is-inverse' 'green' 'green.is-inverse' 'red' 'red.is-inverse' 'white' 'white.is-inverse'
+
 .buttons
   display: flex
   flex-wrap: wrap
@@ -40,68 +42,12 @@
         border-top-left-radius: 0
         border-top-right-radius: 0
 
-  &.is-block
-    >.button
-      @extend .button.is-block
+  // generate all modifiers
+  for modifier in $modifiers
+    &.is-{modifier}
+      >.button
+        @extend .button.is-{modifier}
 
-  &.is-tiny
-    >.button
-      @extend .button.is-tiny
-
-  &.is-small
-    >.button
-      @extend .button.is-small
-
-  &.is-large
-    >.button
-      @extend .button.is-large
-
-  &.is-rounded
-    >.button
-      @extend .button.is-rounded
-  
-  &,
-  &.is-black
-    >.button
-      @extend .button.is-black
-
-  &.is-inverse
-    >.button
-      @extend .button.is-inverse
-
-  &.is-white
-    >.button
-      @extend .button.is-white
-  
-  &.is-white.is-inverse
-    >.button
-      @extend .button.is-white.is-inverse
-
-  &.is-blue
-    >.button
-      @extend .button.is-blue
-
-  &.is-blue.is-inverse
-    >.button
-      @extend .button.is-blue.is-inverse
-
-  &.is-red
-    >.button
-      @extend .button.is-red
-
-  &.is-red.is-inverse
-    >.button
-      @extend .button.is-red.is-inverse
-
-  &.is-green
-    >.button
-      @extend .button.is-green
-
-  &.is-green.is-inverse
-    >.button
-      @extend .button.is-green.is-inverse
-
-  &.is-disabled,
   &[disabled]
     >.button
       @extend .button.is-disabled

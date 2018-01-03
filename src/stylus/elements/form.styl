@@ -1,3 +1,5 @@
+$modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue' 'blue.is-inverse' 'green' 'green.is-inverse' 'red' 'red.is-inverse' 'white' 'white.is-inverse'
+
 .form
   display: flex
   align-items: flex-start
@@ -6,38 +8,12 @@
   >*
     margin-bottom: 0
 
-  &.is-tiny
-    >.button
-      @extends .button.is-tiny
-    >.input
-      @extends .input.is-tiny
-
-  &.is-small
-    >.button
-      @extends .button.is-small
-    >.input
-      @extends .input.is-small
-
-  &.is-large
-    >.button
-      @extends .button.is-large
-    >.input
-      @extends .input.is-large
-
-  &.is-rounded
-    >.button
-      @extends .button.is-rounded
-    >.input
-      @extends .input.is-rounded
-
-
   &-addon
     display: inline-flex
     padding: $padding multiple($padding, 1.5)
     border: 2px solid $black
     border-radius: $borderRadius
     background-color: $black
-    color: $white
     vertical-align: top
     text-align: center
     font-size: $font
@@ -52,17 +28,48 @@
     .icon:only-child
       margin: 0 multiple($padding, (-1 / 2))
 
+    &.is-rounded
+      border-radius: 10em
+    &.is-black
+      border-color: $black
+      background-color: $black
+      color: $black
+      _icon-color: $black
+    &.is-white
+      border-color: $white
+      background-color: $white
+      color: $white
+      _icon-color: $white
     &.is-blue
       background-color: $blue
       border-color: $blue
-
+      color: $blue
+      _icon-color: $blue
     &.is-green
       background-color: $green
       border-color: $green
-
+      color: $green
+      _icon-color: $green
     &.is-red
       background-color: $red
       border-color: $red
+      color: $red
+      _icon-color: $red
+    &.is-inverse
+      background-color: transparent
+    &:not(.is-inverse)
+      color: $white
+      _icon-color: $white
+    &.is-disabled
+      opacity: 0.5
+      cursor: not-allowed
+
+    &.is-tiny
+      font-size: $fontTiny
+    &.is-small
+      font-size: $fontSmall
+    &.is-large
+      font-size: $fontLarge
 
   &.has-itemAfter
     .button
@@ -81,3 +88,13 @@
     .input
       border-top-{$startDir}-radius: 0
       border-bottom-{$startDir}-radius: 0
+
+  // generate all modifiers
+  for modifier in $modifiers
+    &.is-{modifier}
+      >.button
+        @extends .button.is-{modifier}
+      >.input
+        @extends .input.is-{modifier} !optional
+      >.form-addon
+        @extends .form-addon.is-{modifier} !optional
