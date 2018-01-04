@@ -1,16 +1,55 @@
 .textarea
-    display: block
-    padding: $padding
-    border-radius: $borderRadius
-    font-size: $font
-    line-height: 1.2
-    border: 2px solid $mainColor
-    text-align: $startDir
-    color: $mainColor
-    margin-bottom: $margin
-    resize: none
+  display: block
+  margin-bottom: $margin
+  padding: $padding
+  width: 100%
+  border: 2px solid $mainColor
+  border-radius: $borderRadius
+  color: $mainColor
+  text-align: $startDir
+  font-size: $font
+  line-height: 1.2
+  resize: none
+
+  &:focus
+    outline: 0
+    border-color: $blue
+
+  /**
+    * modiffers
+    */
+  &.is-block
     width: 100%
 
-    &:focus
-        outline: 0
-        border-color: $blue
+  &.is-tiny
+    font-size: $fontTiny
+
+  &.is-small
+    font-size: $fontSmall
+
+  &.is-large
+    font-size: $fontLarge
+
+  &.is-rounded
+    border-width: 2px
+    border-radius: 10em
+
+  &.is-black
+    border-color: $black
+  &.is-blue
+    border-color: $blue
+  &.is-green
+    border-color: $green
+  &.is-red
+    border-color: $red
+  &.is-white
+    border-color: $white
+
+  &.is-disabled,
+  &[disabled]
+    opacity: 0.5
+    cursor: not-allowed
+
+  &:focus
+    outline: none
+    border-color: $blue

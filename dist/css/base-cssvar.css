@@ -1685,16 +1685,43 @@ h6 {
 .buttons.is-disabled >.button,
 .buttons[disabled] >.button,
 .form.is-disabled >.button {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 .button.is-clean {
   margin: 0;
   border: 0;
-  background-color: transprent;
+  background-color: transparent;
   color: var(--black);
   fill: var(--black);
   stroke-width: 0;
+}
+.button.is-link {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--blue);
+}
+.button.is-link:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--blue);
+  bottom: 0;
+  left: 0;
+  righ: 0;
+}
+.button.is-link:hover:not(.is-disabled):not([disabled]),
+.button.is-link:active:not(.is-disabled):not([disabled]),
+.button.is-link.is-active:not(.is-disabled):not([disabled]) {
+  color: var(--blue);
+}
+.button.is-link:hover:not(.is-disabled):not([disabled]):after,
+.button.is-link:active:not(.is-disabled):not([disabled]):after,
+.button.is-link.is-active:not(.is-disabled):not([disabled]):after {
+  height: 5px;
 }
 .buttons {
   display: -ms-flexbox;
@@ -1892,12 +1919,17 @@ h6 {
 .form {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: start;
-      align-items: flex-start;
   margin-bottom: var(--margin);
 }
 .form >* {
   margin-bottom: 0;
+}
+.form-label {
+  font-size: var(--fontLarge);
+  margin-bottom: var(--margin);
+  white-space: nowrap;
+  -ms-flex: 1;
+      flex: 1;
 }
 .form-addon {
   display: -ms-inline-flexbox;
@@ -1969,10 +2001,19 @@ h6 {
 .form.is-inverse >.form-addon {
   background-color: transparent;
 }
-.form-addon:not(.is-inverse) {
+.form-addon:not(.is-inverse):not(.is-clean),
+.form:not(.is-inverse) >.form-addon:not(.is-clean) {
   color: var(--white);
   fill: var(--white);
   stroke-width: 0;
+}
+.form-addon.is-clean {
+  position: relative;
+  background-color: #fff;
+  fill: var(--gray);
+  stroke-width: 0;
+  border-right: 0;
+  margin-right: -2px;
 }
 .form-addon.is-disabled,
 .form.is-disabled >.form-addon {
@@ -1990,6 +2031,15 @@ h6 {
 .form-addon.is-large,
 .form.is-large >.form-addon {
   font-size: var(--fontLarge);
+}
+.form.has-label {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.form.has-labelInline .form-label {
+  margin-bottom: 0;
+  margin-endDir: var(--margin);
+  line-height: 2.5em;
 }
 .form.has-itemAfter .button {
   border-top-left-radius: 0;
@@ -2063,20 +2113,24 @@ h6 {
   line-height: inherit;
 }
 .icon.is-green {
-  color: var(--green);
   fill: var(--green);
-}
-.icon.is-red {
-  color: var(--red);
-  fill: var(--red);
+  stroke-width: 0;
 }
 .icon.is-blue {
-  color: var(--mainColor);
-  fill: var(--mainColor);
+  fill: var(--blue);
+  stroke-width: 0;
+}
+.icon.is-red {
+  fill: var(--red);
+  stroke-width: 0;
+}
+.icon.is-white {
+  fill: var(--white);
+  stroke-width: 0;
 }
 .icon.is-black {
-  color: var(--black);
   fill: var(--black);
+  stroke-width: 0;
 }
 .icon.is-tiny {
   width: var(--fontTiny);
@@ -2293,19 +2347,62 @@ h6 {
 }
 .textarea {
   display: block;
+  margin-bottom: var(--margin);
   padding: var(--padding);
+  width: 100%;
+  border: 2px solid var(--mainColor);
   border-radius: var(--borderRadius);
+  color: var(--mainColor);
+  text-align: left;
   font-size: var(--font);
   line-height: 1.2;
-  border: 2px solid var(--mainColor);
-  text-align: left;
-  color: var(--mainColor);
-  margin-bottom: var(--margin);
   resize: none;
-  width: 100%;
+/**
+    * modiffers
+    */
 }
 .textarea:focus {
   outline: 0;
+  border-color: var(--blue);
+}
+.textarea.is-block {
+  width: 100%;
+}
+.textarea.is-tiny {
+  font-size: var(--fontTiny);
+}
+.textarea.is-small {
+  font-size: var(--fontSmall);
+}
+.textarea.is-large {
+  font-size: var(--fontLarge);
+}
+.textarea.is-rounded {
+  border-width: 2px;
+  border-radius: 10em;
+}
+.textarea.is-black {
+  border-color: var(--black);
+}
+.textarea.is-blue {
+  border-color: var(--blue);
+}
+.textarea.is-green {
+  border-color: var(--green);
+}
+.textarea.is-red {
+  border-color: var(--red);
+}
+.textarea.is-white {
+  border-color: var(--white);
+}
+.textarea.is-disabled,
+.textarea[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.textarea:focus {
+  outline: none;
   border-color: var(--blue);
 }
 [tooltip] {

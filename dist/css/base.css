@@ -1657,16 +1657,43 @@ h6 {
 .buttons.is-disabled >.button,
 .buttons[disabled] >.button,
 .form.is-disabled >.button {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 .button.is-clean {
   margin: 0;
   border: 0;
-  background-color: transprent;
+  background-color: transparent;
   color: #000;
   fill: #000;
   stroke-width: 0;
+}
+.button.is-link {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: #1700ff;
+}
+.button.is-link:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #1700ff;
+  bottom: 0;
+  left: 0;
+  righ: 0;
+}
+.button.is-link:hover:not(.is-disabled):not([disabled]),
+.button.is-link:active:not(.is-disabled):not([disabled]),
+.button.is-link.is-active:not(.is-disabled):not([disabled]) {
+  color: #1700ff;
+}
+.button.is-link:hover:not(.is-disabled):not([disabled]):after,
+.button.is-link:active:not(.is-disabled):not([disabled]):after,
+.button.is-link.is-active:not(.is-disabled):not([disabled]):after {
+  height: 5px;
 }
 .buttons {
   display: -ms-flexbox;
@@ -1864,12 +1891,17 @@ h6 {
 .form {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: start;
-      align-items: flex-start;
   margin-bottom: 10px;
 }
 .form >* {
   margin-bottom: 0;
+}
+.form-label {
+  font-size: 24px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  -ms-flex: 1;
+      flex: 1;
 }
 .form-addon {
   display: -ms-inline-flexbox;
@@ -1941,10 +1973,19 @@ h6 {
 .form.is-inverse >.form-addon {
   background-color: transparent;
 }
-.form-addon:not(.is-inverse) {
+.form-addon:not(.is-inverse):not(.is-clean),
+.form:not(.is-inverse) >.form-addon:not(.is-clean) {
   color: #fff;
   fill: #fff;
   stroke-width: 0;
+}
+.form-addon.is-clean {
+  position: relative;
+  background-color: #fff;
+  fill: #aaa;
+  stroke-width: 0;
+  border-right: 0;
+  margin-right: -2px;
 }
 .form-addon.is-disabled,
 .form.is-disabled >.form-addon {
@@ -1962,6 +2003,15 @@ h6 {
 .form-addon.is-large,
 .form.is-large >.form-addon {
   font-size: 24px;
+}
+.form.has-label {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.form.has-labelInline .form-label {
+  margin-bottom: 0;
+  margin-endDir: 10px;
+  line-height: 2.5em;
 }
 .form.has-itemAfter .button {
   border-top-left-radius: 0;
@@ -2035,20 +2085,24 @@ h6 {
   line-height: inherit;
 }
 .icon.is-green {
-  color: #5fca16;
   fill: #5fca16;
-}
-.icon.is-red {
-  color: #f42828;
-  fill: #f42828;
+  stroke-width: 0;
 }
 .icon.is-blue {
-  color: #000;
-  fill: #000;
+  fill: #1700ff;
+  stroke-width: 0;
+}
+.icon.is-red {
+  fill: #f42828;
+  stroke-width: 0;
+}
+.icon.is-white {
+  fill: #fff;
+  stroke-width: 0;
 }
 .icon.is-black {
-  color: #000;
   fill: #000;
+  stroke-width: 0;
 }
 .icon.is-tiny {
   width: 12px;
@@ -2265,19 +2319,62 @@ h6 {
 }
 .textarea {
   display: block;
+  margin-bottom: 10px;
   padding: 0.75em;
+  width: 100%;
+  border: 2px solid #000;
   border-radius: 4px;
+  color: #000;
+  text-align: left;
   font-size: 16px;
   line-height: 1.2;
-  border: 2px solid #000;
-  text-align: left;
-  color: #000;
-  margin-bottom: 10px;
   resize: none;
-  width: 100%;
+/**
+    * modiffers
+    */
 }
 .textarea:focus {
   outline: 0;
+  border-color: #1700ff;
+}
+.textarea.is-block {
+  width: 100%;
+}
+.textarea.is-tiny {
+  font-size: 12px;
+}
+.textarea.is-small {
+  font-size: 14px;
+}
+.textarea.is-large {
+  font-size: 24px;
+}
+.textarea.is-rounded {
+  border-width: 2px;
+  border-radius: 10em;
+}
+.textarea.is-black {
+  border-color: #000;
+}
+.textarea.is-blue {
+  border-color: #1700ff;
+}
+.textarea.is-green {
+  border-color: #5fca16;
+}
+.textarea.is-red {
+  border-color: #f42828;
+}
+.textarea.is-white {
+  border-color: #fff;
+}
+.textarea.is-disabled,
+.textarea[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.textarea:focus {
+  outline: none;
   border-color: #1700ff;
 }
 [tooltip] {

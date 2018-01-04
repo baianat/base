@@ -2,12 +2,15 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
 
 .form
   display: flex
-  align-items: flex-start
   margin-bottom: $margin
 
   >*
     margin-bottom: 0
-
+  &-label
+    font-size: $fontLarge
+    margin-bottom: $margin
+    white-space: nowrap
+    flex: 1
   &-addon
     display: inline-flex
     padding: $padding multiple($padding, 1.5)
@@ -57,9 +60,16 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
       _icon-color: $red
     &.is-inverse
       background-color: transparent
-    &:not(.is-inverse)
+    &:not(.is-inverse):not(.is-clean),
+    ~/:not(.is-inverse) >&:not(.is-clean)
       color: $white
       _icon-color: $white
+    &.is-clean
+      position: relative
+      background-color: white
+      _icon-color: $gray
+      border-{$endDir}: 0
+      margin-{$endDir}: -2px
     &.is-disabled
       opacity: 0.5
       cursor: not-allowed
@@ -70,6 +80,13 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
       font-size: $fontSmall
     &.is-large
       font-size: $fontLarge
+  &.has-label
+    flex-wrap: wrap
+  &.has-labelInline
+    .form-label
+      margin-bottom: 0
+      margin-{endDir}: $margin
+      line-height: 2.5em
 
   &.has-itemAfter
     .button
@@ -88,7 +105,6 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
     .input
       border-top-{$startDir}-radius: 0
       border-bottom-{$startDir}-radius: 0
-
   // generate all modifiers
   for modifier in $modifiers
     &.is-{modifier}
