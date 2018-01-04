@@ -1,6 +1,8 @@
 [tooltip]
   position: relative
 
+  &:focus
+    outline: none
   &:hover
     &:before,
     &:after
@@ -23,18 +25,19 @@
     opacity: 0
     transition: 0.4s
     transform: translate(-50%, 0)
+    user-select: none
 
   &:after
     position: absolute
     top: -44px
     left: 50%
-    color: $white
     z-index: 99999
     display: block
     visibility: hidden
     padding: $padding
     border-radius: $borderRadius
     background-color: $black
+    color: $white
     content: attr(tooltip)
     white-space: nowrap
     font-size: $fontSmall
@@ -42,6 +45,7 @@
     opacity: 0
     transition: 0.4s
     transform: translate(-50%, 0)
+    user-select: none
 
 [tooltip-position='bottom']
   &:before

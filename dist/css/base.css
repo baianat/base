@@ -1663,11 +1663,7 @@ h6 {
 .button.is-clean {
   margin: 0;
   border: 0;
-  color: #000;
-  fill: #000;
-  stroke-width: 0;
-}
-.button.is-clean:hover {
+  background-color: transprent;
   color: #000;
   fill: #000;
   stroke-width: 0;
@@ -1732,22 +1728,26 @@ h6 {
   -ms-flex-align: center;
       align-items: center;
   overflow: hidden;
-  min-width: 37px;
   margin: 0 2px;
   margin-bottom: 10px;
   padding: 0.75em;
+  min-width: 37px;
   border-radius: 4px;
   background-color: #aaa;
   color: #000;
   vertical-align: center;
   font-size: 14px;
+  line-height: 1;
   fill: #000;
   stroke-width: 0;
 }
 .label img {
-  margin: -7px -10px;
-  height: 27px;
+  margin: -0.75em;
+  height: 2.5em;
   vertical-align: top;
+}
+.label .icon {
+  height: 14px;
 }
 .label .icon:first-child:not(:last-child),
 .label img:first-child:not(:last-child) {
@@ -2046,7 +2046,7 @@ h6 {
   color: #000;
   fill: #000;
 }
-.icon.is-dark {
+.icon.is-black {
   color: #000;
   fill: #000;
 }
@@ -2195,6 +2195,9 @@ h6 {
     border-bottom: 0;
   }
 }
+.table tfoot {
+  background-color: #fff;
+}
 .table tfoot th {
   border-top: 2px solid #000;
   padding: 0.75em;
@@ -2208,6 +2211,7 @@ h6 {
 .table td {
   padding: 0.75em;
   border-top: 2px solid #000;
+  background-color: #fff;
 }
 @media screen and (max-width: 767px) {
   .table td {
@@ -2279,6 +2283,9 @@ h6 {
 [tooltip] {
   position: relative;
 }
+[tooltip]:focus {
+  outline: none;
+}
 [tooltip]:hover:before,
 [tooltip]:hover:after {
   visibility: visible;
@@ -2301,18 +2308,22 @@ h6 {
   transition: 0.4s;
   -ms-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 [tooltip]:after {
   position: absolute;
   top: -44px;
   left: 50%;
-  color: #fff;
   z-index: 99999;
   display: block;
   visibility: hidden;
   padding: 0.75em;
   border-radius: 4px;
   background-color: #000;
+  color: #fff;
   content: attr(tooltip);
   white-space: nowrap;
   font-size: 14px;
@@ -2321,6 +2332,10 @@ h6 {
   transition: 0.4s;
   -ms-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 [tooltip-position='bottom']:before {
   top: auto;

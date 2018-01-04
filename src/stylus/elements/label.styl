@@ -3,22 +3,24 @@
   justify-content: center
   align-items: center
   overflow: hidden
-  min-width: 37px
   margin: 0 2px
   margin-bottom: $margin
   padding: $padding
+  min-width: 37px
   border-radius: $borderRadius
   background-color: $gray
   color: $black
   vertical-align: center
   font-size: $fontSmall
+  line-height: 1
   _icon-color: $black
 
   img
-    margin: -7px -10px
-    height: 27px
+    margin: -0.75em
+    height: 2.5em
     vertical-align: top
-
+  .icon
+    height: 14px
   .icon:first-child:not(:last-child),
   img:first-child:not(:last-child)
     margin-{$endDir}: multiple($padding, (1 / 2))
