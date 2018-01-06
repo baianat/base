@@ -2079,10 +2079,13 @@ h6 {
 }
 .icon {
   display: inline;
-  width: 1.1875em;
-  height: 1.1875em;
   vertical-align: middle;
   line-height: inherit;
+}
+.icon,
+.icon.is-normal {
+  width: 1.1875em;
+  height: 1.1875em;
 }
 .icon.is-green {
   fill: #5fca16;
@@ -2820,7 +2823,11 @@ h6 {
   top: 0;
   z-index: 9999;
   padding: 20px;
+  background-color: transparent;
+  border: 0;
   right: 0;
+  fill: inherat;
+  stroke-width: 0;
 }
 .modal-dismiss:hover {
   fill: #f42828;
