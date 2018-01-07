@@ -1,4 +1,4 @@
-/* normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/* normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -6,12 +6,8 @@
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
-*
-  box-sizing: border-box
-
 html
-  line-height: 1.1875 /* 1 */
-  direction: $direction
+  line-height: 1.15 /* 1 */
   -ms-text-size-adjust: 100% /* 2 */
   -webkit-text-size-adjust: 100% /* 2 */
 
@@ -33,6 +29,7 @@ header,
 nav,
 section
   display: block
+
 
 /* Grouping content
    ========================================================================== */
@@ -80,15 +77,7 @@ a
   -webkit-text-decoration-skip: objects /* 2 */
 
 /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-a:active,
-a:hover
-  outline-width: 0
-
-/**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title]
@@ -198,7 +187,7 @@ textarea
   margin: 0 /* 2 */
   font-size: 100% /* 1 */
   font-family: sans-serif /* 1 */
-  line-height: 1.1875 /* 1 */
+  line-height: 1.15 /* 1 */
 
 /**
  * Show the overflow in IE.
@@ -249,12 +238,10 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText
 
 /**
- * Change the border, margin, and padding in all browsers (opinionated).
+ * Correct the padding in Firefox.
  */
 fieldset
-  margin: 0 2px
-  padding: 0.35em 0.625em 0.75em
-  border: 1px solid #c0c0c0
+  padding: 0.35em 0.75em 0.625em
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -298,8 +285,7 @@ textarea
  */
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button
-  appearance: none
-  margin: 0
+  height: auto
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
@@ -331,7 +317,7 @@ textarea
    * 1. Add the correct display in Edge, IE, and Firefox.
 */
 details,
-menu /* 1 */
+menu
   display: block
 
 /*

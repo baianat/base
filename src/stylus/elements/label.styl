@@ -29,6 +29,12 @@
   img:last-child:not(:first-child)
     margin-{$startDir}: multiple($padding, (1 / 2))
 
+  &,
+  &.is-black
+    background-color: $black
+    color: $white
+    _icon-color: $white
+
   &.is-green
     background-color: $green
     color: $white
@@ -40,7 +46,7 @@
     _icon-color: $white
 
   &.is-blue
-    background-color: $mainColor
+    background-color: $blue
     color: $white
     _icon-color: $white
 
@@ -48,11 +54,6 @@
     background-color: $white
     color: $black
     _icon-color: $black
-
-  &.is-black
-    background-color: $black
-    color: $white
-    _icon-color: $white
 
   &.is-rounded
     border-radius: 10em

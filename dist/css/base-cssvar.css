@@ -29,12 +29,8 @@
   --shadow: rgba(0,0,0,0.05);
   --mainColor: var(--black);
 }
-* {
-  box-sizing: border-box;
-}
 html {
-  line-height: 1.1875 /* 1 */;
-  direction: ltr;
+  line-height: 1.15 /* 1 */;
   -ms-text-size-adjust: 100% /* 2 */;
   -webkit-text-size-adjust: 100% /* 2 */;
 }
@@ -70,10 +66,6 @@ pre {
 a {
   background-color: transparent /* 1 */;
   -webkit-text-decoration-skip: objects /* 2 */;
-}
-a:active,
-a:hover {
-  outline-width: 0;
 }
 abbr[title] {
   border-bottom: none /* 1 */;
@@ -139,7 +131,7 @@ textarea {
   margin: 0 /* 2 */;
   font-size: 100% /* 1 */;
   font-family: sans-serif /* 1 */;
-  line-height: 1.1875 /* 1 */;
+  line-height: 1.15 /* 1 */;
 }
 button,
 input {
@@ -171,9 +163,7 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 fieldset {
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-  border: 1px solid #c0c0c0;
+  padding: 0.35em 0.75em 0.625em;
 }
 legend {
   display: table /* 1 */;
@@ -197,9 +187,7 @@ textarea {
 }
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-          appearance: none;
-  margin: 0;
+  height: auto;
 }
 [type='search'] {
   outline-offset: -2px /* 2 */;
@@ -228,9 +216,6 @@ template {
 }
 [hidden] {
   display: none;
-}
-html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 h0 {
   font-size: 80px;
@@ -291,6 +276,10 @@ h6 {
 }
 *::placeholder {
   color: var(--gray);
+}
+html {
+  direction: ltr;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 .container {
   width: calc(100% - 22px);
@@ -1415,6 +1404,9 @@ h6 {
 .form.is-large >.button {
   font-size: var(--fontLarge);
 }
+.button.is-massive {
+  font-size: var(--fontMassive);
+}
 .button.is-rounded,
 .buttons.is-rounded >.button,
 .form.is-rounded >.button {
@@ -1674,7 +1666,7 @@ h6 {
 .button.is-link {
   background-color: transparent;
   border: 0;
-  padding: 0;
+  padding: 0 0.2em;
   color: var(--blue);
 }
 .button.is-link:after {
@@ -1682,11 +1674,11 @@ h6 {
   display: block;
   content: '';
   width: 100%;
-  height: 2px;
+  height: 0.1em;
   background-color: var(--blue);
   bottom: 0;
   left: 0;
-  righ: 0;
+  right: 0;
 }
 .button.is-link:hover:not(.is-disabled):not([disabled]),
 .button.is-link:active:not(.is-disabled):not([disabled]),
@@ -1696,7 +1688,7 @@ h6 {
 .button.is-link:hover:not(.is-disabled):not([disabled]):after,
 .button.is-link:active:not(.is-disabled):not([disabled]):after,
 .button.is-link.is-active:not(.is-disabled):not([disabled]):after {
-  height: 5px;
+  height: 0.2em;
 }
 .buttons {
   display: -ms-flexbox;
@@ -1787,6 +1779,13 @@ h6 {
 .label img:last-child:not(:first-child) {
   margin-left: calc(var(--padding) * 0.5);
 }
+.label,
+.label.is-black {
+  background-color: var(--black);
+  color: var(--white);
+  fill: var(--white);
+  stroke-width: 0;
+}
 .label.is-green {
   background-color: var(--green);
   color: var(--white);
@@ -1800,7 +1799,7 @@ h6 {
   stroke-width: 0;
 }
 .label.is-blue {
-  background-color: var(--mainColor);
+  background-color: var(--blue);
   color: var(--white);
   fill: var(--white);
   stroke-width: 0;
@@ -1809,12 +1808,6 @@ h6 {
   background-color: var(--white);
   color: var(--black);
   fill: var(--black);
-  stroke-width: 0;
-}
-.label.is-black {
-  background-color: var(--black);
-  color: var(--white);
-  fill: var(--white);
   stroke-width: 0;
 }
 .label.is-rounded {
@@ -1890,6 +1883,16 @@ h6 {
 .input:focus {
   outline: none;
   border-color: var(--blue);
+}
+.file {
+  margin-bottom: var(--margin);
+  padding: var(--padding) calc(var(--padding) * 1.5);
+  width: 100%;
+  border: 2px dashed var(--mainColor);
+  border-radius: var(--borderRadius);
+  font-size: var(--font);
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 .form {
   display: -ms-flexbox;
@@ -2123,8 +2126,8 @@ h6 {
   height: var(--fontLarge);
 }
 .icon.is-massive {
-  width: calc(var(--fontMassive) * 2);
-  height: calc(var(--fontMassive) * 2);
+  width: var(--fontMassive);
+  height: var(--fontMassive);
 }
 .radio {
   margin: calc(var(--margin) * 0.5) 0;
