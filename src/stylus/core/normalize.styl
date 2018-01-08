@@ -11,6 +11,9 @@ html
   -ms-text-size-adjust: 100% /* 2 */
   -webkit-text-size-adjust: 100% /* 2 */
 
+*
+  box-sizing: border-box
+
 /* Sections
    ========================================================================== */
 /**
@@ -281,11 +284,18 @@ textarea
   padding: 0 /* 2 */
 
 /**
- * Correct the cursor style of increment and decrement buttons in Chrome.
+ * remove increment and decrement buttons in Chrome.
  */
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button
-  height: auto
+  margin: 0
+  -webkit-appearance: none
+
+/**
+ * remove increment and decrement buttons in FireFox.
+ */
+[type=number]
+  -moz-appearance: textfield
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
