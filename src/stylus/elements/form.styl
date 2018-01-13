@@ -1,4 +1,4 @@
-$modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue' 'blue.is-inverse' 'green' 'green.is-inverse' 'red' 'red.is-inverse' 'white' 'white.is-inverse'
+$modifiers = 'tiny' 'small' 'normal' 'large' 'massive' 'rounded' 'black' 'inverse' 'disabled' 'blue' 'blue.is-inverse' 'green' 'green.is-inverse' 'red' 'red.is-inverse' 'white' 'white.is-inverse'
 
 .form
   display: flex
@@ -11,6 +11,7 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
     margin-bottom: $margin
     white-space: nowrap
     flex: 1
+    line-height: 46px
   &-addon
     display: inline-flex
     padding: $padding multiple($padding, 1.5)
@@ -19,7 +20,6 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
     background-color: $black
     vertical-align: top
     text-align: center
-    font-size: $font
     _icon-color: $white
 
     .icon:first-child:not(:last-child)
@@ -74,12 +74,17 @@ $modifiers = 'tiny' 'small' 'large' 'rounded' 'black' 'inverse' 'disabled' 'blue
       opacity: 0.5
       cursor: not-allowed
 
+    &,
+    &.is-normal
+      font-size: $font
     &.is-tiny
       font-size: $fontTiny
     &.is-small
       font-size: $fontSmall
     &.is-large
       font-size: $fontLarge
+    &.is-massive
+      font-size: $fontMassive
   &.has-label
     flex-wrap: wrap
   &.has-labelInline

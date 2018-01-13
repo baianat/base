@@ -11,8 +11,9 @@ $ultrawide ?= 1920px
  * typography
  */
 $margin ?= 10px
-$padding ?= 0.75em
+$padding ?= 0.375em
 $paddingPx ?= 20px
+$modalSpacing ?= 40px
 $borderRadius ?= 4px
 
 $fontTiny ?= 12px
@@ -23,15 +24,13 @@ $fontMassive ?= 30px
 
 $lineheight ?= 1.1875
 
-$header1 ?= 80px
-$header2 ?= 60px
-$header3 ?= 48px
-$header4 ?= 36px
-$header5 ?= $fontMassive
-$header6 ?= $fontLarge
+$header1 ?= unitRes(40, 200)
+$header2 ?= unitRes(30, 160)
+$header3 ?= unitRes(24, 120)
+$header4 ?= unitRes(20, 100)
+$header5 ?= unitRes(18, 80)
+$header6 ?= unitRes(14, 60)
 
-$responsiveMin ?= $desktop
-$responsiveRatio ?= 5120 - 991
 
 /**
  * grid

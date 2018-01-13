@@ -1,10 +1,8 @@
 $headers = $header1 $header2 $header3 $header4 $header5 $header6
 
 for $header, $n in $headers
-  h{$n}
+  h{$n + 1}
     font-size: $header
-    &.is-responsive
-      font-size: unitRes(remove-unit($header), remove-unit($header * 2))
 
 h1,
 h2,

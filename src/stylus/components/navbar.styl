@@ -1,27 +1,37 @@
 .navbar
   display: flex
-  align-items: center
   margin: 0
   padding: 5px 10px
   width: 100%
-  border-radius: 0 0 5px 5px
   background-color: $white
 
   &.is-fixed
     position: fixed
     top: 0
+    left: 0
+    right: 0
     transition: 0.4s
-
+  &.is-inverse
+    background-color: $black
   &.is-hidden
-    transform: translate(0, -100%)
+    transform: translate3d(0, -100%, 0)
 
-  &-items
+  &-brand
+  &-start
+  &-end
     display: flex
     flex-wrap: wrap
     align-items: center
-    margin: 0
-    padding: 0
-    list-style: none
+
+  &-brand
+    padding: multiple($padding, 1/2) $padding
+    height: multiple($font, 2.6875)
+    img
+      max-height: 100%
+    &.is-white
+      filter: brightness(0) invert(1)
+  &-start
+    flex: 1
 
   &-item
     display: block
@@ -30,10 +40,21 @@
     text-decoration: none
     white-space: nowrap
     font-size: $font
-
+    height: multiple($font, 2.6875)
+    cursor: pointer
+    _icon-color: $black
     &:hover,
     &:focus
       color: $blue
+      _icon-color: $blue
+    ~/.is-inverse &
+      color: $white
+      _icon-color: $white
+      &:hover,
+      &:focus
+        color: $blue
+        _icon-color: $blue
+      
     
     &.is-active
       border-bottom: 4px solid $blue

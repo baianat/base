@@ -6,6 +6,7 @@
   justify-content: center
   align-items: stretch
   margin: $margin 0
+  padding: $modalSpacing
   width: 100%
   border: 0
   border-radius: $borderRadius
@@ -17,33 +18,41 @@
 
   &-header
     position: relative
-    padding: multiple($paddingPx, 2)
+    margin-bottom: $modalSpacing
 
   &-title
     margin: 0
 
   &-body
+    display: flex
     position: relative
     overflow: auto
-    padding: $paddingPx multiple($paddingPx, 2)
+    padding: 0
+
+  &-icon
+    margin-{$endDir}: $modalSpacing
 
   &-footer
     display: flex
     flex-direction: row-reverse
     justify-content: space-between
-    padding: $paddingPx
+    margin-top: $modalSpacing
+
+    >*
+      margin-bottom: 0
 
   &-dismiss
     position: absolute
     top: 0
     z-index: 9999
-    padding: $paddingPx
-    background-color: transparent
+    padding: 0
     border: 0
+    background-color: transparent
     {$endDir}: 0
-    _icon-color: inherat
+    _icon-color: inherit
+
     &:hover
-      _icon-color: $red
+      _icon-color: $gray
 
   &,
   &.is-black

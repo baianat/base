@@ -81,7 +81,7 @@
   &.is-striped
     tr:nth-child(2n)
       td
-        background-color: $gray
+        background-color: $lightGray
 
   &.is-relaxed
     border: 0
@@ -91,6 +91,13 @@
 
   &.is-center
     text-align: center
+
+  &.is-top tbody
+      vertical-align: top
+  &.is-bottom tbody
+    vertical-align: bottom
+  &.is-middle tbody
+    vertical-align: middle
 
   &.is-small td
     padding: multiple($padding, (1 / 2)) $padding

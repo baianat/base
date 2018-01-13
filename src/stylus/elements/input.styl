@@ -4,7 +4,6 @@
   width: 100%
   border: 2px solid $mainColor
   border-radius: $borderRadius
-  font-size: $font
   -webkit-appearance: none
   -moz-appearance: none
 
@@ -14,14 +13,17 @@
   &.is-block
     width: 100%
 
+  &,
+  &.is-normal
+    font-size: $font
   &.is-tiny
     font-size: $fontTiny
-
   &.is-small
     font-size: $fontSmall
-
   &.is-large
     font-size: $fontLarge
+  &.is-massive
+    font-size: $fontMassive
 
   &.is-rounded
     border-width: 2px
