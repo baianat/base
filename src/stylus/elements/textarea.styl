@@ -3,11 +3,10 @@
   margin-bottom: $margin
   padding: $padding
   width: 100%
-  border: 2px solid $mainColor
+  border: $border solid $mainColor
   border-radius: $borderRadius
   color: $mainColor
   text-align: $startDir
-  font-size: $font
   line-height: 1.2
   resize: none
 
@@ -18,21 +17,7 @@
   /**
     * modiffers
     */
-  &.is-block
-    width: 100%
-
-  &.is-tiny
-    font-size: $fontTiny
-
-  &.is-small
-    font-size: $fontSmall
-
-  &.is-large
-    font-size: $fontLarge
-
-  &.is-rounded
-    border-width: 2px
-    border-radius: 10em
+  generateSizes()
 
   &.is-black
     border-color: $black

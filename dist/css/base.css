@@ -1,6 +1,75 @@
 /**
  * core
  */
+.button.is-tiny,
+.buttons.is-tiny >.button,
+.input-tag.is-tiny,
+.input.is-tiny,
+.inputGroup.is-tiny,
+.inputGroup.is-tiny >.button,
+.inputGroup.is-tiny >.input,
+.inputGroup.is-tiny >.input-tag,
+.textarea.is-tiny {
+  font-size: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
+}
+.button.is-small,
+.buttons.is-small >.button,
+.label,
+.input-tag.is-small,
+.input.is-small,
+.inputGroup.is-small,
+.inputGroup.is-small >.button,
+.inputGroup.is-small >.input,
+.inputGroup.is-small >.input-tag,
+.textarea.is-small,
+[tooltip]:after {
+  font-size: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+}
+p,
+body,
+.button,
+.button.is-normal,
+.input-tag,
+.input-tag.is-normal,
+.input,
+.input.is-normal,
+.inputGroup,
+.inputGroup.is-normal,
+.inputGroup.is-normal >.button,
+.inputGroup.is-normal >.input,
+.inputGroup.is-normal >.input-tag,
+.table,
+.textarea,
+.textarea.is-normal,
+.modal,
+.navbar-item,
+.pagination-item,
+.pagination-next,
+.pagination-prev {
+  font-size: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
+}
+.button.is-large,
+.buttons.is-large >.button,
+.input-tag.is-large,
+.input.is-large,
+.inputGroup.is-large,
+.inputGroup.is-large >.button,
+.inputGroup.is-large >.input,
+.inputGroup.is-large >.input-tag,
+.textarea.is-large {
+  font-size: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
+}
+.button.is-massive,
+.buttons.is-massive >.button,
+.input-tag.is-massive,
+.input.is-massive,
+.inputGroup.is-massive,
+.inputGroup.is-massive >.button,
+.inputGroup.is-massive >.input,
+.inputGroup.is-massive >.input-tag,
+.textarea.is-massive {
+  font-size: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
+}
 html {
   line-height: 1.1875 /* 1 */;
   -ms-text-size-adjust: 100% /* 2 */;
@@ -224,10 +293,10 @@ h6 {
   line-height: 1.1875;
 }
 ::-moz-selection {
-  background: #000;
+  background: #1700ff;
 }
 ::selection {
-  background: #000;
+  background: #1700ff;
 }
 *::-webkit-input-placeholder {
   color: #aaa;
@@ -1082,10 +1151,10 @@ html {
   -ms-flex-pack: center;
       justify-content: center;
   margin-bottom: 10px;
-  padding: 0.375em 0.5625em;
+  padding: 0.5em 0.75em;
   outline-width: 2px;
   outline-offset: 1px;
-  border-width: 2px;
+  border-width: 0.08em;
   border-style: solid;
   border-radius: 4px;
   background-clip: border-box;
@@ -1099,17 +1168,22 @@ html {
    * modiffers
    */
 }
+.button .icon {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+}
 .button .icon:first-child:not(:last-child) {
-  margin-right: 0.1875em;
+  margin-right: 0.25em;
 }
 .button .icon:last-child:not(:first-child) {
-  margin-left: 0.1875em;
+  margin-left: 0.25em;
 }
 .button .icon:only-child {
-  margin: 0 -0.1875em;
+  margin: 0 -0.25em;
 }
 .button .label {
-  margin: -0.375em 0;
+  margin: -0.5em 0;
 }
 .button:hover {
   text-decoration: none;
@@ -1121,41 +1195,16 @@ html {
 .buttons.is-block >.button {
   width: 100%;
 }
-.button,
-.button.is-normal,
-.form.is-normal >.button {
-  font-size: 16px;
-}
-.button.is-tiny,
-.buttons.is-tiny >.button,
-.form.is-tiny >.button {
-  font-size: 12px;
-}
-.button.is-small,
-.buttons.is-small >.button,
-.form.is-small >.button {
-  font-size: 14px;
-}
-.button.is-large,
-.buttons.is-large >.button,
-.form.is-large >.button {
-  font-size: 24px;
-}
-.button.is-massive,
-.buttons.is-massive >.button,
-.form.is-massive >.button {
-  font-size: 30px;
-}
 .button.is-rounded,
 .buttons.is-rounded >.button,
-.form.is-rounded >.button {
+.inputGroup.is-rounded >.button {
   border-width: 2px;
   border-radius: 10em;
 }
 .button,
 .button.is-black,
 .buttons.is-black >.button,
-.form.is-black >.button {
+.inputGroup.is-black >.button {
   border-color: #000;
   background-color: #000;
   color: #fff;
@@ -1165,15 +1214,15 @@ html {
 .button:hover:not(.is-disabled):not([disabled]),
 .button.is-black:hover:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-black >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-black >.button:hover:not(.is-disabled):not([disabled]),
 .button:active:not(.is-disabled):not([disabled]),
 .button.is-black:active:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button:active:not(.is-disabled):not([disabled]),
-.form.is-black >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-black >.button:active:not(.is-disabled):not([disabled]),
 .button.is-active:not(.is-disabled):not([disabled]),
 .button.is-black.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: #000;
   fill: #000;
@@ -1181,7 +1230,7 @@ html {
 }
 .button.is-inverse,
 .buttons.is-inverse >.button,
-.form.is-inverse >.button {
+.inputGroup.is-inverse >.button {
   border-color: #000;
   background-color: transparent;
   color: #000;
@@ -1190,13 +1239,13 @@ html {
 }
 .button.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: #000;
   color: #fff;
   fill: #fff;
@@ -1204,7 +1253,7 @@ html {
 }
 .button.is-white,
 .buttons.is-white >.button,
-.form.is-white >.button {
+.inputGroup.is-white >.button {
   border-color: #fff;
   background-color: #fff;
   color: #000;
@@ -1213,13 +1262,13 @@ html {
 }
 .button.is-white:hover:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-white >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-white >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-white:active:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button:active:not(.is-disabled):not([disabled]),
-.form.is-white >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-white >.button:active:not(.is-disabled):not([disabled]),
 .button.is-white.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-white >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-white >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: #fff;
   fill: #fff;
@@ -1227,7 +1276,7 @@ html {
 }
 .button.is-white.is-inverse,
 .buttons.is-white.is-inverse >.button,
-.form.is-white.is-inverse >.button {
+.inputGroup.is-white.is-inverse >.button {
   border-color: #fff;
   background-color: transparent;
   color: #fff;
@@ -1236,13 +1285,13 @@ html {
 }
 .button.is-white.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-white.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-white.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: #fff;
   color: #000;
   fill: #000;
@@ -1250,7 +1299,7 @@ html {
 }
 .button.is-blue,
 .buttons.is-blue >.button,
-.form.is-blue >.button {
+.inputGroup.is-blue >.button {
   border-color: #1700ff;
   background-color: #1700ff;
   color: #fff;
@@ -1259,13 +1308,13 @@ html {
 }
 .button.is-blue:hover:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-blue >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-blue:active:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button:active:not(.is-disabled):not([disabled]),
-.form.is-blue >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue >.button:active:not(.is-disabled):not([disabled]),
 .button.is-blue.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-blue >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-blue >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: #1700ff;
   fill: #1700ff;
@@ -1273,7 +1322,7 @@ html {
 }
 .button.is-blue.is-inverse,
 .buttons.is-blue.is-inverse >.button,
-.form.is-blue.is-inverse >.button {
+.inputGroup.is-blue.is-inverse >.button {
   border-color: #1700ff;
   background-color: transparent;
   color: #1700ff;
@@ -1282,13 +1331,13 @@ html {
 }
 .button.is-blue.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-blue.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-blue.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: #1700ff;
   color: #fff;
   fill: #fff;
@@ -1296,7 +1345,7 @@ html {
 }
 .button.is-red,
 .buttons.is-red >.button,
-.form.is-red >.button {
+.inputGroup.is-red >.button {
   border-color: #f42828;
   background-color: #f42828;
   color: #fff;
@@ -1305,13 +1354,13 @@ html {
 }
 .button.is-red:hover:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-red >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-red >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-red:active:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button:active:not(.is-disabled):not([disabled]),
-.form.is-red >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-red >.button:active:not(.is-disabled):not([disabled]),
 .button.is-red.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-red >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-red >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: #f42828;
   fill: #f42828;
@@ -1319,7 +1368,7 @@ html {
 }
 .button.is-red.is-inverse,
 .buttons.is-red.is-inverse >.button,
-.form.is-red.is-inverse >.button {
+.inputGroup.is-red.is-inverse >.button {
   border-color: #f42828;
   background-color: transparent;
   color: #f42828;
@@ -1328,13 +1377,13 @@ html {
 }
 .button.is-red.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-red.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-red.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: #f42828;
   color: #fff;
   fill: #fff;
@@ -1342,7 +1391,7 @@ html {
 }
 .button.is-green,
 .buttons.is-green >.button,
-.form.is-green >.button {
+.inputGroup.is-green >.button {
   border-color: #5fca16;
   background-color: #5fca16;
   color: #fff;
@@ -1351,13 +1400,13 @@ html {
 }
 .button.is-green:hover:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-green >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-green >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-green:active:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button:active:not(.is-disabled):not([disabled]),
-.form.is-green >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-green >.button:active:not(.is-disabled):not([disabled]),
 .button.is-green.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-green >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-green >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: #5fca16;
   fill: #5fca16;
@@ -1365,7 +1414,7 @@ html {
 }
 .button.is-green.is-inverse,
 .buttons.is-green.is-inverse >.button,
-.form.is-green.is-inverse >.button {
+.inputGroup.is-green.is-inverse >.button {
   border-color: #5fca16;
   background-color: transparent;
   color: #5fca16;
@@ -1374,13 +1423,13 @@ html {
 }
 .button.is-green.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-green.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-green.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: #5fca16;
   color: #fff;
   fill: #fff;
@@ -1390,7 +1439,7 @@ html {
 .button[disabled],
 .buttons.is-disabled >.button,
 .buttons[disabled] >.button,
-.form.is-disabled >.button {
+.inputGroup.is-disabled >.button {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -1403,17 +1452,22 @@ html {
   stroke-width: 0;
 }
 .button.is-link {
-  background-color: transparent;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0;
+  padding-right: 0.7em;
   border: 0;
-  padding: 0 0.2em;
+  background-color: transparent;
   color: #1700ff;
+  fill: #1700ff;
+  stroke-width: 0;
 }
 .button.is-link:after {
   position: absolute;
   display: block;
   content: '';
   width: 100%;
-  height: 0.1em;
+  height: 0.15em;
   background-color: #1700ff;
   bottom: 0;
   left: 0;
@@ -1427,7 +1481,7 @@ html {
 .button.is-link:hover:not(.is-disabled):not([disabled]):after,
 .button.is-link:active:not(.is-disabled):not([disabled]):after,
 .button.is-link.is-active:not(.is-disabled):not([disabled]):after {
-  height: 0.2em;
+  height: 0.25em;
 }
 .buttons {
   display: -ms-flexbox;
@@ -1491,13 +1545,12 @@ html {
   overflow: hidden;
   margin: 0 2px;
   margin-bottom: 10px;
-  padding: 0.375em;
+  padding: 0.5em;
   min-width: 37px;
   border-radius: 4px;
   background-color: #aaa;
   color: #000;
   vertical-align: center;
-  font-size: 14px;
   line-height: 1;
   fill: #000;
   stroke-width: 0;
@@ -1512,11 +1565,11 @@ html {
 }
 .label .icon:first-child:not(:last-child),
 .label img:first-child:not(:last-child) {
-  margin-right: 0.1875em;
+  margin-right: 0.25em;
 }
 .label .icon:last-child:not(:first-child),
 .label img:last-child:not(:first-child) {
-  margin-left: 0.1875em;
+  margin-left: 0.25em;
 }
 .label,
 .label.is-black {
@@ -1556,15 +1609,15 @@ html {
   position: absolute;
   top: 0;
   margin: 0;
-  margin-top: -0.75em;
+  margin-top: -1em;
   right: 0;
-  margin-right: -0.75em;
+  margin-right: -1em;
 }
 .input {
   margin-bottom: 10px;
-  padding: 0.375em 0.5625em;
+  padding: 0.5em 0.75em;
   width: 100%;
-  border: 2px solid #000;
+  border: 0.08em solid #000;
   border-radius: 4px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1572,58 +1625,125 @@ html {
     * modiffers
     */
 }
+.input-tag {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0.5em 0.75em;
+  border: 0.08em solid #000;
+  border-radius: 4px;
+  background-color: #000;
+  vertical-align: top;
+  text-align: center;
+  fill: #fff;
+  stroke-width: 0;
+}
+.input-tag .icon:first-child:not(:last-child) {
+  margin-right: 0.25em;
+}
+.input-tag .icon:last-child:not(:first-child) {
+  margin-left: 0.25em;
+}
+.input-tag .icon:only-child {
+  margin: 0 -0.25em;
+}
+.input-tag.is-rounded,
+.inputGroup.is-rounded >.input-tag {
+  border-radius: 10em;
+}
+.input-tag.is-black,
+.inputGroup.is-black >.input-tag {
+  border-color: #000;
+  background-color: #000;
+  color: #000;
+  fill: #000;
+  stroke-width: 0;
+}
+.input-tag.is-white,
+.inputGroup.is-white >.input-tag {
+  border-color: #fff;
+  background-color: #fff;
+  color: #fff;
+  fill: #fff;
+  stroke-width: 0;
+}
+.input-tag.is-blue,
+.inputGroup.is-blue >.input-tag {
+  background-color: #1700ff;
+  border-color: #1700ff;
+  color: #1700ff;
+  fill: #1700ff;
+  stroke-width: 0;
+}
+.input-tag.is-green,
+.inputGroup.is-green >.input-tag {
+  background-color: #5fca16;
+  border-color: #5fca16;
+  color: #5fca16;
+  fill: #5fca16;
+  stroke-width: 0;
+}
+.input-tag.is-red,
+.inputGroup.is-red >.input-tag {
+  background-color: #f42828;
+  border-color: #f42828;
+  color: #f42828;
+  fill: #f42828;
+  stroke-width: 0;
+}
+.input-tag.is-inverse,
+.inputGroup.is-inverse >.input-tag {
+  background-color: transparent;
+}
+.input-tag:not(.is-inverse):not(.is-clean),
+.inputGroup:not(.is-inverse) >.input-tag:not(.is-clean) {
+  color: #fff;
+  fill: #fff;
+  stroke-width: 0;
+}
+.input-tag.is-clean {
+  position: relative;
+  background-color: #fff;
+  fill: #aaa;
+  stroke-width: 0;
+  border-right: 0;
+  margin-right: -2px;
+}
+.input-tag.is-disabled,
+.inputGroup.is-disabled >.input-tag {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .input.is-block {
   width: 100%;
 }
-.input,
-.input.is-normal,
-.form.is-normal >.input {
-  font-size: 16px;
-}
-.input.is-tiny,
-.form.is-tiny >.input {
-  font-size: 12px;
-}
-.input.is-small,
-.form.is-small >.input {
-  font-size: 14px;
-}
-.input.is-large,
-.form.is-large >.input {
-  font-size: 24px;
-}
-.input.is-massive,
-.form.is-massive >.input {
-  font-size: 30px;
-}
 .input.is-rounded,
-.form.is-rounded >.input {
+.inputGroup.is-rounded >.input {
   border-width: 2px;
   border-radius: 10em;
 }
 .input.is-black,
-.form.is-black >.input {
+.inputGroup.is-black >.input {
   border-color: #000;
 }
 .input.is-blue,
-.form.is-blue >.input {
+.inputGroup.is-blue >.input {
   border-color: #1700ff;
 }
 .input.is-green,
-.form.is-green >.input {
+.inputGroup.is-green >.input {
   border-color: #5fca16;
 }
 .input.is-red,
-.form.is-red >.input {
+.inputGroup.is-red >.input {
   border-color: #f42828;
 }
 .input.is-white,
-.form.is-white >.input {
+.inputGroup.is-white >.input {
   border-color: #fff;
 }
 .input.is-disabled,
 .input[disabled],
-.form.is-disabled >.input {
+.inputGroup.is-disabled >.input {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -1633,7 +1753,7 @@ html {
 }
 .file {
   margin-bottom: 10px;
-  padding: 0.375em 0.5625em;
+  padding: 0.5em 0.75em;
   width: 100%;
   border: 2px dashed #000;
   border-radius: 4px;
@@ -1641,153 +1761,45 @@ html {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-.form {
+.inputGroup {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 10px;
 }
-.form >* {
+.inputGroup >*:not(.input-label) {
   margin-bottom: 0;
 }
-.form-label {
-  font-size: 24px;
-  margin-bottom: 10px;
-  white-space: nowrap;
+.inputGroup-label {
   -ms-flex: 1;
       flex: 1;
-  line-height: 46px;
+  margin-bottom: 0.5em;
+  margin-right: 10px;
+  white-space: nowrap;
+  font-size: 1.7em;
 }
-.form-addon {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 0.375em 0.5625em;
-  border: 2px solid #000;
-  border-radius: 4px;
-  background-color: #000;
-  vertical-align: top;
-  text-align: center;
-  fill: #fff;
-  stroke-width: 0;
-}
-.form-addon .icon:first-child:not(:last-child) {
-  margin-right: 0.1875em;
-}
-.form-addon .icon:last-child:not(:first-child) {
-  margin-left: 0.1875em;
-}
-.form-addon .icon:only-child {
-  margin: 0 -0.1875em;
-}
-.form-addon.is-rounded,
-.form.is-rounded >.form-addon {
-  border-radius: 10em;
-}
-.form-addon.is-black,
-.form.is-black >.form-addon {
-  border-color: #000;
-  background-color: #000;
-  color: #000;
-  fill: #000;
-  stroke-width: 0;
-}
-.form-addon.is-white,
-.form.is-white >.form-addon {
-  border-color: #fff;
-  background-color: #fff;
-  color: #fff;
-  fill: #fff;
-  stroke-width: 0;
-}
-.form-addon.is-blue,
-.form.is-blue >.form-addon {
-  background-color: #1700ff;
-  border-color: #1700ff;
-  color: #1700ff;
-  fill: #1700ff;
-  stroke-width: 0;
-}
-.form-addon.is-green,
-.form.is-green >.form-addon {
-  background-color: #5fca16;
-  border-color: #5fca16;
-  color: #5fca16;
-  fill: #5fca16;
-  stroke-width: 0;
-}
-.form-addon.is-red,
-.form.is-red >.form-addon {
-  background-color: #f42828;
-  border-color: #f42828;
-  color: #f42828;
-  fill: #f42828;
-  stroke-width: 0;
-}
-.form-addon.is-inverse,
-.form.is-inverse >.form-addon {
-  background-color: transparent;
-}
-.form-addon:not(.is-inverse):not(.is-clean),
-.form:not(.is-inverse) >.form-addon:not(.is-clean) {
-  color: #fff;
-  fill: #fff;
-  stroke-width: 0;
-}
-.form-addon.is-clean {
-  position: relative;
-  background-color: #fff;
-  fill: #aaa;
-  stroke-width: 0;
-  border-right: 0;
-  margin-right: -2px;
-}
-.form-addon.is-disabled,
-.form.is-disabled >.form-addon {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.form-addon,
-.form-addon.is-normal,
-.form.is-normal >.form-addon {
-  font-size: 16px;
-}
-.form-addon.is-tiny,
-.form.is-tiny >.form-addon {
-  font-size: 12px;
-}
-.form-addon.is-small,
-.form.is-small >.form-addon {
-  font-size: 14px;
-}
-.form-addon.is-large,
-.form.is-large >.form-addon {
-  font-size: 24px;
-}
-.form-addon.is-massive,
-.form.is-massive >.form-addon {
-  font-size: 30px;
-}
-.form.has-label {
+.inputGroup.has-label {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.form.has-labelInline .form-label {
-  margin-bottom: 0;
-  margin-endDir: 10px;
-  line-height: 2.5em;
+.inputGroup.has-labelInline {
+  -ms-flex-align: center;
+      align-items: center;
 }
-.form.has-itemAfter .button {
+.inputGroup.has-itemAfter .button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-left: 0;
 }
-.form.has-itemAfter .input {
+.inputGroup.has-itemAfter .input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.form.has-itemBefore .form-addon {
+.inputGroup.has-itemBefore .input-tag {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-right: 0;
 }
-.form.has-itemBefore .input {
+.inputGroup.has-itemBefore .input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -1844,11 +1856,6 @@ html {
   vertical-align: middle;
   line-height: inherit;
 }
-.icon,
-.icon.is-normal {
-  width: 1.1875em;
-  height: 1.1875em;
-}
 .icon.is-green {
   fill: #5fca16;
   stroke-width: 0;
@@ -1870,20 +1877,25 @@ html {
   stroke-width: 0;
 }
 .icon.is-tiny {
-  width: 12px;
-  height: 12px;
+  width: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
 }
 .icon.is-small {
-  width: 14px;
-  height: 14px;
+  width: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+}
+.icon,
+.icon.is-normal {
+  width: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
 }
 .icon.is-large {
-  width: 24px;
-  height: 24px;
+  width: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
 }
 .icon.is-massive {
-  width: 30px;
-  height: 30px;
+  width: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
 }
 .radio {
   margin: 5px 0;
@@ -1973,20 +1985,19 @@ html {
 .table {
   overflow: hidden;
   width: 100%;
-  border: 2px solid #000;
+  border: 0.08em solid #000;
   border-spacing: 0;
   border-collapse: separate;
   border-radius: 4px;
   color: #000;
   text-align: left;
-  font-size: 16px;
 }
 .table:not(:last-child) {
   margin-bottom: 10px;
 }
 .table th:not(:last-child),
 .table td:not(:last-child) {
-  border-right: 2px solid #000;
+  border-right: 0.08em solid #000;
 }
 @media screen and (max-width: 767px) {
   .table th:not(:last-child),
@@ -2005,8 +2016,8 @@ html {
   background-color: #fff;
 }
 .table thead th {
-  border-bottom: 2px solid #000;
-  padding: 0.75em 0.375em;
+  border-bottom: 0.08em solid #000;
+  padding: 1em 0.5em;
   font-weight: bold;
 }
 @media screen and (max-width: 767px) {
@@ -2018,18 +2029,18 @@ html {
   background-color: #fff;
 }
 .table tfoot th {
-  border-top: 2px solid #000;
-  padding: 0.375em;
+  border-top: 0.08em solid #000;
+  padding: 0.5em;
 }
 @media screen and (max-width: 767px) {
   .table tr {
     display: block;
-    border-top: 2px solid #000;
+    border-top: 0.08em solid #000;
   }
 }
 .table td {
-  padding: 0.375em;
-  border-top: 2px solid #000;
+  padding: 0.5em;
+  border-top: 0.08em solid #000;
   background-color: #fff;
 }
 @media screen and (max-width: 767px) {
@@ -2042,14 +2053,14 @@ html {
   display: table;
   overflow-x: auto;
   margin: 10px auto;
-  padding: 0.375em;
-  border: 2px solid #fff;
+  padding: 0.5em;
+  border: 0.08em solid #fff;
   border-radius: 4px;
   background-color: #fff;
 }
 .table-sort {
   float: right;
-  border: 2px solid #000;
+  border: 0.08em solid #000;
   border-radius: 50%;
   padding: 0;
   outline: 0;
@@ -2086,21 +2097,20 @@ html {
   vertical-align: middle;
 }
 .table.is-small td {
-  padding: 0.1875em 0.375em;
+  padding: 0.25em 0.5em;
 }
 .table.is-large td {
-  padding: 0.75em 0.375em;
+  padding: 1em 0.5em;
 }
 .textarea {
   display: block;
   margin-bottom: 10px;
-  padding: 0.375em;
+  padding: 0.5em;
   width: 100%;
-  border: 2px solid #000;
+  border: 0.08em solid #000;
   border-radius: 4px;
   color: #000;
   text-align: left;
-  font-size: 16px;
   line-height: 1.2;
   resize: none;
 /**
@@ -2110,22 +2120,6 @@ html {
 .textarea:focus {
   outline: 0;
   border-color: #1700ff;
-}
-.textarea.is-block {
-  width: 100%;
-}
-.textarea.is-tiny {
-  font-size: 12px;
-}
-.textarea.is-small {
-  font-size: 14px;
-}
-.textarea.is-large {
-  font-size: 24px;
-}
-.textarea.is-rounded {
-  border-width: 2px;
-  border-radius: 10em;
 }
 .textarea.is-black {
   border-color: #000;
@@ -2191,14 +2185,12 @@ html {
   z-index: 99999;
   display: block;
   visibility: hidden;
-  padding: 0.375em;
+  padding: 0.5em;
   border-radius: 4px;
   background-color: #000;
   color: #fff;
   content: attr(tooltip);
   white-space: nowrap;
-  font-size: 14px;
-  line-height: 14px;
   opacity: 0;
   transition: 0.4s;
   -ms-transform: translate(-50%, 0);
@@ -2325,7 +2317,7 @@ html {
   color: #fff;
 }
 .select-item:not(.is-group) {
-  padding: 0.375em;
+  padding: 0.5em;
 }
 .select-item:not(.is-group):hover {
   background-color: #000;
@@ -2339,11 +2331,11 @@ html {
 }
 .select-childTitle {
   display: block;
-  padding: 0.375em;
+  padding: 0.5em;
   color: #aaa;
 }
 .select-childItem {
-  padding: 0.375em 0.375em 0.375em 0.75em;
+  padding: 0.5em 0.5em 0.5em 1em;
   color: #000;
   cursor: pointer;
 }
@@ -2382,7 +2374,7 @@ html {
   position: absolute;
   top: 70px;
   left: 0;
-  padding: 0.375em;
+  padding: 0.5em;
   width: 300px;
   border: 2px solid #000;
   border-radius: 4px;
@@ -2421,7 +2413,7 @@ html {
 .dropdown-menu:before {
   position: absolute;
   top: -7px;
-  left: 0.375em;
+  left: 0.5em;
   display: block;
   width: 0;
   height: 0;
@@ -2433,7 +2425,7 @@ html {
 .dropdown-menu:after {
   position: absolute;
   top: -5px;
-  left: 0.375em;
+  left: 0.5em;
   display: block;
   width: 0;
   height: 0;
@@ -2451,7 +2443,7 @@ html {
 }
 .is-right .dropdown-menu:before,
 .is-right .dropdown-menu:after {
-  right: 0.375em;
+  right: 0.5em;
   left: auto;
   left: initial;
 }
@@ -2481,7 +2473,6 @@ html {
   border: 0;
   border-radius: 4px;
   background-color: #fff;
-  font-size: 16px;
 }
 .modal p {
   margin: 0;
@@ -2636,7 +2627,7 @@ html {
       align-items: center;
 }
 .navbar-brand {
-  padding: 0.1875em 0.375em;
+  padding: 0.25em 0.5em;
   height: 43px;
 }
 .navbar-brand img {
@@ -2652,12 +2643,11 @@ html {
 }
 .navbar-item {
   display: block;
-  padding: 0.375em 0.75em;
+  padding: 0.5em 1em;
   color: #000;
   text-decoration: none;
   white-space: nowrap;
-  font-size: 16px;
-  height: 43px;
+  height: 2.6875em;
   cursor: pointer;
   fill: #000;
   stroke-width: 0;
@@ -2701,7 +2691,7 @@ html {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  padding: 0.375em;
+  padding: 0.5em;
   outline-width: 2px;
   outline-offset: 1px;
   border: 2px solid #000;
@@ -2709,7 +2699,6 @@ html {
   color: #000;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
   cursor: pointer;
   fill: #000;
   stroke-width: 0;
@@ -2797,19 +2786,19 @@ html {
       align-items: stretch;
 }
 .add-padding {
-  padding: 0.375em !important;
+  padding: 0.5em !important;
 }
 .add-paddingTop {
-  padding-top: 0.375em !important;
+  padding-top: 0.5em !important;
 }
 .add-paddingBottom {
-  padding-bottom: 0.375em !important;
+  padding-bottom: 0.5em !important;
 }
 .add-paddingRight {
-  padding-right: 0.375em !important;
+  padding-right: 0.5em !important;
 }
 .add-paddingLeft {
-  padding-left: 0.375em !important;
+  padding-left: 0.5em !important;
 }
 .add-margin {
   margin: 10px !important;

@@ -7,7 +7,7 @@
   padding: $padding multiple($padding, 1.5)
   outline-width: 2px
   outline-offset: 1px
-  border-width: 2px
+  border-width: $border
   border-style: solid
   border-radius: $borderRadius
   background-clip: border-box
@@ -17,14 +17,18 @@
   cursor: pointer
   _icon-color: $white
 
-  .icon:first-child:not(:last-child)
-    margin-{$endDir}: multiple($padding, (1 / 2))
+  .icon
+    font-size: 1em
+    width: 1em
+    height: 1em
+    &:first-child:not(:last-child)
+      margin-{$endDir}: multiple($padding, (1 / 2))
 
-  .icon:last-child:not(:first-child)
-    margin-{$startDir}: multiple($padding, (1 / 2))
+    &:last-child:not(:first-child)
+      margin-{$startDir}: multiple($padding, (1 / 2))
 
-  .icon:only-child
-    margin: 0 multiple($padding, (-1 / 2))
+    &:only-child
+      margin: 0 multiple($padding, (-1 / 2))
 
   .label
     margin: multiple($padding, -1) 0
@@ -38,23 +42,10 @@
   /**
    * modiffers
    */
+  generateSizes()
+
   &.is-block
     width: 100%
-  &,
-  &.is-normal
-    font-size: $font
-
-  &.is-tiny
-    font-size: $fontTiny
-
-  &.is-small
-    font-size: $fontSmall
-
-  &.is-large
-    font-size: $fontLarge
-
-  &.is-massive
-    font-size: $fontMassive
 
   &.is-rounded
     border-width: 2px
@@ -104,16 +95,20 @@
     _icon-color: $black
 
   &.is-link
-    background-color: transparent
+    padding-top: 0.3em
+    padding-bottom: 0.3em
+    padding-{$startDir}: 0
+    padding-{$endDir}: 0.7em
     border: 0
-    padding: 0 0.2em
+    background-color: transparent
     color: $blue
+    _icon-color: $blue
     &:after
       position: absolute
       display: block
       content: ''
       width: 100%
-      height: 0.1em
+      height: 0.15em
       background-color: $blue
       bottom: 0
       left: 0
@@ -123,4 +118,4 @@
     &.is-active:not(.is-disabled):not([disabled])
       color: $blue
       &:after
-        height: 0.2em
+        height: 0.25em

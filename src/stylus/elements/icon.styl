@@ -2,10 +2,6 @@
   display: inline
   vertical-align: middle
   line-height: inherit
-  &,
-  &.is-normal
-    width: 1.1875em
-    height: 1.1875em
 
   &.is-green
     _icon-color: $green
@@ -19,17 +15,19 @@
     _icon-color: $black
 
   &.is-tiny
-    width: $fontTiny
-    height: $fontTiny
+    width: $sizing.tiny
+    height: $sizing.tiny
 
   &.is-small
-    width: $fontSmall
-    height: $fontSmall
-
+    width: $sizing.small
+    height: $sizing.small
+  &,
+  &.is-normal
+    width: $sizing.normal
+    height: $sizing.normal
   &.is-large
-    width: $fontLarge
-    height: $fontLarge
-
+    width: $sizing.large
+    height: $sizing.large
   &.is-massive
-    width: $fontMassive
-    height: $fontMassive
+    width: $sizing.massive
+    height: $sizing.massive

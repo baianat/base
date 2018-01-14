@@ -1,13 +1,13 @@
 .table
   overflow: hidden
   width: 100%
-  border: 2px solid $black
+  border: $border solid $black
   border-spacing: 0
   border-collapse: separate
   border-radius: $borderRadius
   color: $black
   text-align: left
-  font-size: $font
+  @extend $normal
 
   &:not(:last-child)
     margin-bottom: $margin
@@ -16,7 +16,7 @@
   td    
 
     &:not(:last-child)
-      border-{$endDir}: 2px solid $black
+      border-{$endDir}: $border solid $black
 
       +mobile()
         border-right: 0
@@ -28,7 +28,7 @@
   thead
     background-color: $white
     th
-      border-bottom: 2px solid $black
+      border-bottom: $border solid $black
       padding: multiple($padding, 2) $padding
       font-weight: bold
 
@@ -38,17 +38,17 @@
   tfoot
     background-color: $white
     th
-      border-top: 2px solid $black
+      border-top: $border solid $black
       padding: $padding
 
   tr
     +mobile()
       display: block
-      border-top: 2px solid $black
+      border-top: $border solid $black
 
   td
     padding: $padding
-    border-top: 2px solid $black
+    border-top: $border solid $black
     background-color: $white
     +mobile()
       border: 0
@@ -59,13 +59,13 @@
     overflow-x: auto
     margin: $margin auto
     padding: $padding
-    border: 2px solid $white
+    border: $border solid $white
     border-radius: $borderRadius
     background-color: $white
 
   &-sort
     float: right
-    border: 2px solid $black
+    border: $border solid $black
     border-radius: 50%
     padding: 0
     outline: 0

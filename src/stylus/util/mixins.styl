@@ -2,28 +2,28 @@
  * media queries mixins
  */
 responsive(breakpoint)
-    @media screen and (min-width: breakpoint)
-        {block}
+  @media screen and (min-width: breakpoint)
+    {block}
 
 ultrawide()
-    @media screen and (min-width: $ultrawide)
-        {block}
+  @media screen and (min-width: $ultrawide)
+    {block}
 
 widescreen()
-    @media screen and (min-width: $widescreen)
-        {block}
+  @media screen and (min-width: $widescreen)
+    {block}
 
 desktop()
-    @media screen and (min-width: $desktop)
-        {block}
+  @media screen and (min-width: $desktop)
+    {block}
 
 tablet()
-    @media screen and (min-width: $tablet)
-        {block}
+  @media screen and (min-width: $tablet)
+    {block}
 
 mobile()
-    @media screen and (max-width: ($tablet - 1))
-        {block}
+  @media screen and (max-width: (($tablet - 1)))
+    {block}
 
 
 /**
@@ -50,3 +50,30 @@ flexCenter()
   display: flex
   justify-content: center
   align-items: center
+
+
+/**
+ * modifiers mixins
+ */
+$tiny
+  font-size: $sizing.tiny
+$small
+  font-size: $sizing.small
+$normal
+  font-size: $sizing.normal
+$large
+  font-size: $sizing.large
+$massive
+  font-size: $sizing.massive
+generateSizes()
+  &.is-tiny
+    @extend $tiny
+  &.is-small
+    @extends $small
+  &,
+  &.is-normal
+    @extends $normal
+  &.is-large
+    @extends $large
+  &.is-massive
+    @extend $massive

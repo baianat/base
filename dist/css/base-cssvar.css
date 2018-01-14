@@ -1,9 +1,78 @@
 /**
  * core
  */
+.button.is-tiny,
+.buttons.is-tiny >.button,
+.input-tag.is-tiny,
+.input.is-tiny,
+.inputGroup.is-tiny,
+.inputGroup.is-tiny >.button,
+.inputGroup.is-tiny >.input,
+.inputGroup.is-tiny >.input-tag,
+.textarea.is-tiny {
+  font-size: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
+}
+.button.is-small,
+.buttons.is-small >.button,
+.label,
+.input-tag.is-small,
+.input.is-small,
+.inputGroup.is-small,
+.inputGroup.is-small >.button,
+.inputGroup.is-small >.input,
+.inputGroup.is-small >.input-tag,
+.textarea.is-small,
+[tooltip]:after {
+  font-size: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+}
+p,
+body,
+.button,
+.button.is-normal,
+.input-tag,
+.input-tag.is-normal,
+.input,
+.input.is-normal,
+.inputGroup,
+.inputGroup.is-normal,
+.inputGroup.is-normal >.button,
+.inputGroup.is-normal >.input,
+.inputGroup.is-normal >.input-tag,
+.table,
+.textarea,
+.textarea.is-normal,
+.modal,
+.navbar-item,
+.pagination-item,
+.pagination-next,
+.pagination-prev {
+  font-size: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
+}
+.button.is-large,
+.buttons.is-large >.button,
+.input-tag.is-large,
+.input.is-large,
+.inputGroup.is-large,
+.inputGroup.is-large >.button,
+.inputGroup.is-large >.input,
+.inputGroup.is-large >.input-tag,
+.textarea.is-large {
+  font-size: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
+}
+.button.is-massive,
+.buttons.is-massive >.button,
+.input-tag.is-massive,
+.input.is-massive,
+.inputGroup.is-massive,
+.inputGroup.is-massive >.button,
+.inputGroup.is-massive >.input,
+.inputGroup.is-massive >.input-tag,
+.textarea.is-massive {
+  font-size: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
+}
 :root {
   --margin: 10px;
-  --padding: 0.375em;
+  --padding: 0.5em;
   --paddingPx: 20px;
   --modalPadding: $modalPadding;
   --borderRadius: 4px;
@@ -254,10 +323,10 @@ h6 {
   line-height: var(--lineheight);
 }
 ::-moz-selection {
-  background: var(--mainColor);
+  background: var(--blue);
 }
 ::selection {
-  background: var(--mainColor);
+  background: var(--blue);
 }
 *::-webkit-input-placeholder {
   color: var(--gray);
@@ -1115,7 +1184,7 @@ html {
   padding: var(--padding) calc(var(--padding) * 1.5);
   outline-width: 2px;
   outline-offset: 1px;
-  border-width: 2px;
+  border-width: 0.08em;
   border-style: solid;
   border-radius: var(--borderRadius);
   background-clip: border-box;
@@ -1128,6 +1197,11 @@ html {
 /**
    * modiffers
    */
+}
+.button .icon {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
 }
 .button .icon:first-child:not(:last-child) {
   margin-right: calc(var(--padding) * 0.5);
@@ -1151,41 +1225,16 @@ html {
 .buttons.is-block >.button {
   width: 100%;
 }
-.button,
-.button.is-normal,
-.form.is-normal >.button {
-  font-size: var(--font);
-}
-.button.is-tiny,
-.buttons.is-tiny >.button,
-.form.is-tiny >.button {
-  font-size: var(--fontTiny);
-}
-.button.is-small,
-.buttons.is-small >.button,
-.form.is-small >.button {
-  font-size: var(--fontSmall);
-}
-.button.is-large,
-.buttons.is-large >.button,
-.form.is-large >.button {
-  font-size: var(--fontLarge);
-}
-.button.is-massive,
-.buttons.is-massive >.button,
-.form.is-massive >.button {
-  font-size: var(--fontMassive);
-}
 .button.is-rounded,
 .buttons.is-rounded >.button,
-.form.is-rounded >.button {
+.inputGroup.is-rounded >.button {
   border-width: 2px;
   border-radius: 10em;
 }
 .button,
 .button.is-black,
 .buttons.is-black >.button,
-.form.is-black >.button {
+.inputGroup.is-black >.button {
   border-color: var(--mainColor);
   background-color: var(--mainColor);
   color: var(--white);
@@ -1195,15 +1244,15 @@ html {
 .button:hover:not(.is-disabled):not([disabled]),
 .button.is-black:hover:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-black >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-black >.button:hover:not(.is-disabled):not([disabled]),
 .button:active:not(.is-disabled):not([disabled]),
 .button.is-black:active:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button:active:not(.is-disabled):not([disabled]),
-.form.is-black >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-black >.button:active:not(.is-disabled):not([disabled]),
 .button.is-active:not(.is-disabled):not([disabled]),
 .button.is-black.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-black >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--mainColor);
   fill: var(--mainColor);
@@ -1211,7 +1260,7 @@ html {
 }
 .button.is-inverse,
 .buttons.is-inverse >.button,
-.form.is-inverse >.button {
+.inputGroup.is-inverse >.button {
   border-color: var(--mainColor);
   background-color: transparent;
   color: var(--mainColor);
@@ -1220,13 +1269,13 @@ html {
 }
 .button.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--mainColor);
   color: var(--white);
   fill: var(--white);
@@ -1234,7 +1283,7 @@ html {
 }
 .button.is-white,
 .buttons.is-white >.button,
-.form.is-white >.button {
+.inputGroup.is-white >.button {
   border-color: var(--white);
   background-color: var(--white);
   color: var(--black);
@@ -1243,13 +1292,13 @@ html {
 }
 .button.is-white:hover:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-white >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-white >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-white:active:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button:active:not(.is-disabled):not([disabled]),
-.form.is-white >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-white >.button:active:not(.is-disabled):not([disabled]),
 .button.is-white.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-white >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-white >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-white >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--white);
   fill: var(--white);
@@ -1257,7 +1306,7 @@ html {
 }
 .button.is-white.is-inverse,
 .buttons.is-white.is-inverse >.button,
-.form.is-white.is-inverse >.button {
+.inputGroup.is-white.is-inverse >.button {
   border-color: var(--white);
   background-color: transparent;
   color: var(--white);
@@ -1266,13 +1315,13 @@ html {
 }
 .button.is-white.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-white.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-white.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-white.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-white.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-white.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--white);
   color: var(--black);
   fill: var(--black);
@@ -1280,7 +1329,7 @@ html {
 }
 .button.is-blue,
 .buttons.is-blue >.button,
-.form.is-blue >.button {
+.inputGroup.is-blue >.button {
   border-color: var(--blue);
   background-color: var(--blue);
   color: var(--white);
@@ -1289,13 +1338,13 @@ html {
 }
 .button.is-blue:hover:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-blue >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-blue:active:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button:active:not(.is-disabled):not([disabled]),
-.form.is-blue >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue >.button:active:not(.is-disabled):not([disabled]),
 .button.is-blue.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-blue >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-blue >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-blue >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--blue);
   fill: var(--blue);
@@ -1303,7 +1352,7 @@ html {
 }
 .button.is-blue.is-inverse,
 .buttons.is-blue.is-inverse >.button,
-.form.is-blue.is-inverse >.button {
+.inputGroup.is-blue.is-inverse >.button {
   border-color: var(--blue);
   background-color: transparent;
   color: var(--blue);
@@ -1312,13 +1361,13 @@ html {
 }
 .button.is-blue.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-blue.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-blue.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-blue.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-blue.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--blue);
   color: var(--white);
   fill: var(--white);
@@ -1326,7 +1375,7 @@ html {
 }
 .button.is-red,
 .buttons.is-red >.button,
-.form.is-red >.button {
+.inputGroup.is-red >.button {
   border-color: var(--red);
   background-color: var(--red);
   color: var(--white);
@@ -1335,13 +1384,13 @@ html {
 }
 .button.is-red:hover:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-red >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-red >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-red:active:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button:active:not(.is-disabled):not([disabled]),
-.form.is-red >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-red >.button:active:not(.is-disabled):not([disabled]),
 .button.is-red.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-red >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-red >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-red >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--red);
   fill: var(--red);
@@ -1349,7 +1398,7 @@ html {
 }
 .button.is-red.is-inverse,
 .buttons.is-red.is-inverse >.button,
-.form.is-red.is-inverse >.button {
+.inputGroup.is-red.is-inverse >.button {
   border-color: var(--red);
   background-color: transparent;
   color: var(--red);
@@ -1358,13 +1407,13 @@ html {
 }
 .button.is-red.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-red.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-red.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-red.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-red.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-red.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--red);
   color: var(--white);
   fill: var(--white);
@@ -1372,7 +1421,7 @@ html {
 }
 .button.is-green,
 .buttons.is-green >.button,
-.form.is-green >.button {
+.inputGroup.is-green >.button {
   border-color: var(--green);
   background-color: var(--green);
   color: var(--white);
@@ -1381,13 +1430,13 @@ html {
 }
 .button.is-green:hover:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-green >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-green >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-green:active:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button:active:not(.is-disabled):not([disabled]),
-.form.is-green >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-green >.button:active:not(.is-disabled):not([disabled]),
 .button.is-green.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-green >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-green >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-green >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
   color: var(--green);
   fill: var(--green);
@@ -1395,7 +1444,7 @@ html {
 }
 .button.is-green.is-inverse,
 .buttons.is-green.is-inverse >.button,
-.form.is-green.is-inverse >.button {
+.inputGroup.is-green.is-inverse >.button {
   border-color: var(--green);
   background-color: transparent;
   color: var(--green);
@@ -1404,13 +1453,13 @@ html {
 }
 .button.is-green.is-inverse:hover:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
-.form.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
+.inputGroup.is-green.is-inverse >.button:hover:not(.is-disabled):not([disabled]),
 .button.is-green.is-inverse:active:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
-.form.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
+.inputGroup.is-green.is-inverse >.button:active:not(.is-disabled):not([disabled]),
 .button.is-green.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
-.form.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
+.inputGroup.is-green.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: var(--green);
   color: var(--white);
   fill: var(--white);
@@ -1420,7 +1469,7 @@ html {
 .button[disabled],
 .buttons.is-disabled >.button,
 .buttons[disabled] >.button,
-.form.is-disabled >.button {
+.inputGroup.is-disabled >.button {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -1433,17 +1482,22 @@ html {
   stroke-width: 0;
 }
 .button.is-link {
-  background-color: transparent;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0;
+  padding-right: 0.7em;
   border: 0;
-  padding: 0 0.2em;
+  background-color: transparent;
   color: var(--blue);
+  fill: var(--blue);
+  stroke-width: 0;
 }
 .button.is-link:after {
   position: absolute;
   display: block;
   content: '';
   width: 100%;
-  height: 0.1em;
+  height: 0.15em;
   background-color: var(--blue);
   bottom: 0;
   left: 0;
@@ -1457,7 +1511,7 @@ html {
 .button.is-link:hover:not(.is-disabled):not([disabled]):after,
 .button.is-link:active:not(.is-disabled):not([disabled]):after,
 .button.is-link.is-active:not(.is-disabled):not([disabled]):after {
-  height: 0.2em;
+  height: 0.25em;
 }
 .buttons {
   display: -ms-flexbox;
@@ -1527,7 +1581,6 @@ html {
   background-color: var(--gray);
   color: var(--black);
   vertical-align: center;
-  font-size: var(--fontSmall);
   line-height: 1;
   fill: var(--black);
   stroke-width: 0;
@@ -1594,7 +1647,7 @@ html {
   margin-bottom: var(--margin);
   padding: var(--padding) calc(var(--padding) * 1.5);
   width: 100%;
-  border: 2px solid var(--mainColor);
+  border: 0.08em solid var(--mainColor);
   border-radius: var(--borderRadius);
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1602,58 +1655,125 @@ html {
     * modiffers
     */
 }
+.input-tag {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: var(--padding) calc(var(--padding) * 1.5);
+  border: 0.08em solid var(--black);
+  border-radius: var(--borderRadius);
+  background-color: var(--black);
+  vertical-align: top;
+  text-align: center;
+  fill: var(--white);
+  stroke-width: 0;
+}
+.input-tag .icon:first-child:not(:last-child) {
+  margin-right: calc(var(--padding) * 0.5);
+}
+.input-tag .icon:last-child:not(:first-child) {
+  margin-left: calc(var(--padding) * 0.5);
+}
+.input-tag .icon:only-child {
+  margin: 0 calc(var(--padding) * -0.5);
+}
+.input-tag.is-rounded,
+.inputGroup.is-rounded >.input-tag {
+  border-radius: 10em;
+}
+.input-tag.is-black,
+.inputGroup.is-black >.input-tag {
+  border-color: var(--black);
+  background-color: var(--black);
+  color: var(--black);
+  fill: var(--black);
+  stroke-width: 0;
+}
+.input-tag.is-white,
+.inputGroup.is-white >.input-tag {
+  border-color: var(--white);
+  background-color: var(--white);
+  color: var(--white);
+  fill: var(--white);
+  stroke-width: 0;
+}
+.input-tag.is-blue,
+.inputGroup.is-blue >.input-tag {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--blue);
+  fill: var(--blue);
+  stroke-width: 0;
+}
+.input-tag.is-green,
+.inputGroup.is-green >.input-tag {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: var(--green);
+  fill: var(--green);
+  stroke-width: 0;
+}
+.input-tag.is-red,
+.inputGroup.is-red >.input-tag {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: var(--red);
+  fill: var(--red);
+  stroke-width: 0;
+}
+.input-tag.is-inverse,
+.inputGroup.is-inverse >.input-tag {
+  background-color: transparent;
+}
+.input-tag:not(.is-inverse):not(.is-clean),
+.inputGroup:not(.is-inverse) >.input-tag:not(.is-clean) {
+  color: var(--white);
+  fill: var(--white);
+  stroke-width: 0;
+}
+.input-tag.is-clean {
+  position: relative;
+  background-color: #fff;
+  fill: var(--gray);
+  stroke-width: 0;
+  border-right: 0;
+  margin-right: -2px;
+}
+.input-tag.is-disabled,
+.inputGroup.is-disabled >.input-tag {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .input.is-block {
   width: 100%;
 }
-.input,
-.input.is-normal,
-.form.is-normal >.input {
-  font-size: var(--font);
-}
-.input.is-tiny,
-.form.is-tiny >.input {
-  font-size: var(--fontTiny);
-}
-.input.is-small,
-.form.is-small >.input {
-  font-size: var(--fontSmall);
-}
-.input.is-large,
-.form.is-large >.input {
-  font-size: var(--fontLarge);
-}
-.input.is-massive,
-.form.is-massive >.input {
-  font-size: var(--fontMassive);
-}
 .input.is-rounded,
-.form.is-rounded >.input {
+.inputGroup.is-rounded >.input {
   border-width: 2px;
   border-radius: 10em;
 }
 .input.is-black,
-.form.is-black >.input {
+.inputGroup.is-black >.input {
   border-color: var(--black);
 }
 .input.is-blue,
-.form.is-blue >.input {
+.inputGroup.is-blue >.input {
   border-color: var(--blue);
 }
 .input.is-green,
-.form.is-green >.input {
+.inputGroup.is-green >.input {
   border-color: var(--green);
 }
 .input.is-red,
-.form.is-red >.input {
+.inputGroup.is-red >.input {
   border-color: var(--red);
 }
 .input.is-white,
-.form.is-white >.input {
+.inputGroup.is-white >.input {
   border-color: var(--white);
 }
 .input.is-disabled,
 .input[disabled],
-.form.is-disabled >.input {
+.inputGroup.is-disabled >.input {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -1671,153 +1791,45 @@ html {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-.form {
+.inputGroup {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: var(--margin);
 }
-.form >* {
+.inputGroup >*:not(.input-label) {
   margin-bottom: 0;
 }
-.form-label {
-  font-size: var(--fontLarge);
-  margin-bottom: var(--margin);
-  white-space: nowrap;
+.inputGroup-label {
   -ms-flex: 1;
       flex: 1;
-  line-height: 46px;
+  margin-bottom: var(--padding);
+  margin-right: var(--margin);
+  white-space: nowrap;
+  font-size: 1.7em;
 }
-.form-addon {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: var(--padding) calc(var(--padding) * 1.5);
-  border: 2px solid var(--black);
-  border-radius: var(--borderRadius);
-  background-color: var(--black);
-  vertical-align: top;
-  text-align: center;
-  fill: var(--white);
-  stroke-width: 0;
-}
-.form-addon .icon:first-child:not(:last-child) {
-  margin-right: calc(var(--padding) * 0.5);
-}
-.form-addon .icon:last-child:not(:first-child) {
-  margin-left: calc(var(--padding) * 0.5);
-}
-.form-addon .icon:only-child {
-  margin: 0 calc(var(--padding) * -0.5);
-}
-.form-addon.is-rounded,
-.form.is-rounded >.form-addon {
-  border-radius: 10em;
-}
-.form-addon.is-black,
-.form.is-black >.form-addon {
-  border-color: var(--black);
-  background-color: var(--black);
-  color: var(--black);
-  fill: var(--black);
-  stroke-width: 0;
-}
-.form-addon.is-white,
-.form.is-white >.form-addon {
-  border-color: var(--white);
-  background-color: var(--white);
-  color: var(--white);
-  fill: var(--white);
-  stroke-width: 0;
-}
-.form-addon.is-blue,
-.form.is-blue >.form-addon {
-  background-color: var(--blue);
-  border-color: var(--blue);
-  color: var(--blue);
-  fill: var(--blue);
-  stroke-width: 0;
-}
-.form-addon.is-green,
-.form.is-green >.form-addon {
-  background-color: var(--green);
-  border-color: var(--green);
-  color: var(--green);
-  fill: var(--green);
-  stroke-width: 0;
-}
-.form-addon.is-red,
-.form.is-red >.form-addon {
-  background-color: var(--red);
-  border-color: var(--red);
-  color: var(--red);
-  fill: var(--red);
-  stroke-width: 0;
-}
-.form-addon.is-inverse,
-.form.is-inverse >.form-addon {
-  background-color: transparent;
-}
-.form-addon:not(.is-inverse):not(.is-clean),
-.form:not(.is-inverse) >.form-addon:not(.is-clean) {
-  color: var(--white);
-  fill: var(--white);
-  stroke-width: 0;
-}
-.form-addon.is-clean {
-  position: relative;
-  background-color: #fff;
-  fill: var(--gray);
-  stroke-width: 0;
-  border-right: 0;
-  margin-right: -2px;
-}
-.form-addon.is-disabled,
-.form.is-disabled >.form-addon {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.form-addon,
-.form-addon.is-normal,
-.form.is-normal >.form-addon {
-  font-size: var(--font);
-}
-.form-addon.is-tiny,
-.form.is-tiny >.form-addon {
-  font-size: var(--fontTiny);
-}
-.form-addon.is-small,
-.form.is-small >.form-addon {
-  font-size: var(--fontSmall);
-}
-.form-addon.is-large,
-.form.is-large >.form-addon {
-  font-size: var(--fontLarge);
-}
-.form-addon.is-massive,
-.form.is-massive >.form-addon {
-  font-size: var(--fontMassive);
-}
-.form.has-label {
+.inputGroup.has-label {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.form.has-labelInline .form-label {
-  margin-bottom: 0;
-  margin-endDir: var(--margin);
-  line-height: 2.5em;
+.inputGroup.has-labelInline {
+  -ms-flex-align: center;
+      align-items: center;
 }
-.form.has-itemAfter .button {
+.inputGroup.has-itemAfter .button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-left: 0;
 }
-.form.has-itemAfter .input {
+.inputGroup.has-itemAfter .input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.form.has-itemBefore .form-addon {
+.inputGroup.has-itemBefore .input-tag {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-right: 0;
 }
-.form.has-itemBefore .input {
+.inputGroup.has-itemBefore .input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -1874,11 +1886,6 @@ html {
   vertical-align: middle;
   line-height: inherit;
 }
-.icon,
-.icon.is-normal {
-  width: 1.1875em;
-  height: 1.1875em;
-}
 .icon.is-green {
   fill: var(--green);
   stroke-width: 0;
@@ -1900,20 +1907,25 @@ html {
   stroke-width: 0;
 }
 .icon.is-tiny {
-  width: var(--fontTiny);
-  height: var(--fontTiny);
+  width: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
 }
 .icon.is-small {
-  width: var(--fontSmall);
-  height: var(--fontSmall);
+  width: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+}
+.icon,
+.icon.is-normal {
+  width: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
 }
 .icon.is-large {
-  width: var(--fontLarge);
-  height: var(--fontLarge);
+  width: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
 }
 .icon.is-massive {
-  width: var(--fontMassive);
-  height: var(--fontMassive);
+  width: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
+  height: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
 }
 .radio {
   margin: calc(var(--margin) * 0.5) 0;
@@ -2003,20 +2015,19 @@ html {
 .table {
   overflow: hidden;
   width: 100%;
-  border: 2px solid var(--black);
+  border: 0.08em solid var(--black);
   border-spacing: 0;
   border-collapse: separate;
   border-radius: var(--borderRadius);
   color: var(--black);
   text-align: left;
-  font-size: var(--font);
 }
 .table:not(:last-child) {
   margin-bottom: var(--margin);
 }
 .table th:not(:last-child),
 .table td:not(:last-child) {
-  border-right: 2px solid var(--black);
+  border-right: 0.08em solid var(--black);
 }
 @media screen and (max-width: 767px) {
   .table th:not(:last-child),
@@ -2035,7 +2046,7 @@ html {
   background-color: var(--white);
 }
 .table thead th {
-  border-bottom: 2px solid var(--black);
+  border-bottom: 0.08em solid var(--black);
   padding: calc(var(--padding) * 2) var(--padding);
   font-weight: bold;
 }
@@ -2048,18 +2059,18 @@ html {
   background-color: var(--white);
 }
 .table tfoot th {
-  border-top: 2px solid var(--black);
+  border-top: 0.08em solid var(--black);
   padding: var(--padding);
 }
 @media screen and (max-width: 767px) {
   .table tr {
     display: block;
-    border-top: 2px solid var(--black);
+    border-top: 0.08em solid var(--black);
   }
 }
 .table td {
   padding: var(--padding);
-  border-top: 2px solid var(--black);
+  border-top: 0.08em solid var(--black);
   background-color: var(--white);
 }
 @media screen and (max-width: 767px) {
@@ -2073,13 +2084,13 @@ html {
   overflow-x: auto;
   margin: var(--margin) auto;
   padding: var(--padding);
-  border: 2px solid var(--white);
+  border: 0.08em solid var(--white);
   border-radius: var(--borderRadius);
   background-color: var(--white);
 }
 .table-sort {
   float: right;
-  border: 2px solid var(--black);
+  border: 0.08em solid var(--black);
   border-radius: 50%;
   padding: 0;
   outline: 0;
@@ -2126,11 +2137,10 @@ html {
   margin-bottom: var(--margin);
   padding: var(--padding);
   width: 100%;
-  border: 2px solid var(--mainColor);
+  border: 0.08em solid var(--mainColor);
   border-radius: var(--borderRadius);
   color: var(--mainColor);
   text-align: left;
-  font-size: var(--font);
   line-height: 1.2;
   resize: none;
 /**
@@ -2140,22 +2150,6 @@ html {
 .textarea:focus {
   outline: 0;
   border-color: var(--blue);
-}
-.textarea.is-block {
-  width: 100%;
-}
-.textarea.is-tiny {
-  font-size: var(--fontTiny);
-}
-.textarea.is-small {
-  font-size: var(--fontSmall);
-}
-.textarea.is-large {
-  font-size: var(--fontLarge);
-}
-.textarea.is-rounded {
-  border-width: 2px;
-  border-radius: 10em;
 }
 .textarea.is-black {
   border-color: var(--black);
@@ -2227,8 +2221,6 @@ html {
   color: var(--white);
   content: attr(tooltip);
   white-space: nowrap;
-  font-size: var(--fontSmall);
-  line-height: var(--fontSmall);
   opacity: 0;
   transition: 0.4s;
   -ms-transform: translate(-50%, 0);
@@ -2511,7 +2503,6 @@ html {
   border: 0;
   border-radius: var(--borderRadius);
   background-color: var(--white);
-  font-size: var(--font);
 }
 .modal p {
   margin: 0;
@@ -2686,8 +2677,7 @@ html {
   color: var(--black);
   text-decoration: none;
   white-space: nowrap;
-  font-size: var(--font);
-  height: calc(var(--font) * 2.6875);
+  height: 2.6875em;
   cursor: pointer;
   fill: var(--black);
   stroke-width: 0;
@@ -2739,7 +2729,6 @@ html {
   color: var(--black);
   text-align: center;
   text-decoration: none;
-  font-size: var(--font);
   cursor: pointer;
   fill: var(--black);
   stroke-width: 0;
