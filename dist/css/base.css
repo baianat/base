@@ -9,8 +9,9 @@
 .inputGroup.is-tiny >.button,
 .inputGroup.is-tiny >.input,
 .inputGroup.is-tiny >.input-tag,
-.textarea.is-tiny {
-  font-size: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
+.textarea.is-tiny,
+.select-searchInput {
+  font-size: calc( 12px + 6 * (100vw - 320px) / 2240 );
 }
 .button.is-small,
 .buttons.is-small >.button,
@@ -22,8 +23,10 @@
 .inputGroup.is-small >.input,
 .inputGroup.is-small >.input-tag,
 .textarea.is-small,
-[tooltip]:after {
-  font-size: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+[tooltip]:after,
+.select-label,
+.select-item {
+  font-size: calc( 14px + 10 * (100vw - 320px) / 2240 );
 }
 p,
 body,
@@ -41,12 +44,13 @@ body,
 .table,
 .textarea,
 .textarea.is-normal,
+.select-input,
 .modal,
 .navbar-item,
 .pagination-item,
 .pagination-next,
 .pagination-prev {
-  font-size: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 18px + 14 * (100vw - 320px) / 2240 );
 }
 .button.is-large,
 .buttons.is-large >.button,
@@ -57,7 +61,7 @@ body,
 .inputGroup.is-large >.input,
 .inputGroup.is-large >.input-tag,
 .textarea.is-large {
-  font-size: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 24px + 18 * (100vw - 320px) / 2240 );
 }
 .button.is-massive,
 .buttons.is-massive >.button,
@@ -68,7 +72,7 @@ body,
 .inputGroup.is-massive >.input,
 .inputGroup.is-massive >.input-tag,
 .textarea.is-massive {
-  font-size: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 32px + 22 * (100vw - 320px) / 2240 );
 }
 html {
   line-height: 1.1875 /* 1 */;
@@ -266,22 +270,22 @@ template {
   display: none;
 }
 h1 {
-  font-size: calc( 40px + (200 - 40) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 40px + 160 * (100vw - 320px) / 2240 );
 }
 h2 {
-  font-size: calc( 30px + (160 - 30) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 30px + 130 * (100vw - 320px) / 2240 );
 }
 h3 {
-  font-size: calc( 24px + (120 - 24) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 24px + 96 * (100vw - 320px) / 2240 );
 }
 h4 {
-  font-size: calc( 20px + (100 - 20) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 20px + 80 * (100vw - 320px) / 2240 );
 }
 h5 {
-  font-size: calc( 18px + (80 - 18) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 18px + 62 * (100vw - 320px) / 2240 );
 }
 h6 {
-  font-size: calc( 14px + (60 - 14) * (100vw - 320px) / (2560 - 320) );
+  font-size: calc( 14px + 46 * (100vw - 320px) / 2240 );
 }
 h1,
 h2,
@@ -1877,25 +1881,25 @@ html {
   stroke-width: 0;
 }
 .icon.is-tiny {
-  width: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
-  height: calc( 12px + (18 - 12) * (100vw - 320px) / (2560 - 320) );
+  width: calc( 12px + 6 * (100vw - 320px) / 2240 );
+  height: calc( 12px + 6 * (100vw - 320px) / 2240 );
 }
 .icon.is-small {
-  width: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
-  height: calc( 14px + (24 - 14) * (100vw - 320px) / (2560 - 320) );
+  width: calc( 14px + 10 * (100vw - 320px) / 2240 );
+  height: calc( 14px + 10 * (100vw - 320px) / 2240 );
 }
 .icon,
 .icon.is-normal {
-  width: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
-  height: calc( 18px + (32 - 18) * (100vw - 320px) / (2560 - 320) );
+  width: calc( 18px + 14 * (100vw - 320px) / 2240 );
+  height: calc( 18px + 14 * (100vw - 320px) / 2240 );
 }
 .icon.is-large {
-  width: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
-  height: calc( 24px + (42 - 24) * (100vw - 320px) / (2560 - 320) );
+  width: calc( 24px + 18 * (100vw - 320px) / 2240 );
+  height: calc( 24px + 18 * (100vw - 320px) / 2240 );
 }
 .icon.is-massive {
-  width: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
-  height: calc( 32px + (54 - 32) * (100vw - 320px) / (2560 - 320) );
+  width: calc( 32px + 22 * (100vw - 320px) / 2240 );
+  height: calc( 32px + 22 * (100vw - 320px) / 2240 );
 }
 .radio {
   margin: 5px 0;
@@ -2248,10 +2252,35 @@ html {
   position: relative;
   width: 300px;
 }
-.select .label {
+.select-label {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow: hidden;
+  margin: 0 2px;
   margin-bottom: 4px;
+  padding: 0.5em;
+  min-width: 37px;
+  border-radius: 4px;
+  background-color: #000;
+  color: #fff;
+  vertical-align: center;
+  line-height: 1;
+  fill: #000;
+  stroke-width: 0;
 }
-.select-input {
+.select-input,
+.select-searchInput {
+  margin-bottom: 10px;
+  padding: 0.5em 0.75em;
+  width: 100%;
+  border: 0.08em solid #000;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   margin-bottom: 0;
   min-height: 47px;
   text-align: left;
@@ -2304,13 +2333,12 @@ html {
   display: inline-flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: -10px 5px -14px -17px;
+  margin: 0 0.5em -0.3em -0.2em;
   padding: 0;
 }
 .select-item {
   padding: 0;
   width: 100%;
-  font-size: 14px;
 }
 .select-item.is-selected {
   background-color: #000;
@@ -2347,7 +2375,7 @@ html {
   background-color: #000;
   color: #fff;
 }
-.select .is-visiable {
+.select .is-visible {
   display: block;
 }
 .select .is-hidden {
@@ -2394,7 +2422,8 @@ html {
   font-size: 16px;
 }
 .dropdown-menu .dropdown-menu {
-  position: static;
+  position: relative;
+  top: 0;
 }
 .dropdown-menu:empty {
   display: none;
@@ -2406,7 +2435,7 @@ html {
   -ms-transform: scale(0);
       transform: scale(0);
 }
-.dropdown-menu.is-visiable {
+.dropdown-menu.is-visible {
   -ms-transform: scale(1);
       transform: scale(1);
 }
@@ -2647,10 +2676,12 @@ html {
   color: #000;
   text-decoration: none;
   white-space: nowrap;
-  height: 2.6875em;
   cursor: pointer;
   fill: #000;
   stroke-width: 0;
+}
+.navbar-item.dropdown {
+  height: auto;
 }
 .navbar-item:hover,
 .navbar-item:focus {

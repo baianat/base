@@ -28,7 +28,8 @@
       padding: 0
       font-size: $font
     .dropdown-menu &
-      position: static
+      position: relative
+      top: 0
     &:empty
       display: none
 
@@ -38,7 +39,7 @@
       height: 0
       transform: scale(0)
 
-    &.is-visiable
+    &.is-visible
       transform: scale(1)
 
     &:before

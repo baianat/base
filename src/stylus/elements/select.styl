@@ -2,14 +2,41 @@
   position: relative
   width: 300px
 
-  .label
+  &-label
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    margin: 0 2px
     margin-bottom: 4px
+    padding: $padding
+    min-width: 37px
+    border-radius: $borderRadius
+    background-color: $black
+    color: $white
+    vertical-align: center
+    line-height: 1
+    _icon-color: $black
+    @extend $small
 
-  &-input
+  &-input,
+  &-searchInput
+    margin-bottom: $margin
+    padding: $padding multiple($padding, 1.5)
+    width: 100%
+    border: $border solid $mainColor
+    border-radius: $borderRadius
+    -webkit-appearance: none
+    -moz-appearance: none
     margin-bottom: 0
     min-height: 47px
     text-align: left
 
+  &-searchInput
+    @extends $tiny
+
+  &-input  
+    @extends $normal
     &:after
       position: absolute
       top: 10px
@@ -34,6 +61,7 @@
   &-search
     padding: 10px
     width: 100%
+  
 
   &-menu
     position: absolute
@@ -56,13 +84,13 @@
   &-labels
     display: inline-flex
     flex-wrap: wrap
-    margin: -10px 5px -14px -17px
+    margin: 0 0.5em -0.3em -0.2em
     padding: 0
 
   &-item
     padding: 0
     width: 100%
-    font-size: $fontSmall
+    @extend $small
 
     &.is-selected
       background-color: $black
@@ -99,7 +127,7 @@
       background-color: $black
       color: $white
 
-  .is-visiable
+  .is-visible
     display: block
 
   .is-hidden
