@@ -1283,8 +1283,8 @@ pre {
 .button.is-black,
 .buttons.is-black >.button,
 .inputGroup.is-black >.button {
-  border-color: $mainColor;
-  background-color: $mainColor;
+  border-color: #eb008b;
+  background-color: #eb008b;
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1302,17 +1302,17 @@ pre {
 .buttons.is-black >.button.is-active:not(.is-disabled):not([disabled]),
 .inputGroup.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
-  color: $mainColor;
-  fill: $mainColor;
+  color: #eb008b;
+  fill: #eb008b;
   stroke-width: 0;
 }
 .button.is-inverse,
 .buttons.is-inverse >.button,
 .inputGroup.is-inverse >.button {
-  border-color: $mainColor;
+  border-color: #eb008b;
   background-color: transparent;
-  color: $mainColor;
-  fill: $mainColor;
+  color: #eb008b;
+  fill: #eb008b;
   stroke-width: 0;
 }
 .button.is-inverse:hover:not(.is-disabled):not([disabled]),
@@ -1324,7 +1324,7 @@ pre {
 .button.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
 .inputGroup.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
-  background-color: $mainColor;
+  background-color: #eb008b;
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1908,7 +1908,7 @@ pre {
   margin-bottom: 10px;
   padding: 0.5em 0.75em;
   width: 100%;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid $mainColor;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #eb008b;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2089,7 +2089,7 @@ pre {
   margin-bottom: 10px;
   padding: 0.5em 0.75em;
   width: 100%;
-  border: 2px dashed $mainColor;
+  border: 2px dashed #eb008b;
   border-radius: 0;
   font-size: 16px;
   -webkit-appearance: none;
@@ -2300,11 +2300,11 @@ pre {
 .switcher-input:checked + .switcher-body .switcher-handle {
   left: calc(100% - 1.05em);
 }
-.switcher-input:checked + .switcher-body .switcher-body-true {
+.switcher-input:checked + .switcher-body .switcher-true {
   max-width: 40em;
   opacity: 1;
 }
-.switcher-input:checked + .switcher-body .switcher-body-false {
+.switcher-input:checked + .switcher-body .switcher-false {
   max-width: 0em;
   opacity: 0;
 }
@@ -2505,9 +2505,9 @@ pre {
   padding: 0.5em;
   min-width: 100%;
   max-width: 100%;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid $mainColor;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #eb008b;
   border-radius: 0;
-  color: $mainColor;
+  color: #eb008b;
   text-align: left;
   line-height: 1.2;
 /**
@@ -2766,71 +2766,104 @@ pre {
 }
 .select {
   position: relative;
+  margin-bottom: 10px;
+  margin-bottom: 0;
+  padding: 0.5em 0.75em;
   max-width: 100%;
-}
-.select-input {
+  width: 100%;
+  outline: 0;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
+  border-radius: 0;
+  background-color: #fff;
   background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
   background-position: calc(100% - 0.8em) calc(50% + 0.1em), calc(100% - 0.4em) calc(50% + 0.1em);
   background-size: 0.4em 0.4em, 0.4em 0.4em;
   background-repeat: no-repeat;
+  text-align: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select-searchInput {
+  margin-bottom: 10px;
+  margin-bottom: 0;
+  padding: 0.5em 0.75em;
+  width: 100%;
+  outline: 0;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
+  border-radius: 0;
+  text-align: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select-input {
+  background-color: transparent;
+  font-size: inherit;
+  width: 100%;
+  padding: 0;
+  height: 100%;
+  border: 0;
+  text-align: left;
+}
+.select-input:focus {
+  outline: 0;
 }
 .select-input:disabled,
 .select-input.is-disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
   background: #fff;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.select.is-black {
+  border-color: #000;
+  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+  color: #000;
+}
+.select.is-white {
+  border-color: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+  color: #000;
+}
+.select.is-primary {
+  border-color: #eb008b;
+  background-image: linear-gradient(45deg, transparent 50%, #eb008b 50%), linear-gradient(135deg, #eb008b 50%, transparent 50%);
+  color: #eb008b;
+}
+.select.is-danger {
+  border-color: #f42828;
+  background-image: linear-gradient(45deg, transparent 50%, #f42828 50%), linear-gradient(135deg, #f42828 50%, transparent 50%);
+  color: #f42828;
+}
+.select.is-success {
+  border-color: #5fca16;
+  background-image: linear-gradient(45deg, transparent 50%, #5fca16 50%), linear-gradient(135deg, #5fca16 50%, transparent 50%);
+  color: #5fca16;
+}
+.select.is-info {
+  border-color: #1de9cf;
+  background-image: linear-gradient(45deg, transparent 50%, #1de9cf 50%), linear-gradient(135deg, #1de9cf 50%, transparent 50%);
+  color: #1de9cf;
+}
+.select.is-warning {
+  border-color: #ff9600;
+  background-image: linear-gradient(45deg, transparent 50%, #ff9600 50%), linear-gradient(135deg, #ff9600 50%, transparent 50%);
+  color: #ff9600;
+}
+.select.is-secondary {
+  border-color: #1a3aff;
+  background-image: linear-gradient(45deg, transparent 50%, #1a3aff 50%), linear-gradient(135deg, #1a3aff 50%, transparent 50%);
+  color: #1a3aff;
 }
 .select.is-rounded .select-input {
   border-radius: 10em;
 }
-.select.is-black .select-input {
-  border-color: #000;
-  color: #000;
-  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
-}
-.select.is-white .select-input {
-  border-color: #fff;
-  color: #000;
-  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
-}
-.select.is-primary .select-input {
-  border-color: #eb008b;
-  color: #eb008b;
-  background-image: linear-gradient(45deg, transparent 50%, #eb008b 50%), linear-gradient(135deg, #eb008b 50%, transparent 50%);
-}
-.select.is-secondary .select-input {
-  border-color: #1a3aff;
-  color: #1a3aff;
-  background-image: linear-gradient(45deg, transparent 50%, #1a3aff 50%), linear-gradient(135deg, #1a3aff 50%, transparent 50%);
-}
-.select.is-danger .select-input {
-  border-color: #f42828;
-  color: #f42828;
-  background-image: linear-gradient(45deg, transparent 50%, #f42828 50%), linear-gradient(135deg, #f42828 50%, transparent 50%);
-}
-.select.is-success .select-input {
-  border-color: #5fca16;
-  color: #5fca16;
-  background-image: linear-gradient(45deg, transparent 50%, #5fca16 50%), linear-gradient(135deg, #5fca16 50%, transparent 50%);
-}
-.select.is-info .select-input {
-  border-color: #1de9cf;
-  color: #1de9cf;
-  background-image: linear-gradient(45deg, transparent 50%, #1de9cf 50%), linear-gradient(135deg, #1de9cf 50%, transparent 50%);
-}
-.select.is-warning .select-input {
-  border-color: #ff9600;
-  color: #ff9600;
-  background-image: linear-gradient(45deg, transparent 50%, #ff9600 50%), linear-gradient(135deg, #ff9600 50%, transparent 50%);
-}
 .select:disabled,
 .select.is-disabled {
-  cursor: not-allowed;
   opacity: 0.7;
+  cursor: not-allowed;
 }
 .select.is-disabled {
-  pointer-events: none;
   opacity: 0.7;
+  pointer-events: none;
 }
 .select-label {
   display: -ms-inline-flexbox;
@@ -2840,10 +2873,10 @@ pre {
   -ms-flex-align: center;
       align-items: center;
   overflow: hidden;
+  font-size: inherit;
+  padding: 0.15em;
   margin: 0 2px;
   margin-bottom: 4px;
-  padding: 0.5em;
-  min-width: 37px;
   border-radius: 0;
   background-color: #000;
   color: #fff;
@@ -2852,54 +2885,23 @@ pre {
   fill: #000;
   stroke-width: 0;
 }
-.select-input,
-.select-searchInput {
-  margin-bottom: 10px;
-  padding: 0.5em 0.75em;
-  width: 100%;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid $mainColor;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  margin-bottom: 0;
-  text-align: left;
-  outline: 0;
-}
-.select-input:before {
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  display: block;
-  margin: 7px;
-  width: 0;
-  height: 0;
-  border-width: 4px 4px 0 4px;
-  border-style: solid;
-  border-color: #000 transparent transparent transparent;
-  content: '';
-  transition: 0.5s;
-}
-.select-input.is-active {
-  border-radius: 0 0 0 0;
-}
-.select-input.is-active :after {
-  border-width: 0 4px 4px 4px;
-  border-color: transparent transparent #000 transparent;
-}
 .select-search {
   padding: 10px;
   width: 100%;
 }
 .select-menu {
   position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin: 0 calc( -2px + -2 * (100vw - 320px) / 2240 );
   z-index: 999;
-  width: 100%;
-  border-width: 0 2px 2px 2px;
+  border-width: 0 calc( 2px + 2 * (100vw - 320px) / 2240 ) calc( 2px + 2 * (100vw - 320px) / 2240 ) calc( 2px + 2 * (100vw - 320px) / 2240 );
   border-style: solid;
-  border-color: #000;
+  border-color: inherit;
   border-radius: 0 0 0 0;
   background: #fff;
-  font-size: 14px;
+  font-size: inherit;
 }
 .select-list {
   overflow: auto;
@@ -2984,9 +2986,8 @@ pre {
   left: 0;
   padding: 0.5em;
   width: 300px;
-  border: 2px solid #000;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
   border-radius: 0;
-  box-shadow: 0 2px 10px $shadow;
   background-color: #fff;
   color: #000;
   list-style: none;
@@ -3021,24 +3022,24 @@ pre {
 }
 .dropdown-menu:before {
   position: absolute;
-  top: -7px;
+  top: -0.5em;
   left: 0.5em;
   display: block;
   width: 0;
   height: 0;
-  border-width: 0 7px 7px 7px;
+  border-width: 0 0.5em 0.5em 0.5em;
   border-style: solid;
   border-color: transparent transparent #000 transparent;
   content: '';
 }
 .dropdown-menu:after {
   position: absolute;
-  top: -5px;
+  top: calc( -6px + 4 * (100vw - 320px) / 2240 );
   left: 0.5em;
   display: block;
   width: 0;
   height: 0;
-  border-width: 0 7px 7px 7px;
+  border-width: 0 0.5em 0.5em 0.5em;
   border-style: solid;
   border-color: transparent transparent #fff transparent;
   content: '';

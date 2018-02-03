@@ -16,9 +16,8 @@
     left: 0
     padding: $padding
     width: 300px
-    border: 2px solid $clBlack
+    border: $border solid $clBlack
     border-radius: $borderRadius
-    box-shadow: 0 2px 10px $shadow
     background-color: $clWhite
     color: $clBlack
     list-style: none
@@ -47,24 +46,24 @@
 
     &:before
       position: absolute
-      top: -7px
+      top: -0.5em
       left: $padding
       display: block
       width: 0
       height: 0
-      border-width: 0 7px 7px 7px
+      border-width: 0 0.5em 0.5em 0.5em
       border-style: solid
       border-color: transparent transparent $clBlack transparent
       content: ''
 
     &:after
       position: absolute
-      top: -5px
+      top: unitRes(-6, -2)
       left: $padding
       display: block
       width: 0
       height: 0
-      border-width: 0 7px 7px 7px
+      border-width: 0 0.5em 0.5em 0.5em
       border-style: solid
       border-color: transparent transparent $clWhite transparent
       content: ''
@@ -75,7 +74,8 @@
       left: initial
       transform-origin: top right
 
-      &:before, &:after
+      &:before,
+      &:after
         right: $padding
         left: auto
         left: initial
@@ -84,5 +84,6 @@
       left: calc(50% - 150px)
       transform-origin: top center
 
-      &:before, &:after
+      &:before,
+      &:after
         left: calc(50% - 7px)

@@ -368,11 +368,11 @@ body {
   margin: 0;
 }
 ::-moz-selection {
-  background: #eb008b;
+  background: var(--mainColor);
   color: #fff;
 }
 ::selection {
-  background: #eb008b;
+  background: var(--mainColor);
   color: #fff;
 }
 *::-webkit-input-placeholder {
@@ -1408,8 +1408,8 @@ pre {
 .button.is-primary,
 .buttons.is-primary >.button,
 .inputGroup.is-primary >.button {
-  border-color: #eb008b;
-  background-color: #eb008b;
+  border-color: var(--mainColor);
+  background-color: var(--mainColor);
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1424,17 +1424,17 @@ pre {
 .buttons.is-primary >.button.is-active:not(.is-disabled):not([disabled]),
 .inputGroup.is-primary >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
-  color: #eb008b;
-  fill: #eb008b;
+  color: var(--mainColor);
+  fill: var(--mainColor);
   stroke-width: 0;
 }
 .button.is-primary.is-inverse,
 .buttons.is-primary.is-inverse >.button,
 .inputGroup.is-primary.is-inverse >.button {
-  border-color: #eb008b;
+  border-color: var(--mainColor);
   background-color: transparent;
-  color: #eb008b;
-  fill: #eb008b;
+  color: var(--mainColor);
+  fill: var(--mainColor);
   stroke-width: 0;
 }
 .button.is-primary.is-inverse:hover:not(.is-disabled):not([disabled]),
@@ -1446,7 +1446,7 @@ pre {
 .button.is-primary.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-primary.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
 .inputGroup.is-primary.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
-  background-color: #eb008b;
+  background-color: var(--mainColor);
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1890,7 +1890,7 @@ pre {
   stroke-width: 0;
 }
 .label.is-primary {
-  background-color: #eb008b;
+  background-color: var(--mainColor);
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1989,10 +1989,10 @@ pre {
 }
 .input-tag.is-primary,
 .inputGroup.is-primary >.input-tag {
-  border-color: #eb008b;
-  background-color: #eb008b;
-  color: #eb008b;
-  fill: #eb008b;
+  border-color: var(--mainColor);
+  background-color: var(--mainColor);
+  color: var(--mainColor);
+  fill: var(--mainColor);
   stroke-width: 0;
 }
 .input-tag.is-secondary,
@@ -2073,7 +2073,7 @@ pre {
 }
 .input.is-primary,
 .inputGroup.is-primary >.input {
-  border-color: #eb008b;
+  border-color: var(--mainColor);
 }
 .input.is-secondary,
 .inputGroup.is-secondary >.input {
@@ -2323,18 +2323,18 @@ pre {
   display: none;
 }
 .switcher-input:checked + .switcher-body {
-  background-color: #eb008b;
+  background-color: var(--mainColor);
   padding-left: 0.5em;
   padding-right: 1.3em;
 }
 .switcher-input:checked + .switcher-body .switcher-handle {
   left: calc(100% - 1.05em);
 }
-.switcher-input:checked + .switcher-body .switcher-body-true {
+.switcher-input:checked + .switcher-body .switcher-true {
   max-width: 40em;
   opacity: 1;
 }
-.switcher-input:checked + .switcher-body .switcher-body-false {
+.switcher-input:checked + .switcher-body .switcher-false {
   max-width: 0em;
   opacity: 0;
 }
@@ -2552,7 +2552,7 @@ pre {
   border-color: #000;
 }
 .textarea.is-primary {
-  border-color: #eb008b;
+  border-color: var(--mainColor);
 }
 .textarea.is-secondary {
   border-color: #1a3aff;
@@ -2689,19 +2689,19 @@ pre {
       transform: translate(100%, -50%);
 }
 [tooltip-color='primary']:after {
-  background: #eb008b;
+  background: var(--mainColor);
 }
 [tooltip-color='primary']:before {
-  border-color: #eb008b transparent transparent transparent;
+  border-color: var(--mainColor) transparent transparent transparent;
 }
 [tooltip-color='primary'][tooltip-position='bottom']:before {
-  border-color: transparent transparent #eb008b transparent;
+  border-color: transparent transparent var(--mainColor) transparent;
 }
 [tooltip-color='primary'][tooltip-position='left']:before {
-  border-color: transparent transparent transparent #eb008b;
+  border-color: transparent transparent transparent var(--mainColor);
 }
 [tooltip-color='primary'][tooltip-position='right']:before {
-  border-color: transparent #eb008b transparent transparent;
+  border-color: transparent var(--mainColor) transparent transparent;
 }
 [tooltip-color='secondary']:after {
   background: #1a3aff;
@@ -2796,71 +2796,104 @@ pre {
 }
 .select {
   position: relative;
+  margin-bottom: var(--margin);
+  margin-bottom: 0;
+  padding: var(--padding) calc(var(--padding) * 1.5);
   max-width: 100%;
-}
-.select-input {
+  width: 100%;
+  outline: 0;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
+  border-radius: var(--borderRadius);
+  background-color: #fff;
   background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
   background-position: calc(100% - 0.8em) calc(50% + 0.1em), calc(100% - 0.4em) calc(50% + 0.1em);
   background-size: 0.4em 0.4em, 0.4em 0.4em;
   background-repeat: no-repeat;
+  text-align: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select-searchInput {
+  margin-bottom: var(--margin);
+  margin-bottom: 0;
+  padding: var(--padding) calc(var(--padding) * 1.5);
+  width: 100%;
+  outline: 0;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
+  border-radius: var(--borderRadius);
+  text-align: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select-input {
+  background-color: transparent;
+  font-size: inherit;
+  width: 100%;
+  padding: 0;
+  height: 100%;
+  border: 0;
+  text-align: left;
+}
+.select-input:focus {
+  outline: 0;
 }
 .select-input:disabled,
 .select-input.is-disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
   background: #fff;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.select.is-black {
+  border-color: #000;
+  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+  color: #000;
+}
+.select.is-white {
+  border-color: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+  color: #000;
+}
+.select.is-primary {
+  border-color: var(--mainColor);
+  background-image: linear-gradient(45deg, transparent 50%, var(--mainColor) 50%), linear-gradient(135deg, var(--mainColor) 50%, transparent 50%);
+  color: var(--mainColor);
+}
+.select.is-danger {
+  border-color: #f42828;
+  background-image: linear-gradient(45deg, transparent 50%, #f42828 50%), linear-gradient(135deg, #f42828 50%, transparent 50%);
+  color: #f42828;
+}
+.select.is-success {
+  border-color: #5fca16;
+  background-image: linear-gradient(45deg, transparent 50%, #5fca16 50%), linear-gradient(135deg, #5fca16 50%, transparent 50%);
+  color: #5fca16;
+}
+.select.is-info {
+  border-color: #1de9cf;
+  background-image: linear-gradient(45deg, transparent 50%, #1de9cf 50%), linear-gradient(135deg, #1de9cf 50%, transparent 50%);
+  color: #1de9cf;
+}
+.select.is-warning {
+  border-color: #ff9600;
+  background-image: linear-gradient(45deg, transparent 50%, #ff9600 50%), linear-gradient(135deg, #ff9600 50%, transparent 50%);
+  color: #ff9600;
+}
+.select.is-secondary {
+  border-color: #1a3aff;
+  background-image: linear-gradient(45deg, transparent 50%, #1a3aff 50%), linear-gradient(135deg, #1a3aff 50%, transparent 50%);
+  color: #1a3aff;
 }
 .select.is-rounded .select-input {
   border-radius: 10em;
 }
-.select.is-black .select-input {
-  border-color: #000;
-  color: #000;
-  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
-}
-.select.is-white .select-input {
-  border-color: #fff;
-  color: #000;
-  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
-}
-.select.is-primary .select-input {
-  border-color: #eb008b;
-  color: #eb008b;
-  background-image: linear-gradient(45deg, transparent 50%, #eb008b 50%), linear-gradient(135deg, #eb008b 50%, transparent 50%);
-}
-.select.is-secondary .select-input {
-  border-color: #1a3aff;
-  color: #1a3aff;
-  background-image: linear-gradient(45deg, transparent 50%, #1a3aff 50%), linear-gradient(135deg, #1a3aff 50%, transparent 50%);
-}
-.select.is-danger .select-input {
-  border-color: #f42828;
-  color: #f42828;
-  background-image: linear-gradient(45deg, transparent 50%, #f42828 50%), linear-gradient(135deg, #f42828 50%, transparent 50%);
-}
-.select.is-success .select-input {
-  border-color: #5fca16;
-  color: #5fca16;
-  background-image: linear-gradient(45deg, transparent 50%, #5fca16 50%), linear-gradient(135deg, #5fca16 50%, transparent 50%);
-}
-.select.is-info .select-input {
-  border-color: #1de9cf;
-  color: #1de9cf;
-  background-image: linear-gradient(45deg, transparent 50%, #1de9cf 50%), linear-gradient(135deg, #1de9cf 50%, transparent 50%);
-}
-.select.is-warning .select-input {
-  border-color: #ff9600;
-  color: #ff9600;
-  background-image: linear-gradient(45deg, transparent 50%, #ff9600 50%), linear-gradient(135deg, #ff9600 50%, transparent 50%);
-}
 .select:disabled,
 .select.is-disabled {
-  cursor: not-allowed;
   opacity: 0.7;
+  cursor: not-allowed;
 }
 .select.is-disabled {
-  pointer-events: none;
   opacity: 0.7;
+  pointer-events: none;
 }
 .select-label {
   display: -ms-inline-flexbox;
@@ -2870,10 +2903,10 @@ pre {
   -ms-flex-align: center;
       align-items: center;
   overflow: hidden;
+  font-size: inherit;
+  padding: 0.15em;
   margin: 0 2px;
   margin-bottom: 4px;
-  padding: var(--padding);
-  min-width: 37px;
   border-radius: var(--borderRadius);
   background-color: #000;
   color: #fff;
@@ -2882,54 +2915,23 @@ pre {
   fill: #000;
   stroke-width: 0;
 }
-.select-input,
-.select-searchInput {
-  margin-bottom: var(--margin);
-  padding: var(--padding) calc(var(--padding) * 1.5);
-  width: 100%;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid var(--mainColor);
-  border-radius: var(--borderRadius);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  margin-bottom: 0;
-  text-align: left;
-  outline: 0;
-}
-.select-input:before {
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  display: block;
-  margin: 7px;
-  width: 0;
-  height: 0;
-  border-width: 4px 4px 0 4px;
-  border-style: solid;
-  border-color: #000 transparent transparent transparent;
-  content: '';
-  transition: 0.5s;
-}
-.select-input.is-active {
-  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
-}
-.select-input.is-active :after {
-  border-width: 0 4px 4px 4px;
-  border-color: transparent transparent #000 transparent;
-}
 .select-search {
   padding: 10px;
   width: 100%;
 }
 .select-menu {
   position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin: 0 calc( -2px + -2 * (100vw - 320px) / 2240 );
   z-index: 999;
-  width: 100%;
-  border-width: 0 2px 2px 2px;
+  border-width: 0 calc( 2px + 2 * (100vw - 320px) / 2240 ) calc( 2px + 2 * (100vw - 320px) / 2240 ) calc( 2px + 2 * (100vw - 320px) / 2240 );
   border-style: solid;
-  border-color: #000;
+  border-color: inherit;
   border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   background: #fff;
-  font-size: var(--fontSmall);
+  font-size: inherit;
 }
 .select-list {
   overflow: auto;
@@ -3014,9 +3016,8 @@ pre {
   left: 0;
   padding: var(--padding);
   width: 300px;
-  border: 2px solid #000;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
   border-radius: var(--borderRadius);
-  box-shadow: 0 2px 10px var(--shadow);
   background-color: #fff;
   color: #000;
   list-style: none;
@@ -3051,24 +3052,24 @@ pre {
 }
 .dropdown-menu:before {
   position: absolute;
-  top: -7px;
+  top: -0.5em;
   left: var(--padding);
   display: block;
   width: 0;
   height: 0;
-  border-width: 0 7px 7px 7px;
+  border-width: 0 0.5em 0.5em 0.5em;
   border-style: solid;
   border-color: transparent transparent #000 transparent;
   content: '';
 }
 .dropdown-menu:after {
   position: absolute;
-  top: -5px;
+  top: calc( -6px + 4 * (100vw - 320px) / 2240 );
   left: var(--padding);
   display: block;
   width: 0;
   height: 0;
-  border-width: 0 7px 7px 7px;
+  border-width: 0 0.5em 0.5em 0.5em;
   border-style: solid;
   border-color: transparent transparent #fff transparent;
   content: '';
