@@ -3,9 +3,7 @@
   justify-content: space-between
   margin: $margin 0
 
-  &-item,
-  &-next,
-  &-prev
+  &-item, &-next, &-prev
     position: relative
     display: inline-flex
     justify-content: center
@@ -13,21 +11,19 @@
     padding: $padding
     outline-width: 2px
     outline-offset: 1px
-    border: 2px solid $black
+    border: 2px solid $clBlack
     border-radius: $borderRadius
-    color: $black
+    color: $clBlack
     text-align: center
     text-decoration: none
     cursor: pointer
-    _icon-color: $black
-    @extends $normal
+    _icon-color: $clBlack
+    @extend $normal
 
-    &.is-active,
-    &:active,
-    &:hover:not(.is-disabled)
-      background-color: $black
-      color: $white
-      _icon-color: $white
+    &.is-active, &:active, &:hover:not(.is-disabled)
+      background-color: $clBlack
+      color: $clWhite
+      _icon-color: $clWhite
 
     &.is-disabled
       border-color: $gray
@@ -35,4 +31,4 @@
       _icon-color: $gray
 
     &:focus
-      outline-color: $blue
+      outline-color: $clSecondary

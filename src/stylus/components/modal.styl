@@ -10,7 +10,7 @@
   width: 100%
   border: 0
   border-radius: $borderRadius
-  background-color: $white
+  background-color: $clWhite
   @extend $normal
 
   p
@@ -54,26 +54,25 @@
     &:hover
       _icon-color: $gray
 
-  &,
-  &.is-black
-    border-color: $black
-    background-color: $black
-    color: $white
-    _icon-color: $white
+  &, &.is-black
+    border-color: $clBlack
+    background-color: $clBlack
+    color: $clWhite
+    _icon-color: $clWhite
 
   &.is-inverse
-    border: 2px solid $black
-    background-color: $white
-    color: $black
-    _icon-color: $black
+    border: 2px solid $clBlack
+    background-color: $clWhite
+    color: $clBlack
+    _icon-color: $clBlack
 
   &.is-blue
     background-color: $lightBlue
-    color: $blue
-    _icon-color: $blue
+    color: $clSecondary
+    _icon-color: $clSecondary
 
     &.is-inverse
-      border-color: $blue
+      border-color: $clSecondary
 
   &.is-red
     background-color: $lightRed
@@ -83,16 +82,16 @@
     &.is-inverse
       border-color: $red
 
-  &.is-green
+  &.is-success
     background-color: $lightGreen
-    color: $green
-    _icon-color: $green
+    color: $clSuccess
+    _icon-color: $clSuccess
 
     &.is-inverse
-      border-color: $green
+      border-color: $clSuccess
 
   &.is-inverse[class*='is-']
-    background-color: $white
+    background-color: $clWhite
 
   &.is-hidden
     display: none

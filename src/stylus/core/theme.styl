@@ -1,9 +1,30 @@
 ::selection
-  background: $blue
+  background: $clPrimary
+  color: $clWhite
 
 *::placeholder
-    color: $gray
+  color: $clBlack
+  opacity: 1
 
-html
+html, input, button
   direction: $direction
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+  font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+  font-weight: $weightDefault
+
+a
+  color: $clLink
+  cursor: pointer
+  text-decoration: none
+
+  &:hover
+    color: $clLinkHover
+
+img
+  max-width: 100%
+  height: auto
+
+strong, b
+  font-weight: $weightSuper
+
+pre
+  direction: ltr

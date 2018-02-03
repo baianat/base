@@ -17,8 +17,8 @@ multiple(value, times)
 _calc()
   if ($cssVar == true)
     return arguments[1]
+
   return convert(arguments)
-  
 
 unitRes(min, max, minScreen = 320, maxScreen = 2560)
   'calc( %spx + %s * (100vw - %spx) / %s )' % (min (max - min) minScreen (maxScreen - minScreen))

@@ -1,6 +1,78 @@
 .select
   position: relative
-  width: 300px
+  max-width: 100%
+  generateSizes()
+
+  &-input
+    background-image: linear-gradient(45deg, transparent 50%, $clBlack 50%), linear-gradient(135deg, $clBlack 50%, transparent 50%)
+    background-position: calc(100% - 0.8em) calc(50% + 0.1em), calc(100% - 0.4em) calc(50% + 0.1em)
+    background-size: 0.4em 0.4em, 0.4em 0.4em
+    background-repeat: no-repeat
+
+    &:disabled, &.is-disabled
+      cursor: not-allowed
+      opacity: 0.7
+      background: $clWhite
+
+  &.is-rounded
+    .select-input
+      border-radius: 10em
+
+  &.is-black
+    .select-input
+      border-color: $clBlack
+      color: $clBlack
+      background-image: linear-gradient(45deg, transparent 50%, $clBlack 50%), linear-gradient(135deg, $clBlack 50%, transparent 50%)
+
+  &.is-white
+    .select-input
+      border-color: $clWhite
+      color: $clBlack
+      background-image: linear-gradient(45deg, transparent 50%, $clBlack 50%), linear-gradient(135deg, $clBlack 50%, transparent 50%)
+
+  &.is-primary
+    .select-input
+      border-color: $clPrimary
+      color: $clPrimary
+      background-image: linear-gradient(45deg, transparent 50%, $clPrimary 50%), linear-gradient(135deg, $clPrimary 50%, transparent 50%)
+
+  &.is-secondary
+    .select-input
+      border-color: $clSecondary
+      color: $clSecondary
+      background-image: linear-gradient(45deg, transparent 50%, $clSecondary 50%), linear-gradient(135deg, $clSecondary 50%, transparent 50%)
+
+  &.is-danger
+    .select-input
+      border-color: $clDanger
+      color: $clDanger
+      background-image: linear-gradient(45deg, transparent 50%, $clDanger 50%), linear-gradient(135deg, $clDanger 50%, transparent 50%)
+
+  &.is-success
+    .select-input
+      border-color: $clSuccess
+      color: $clSuccess
+      background-image: linear-gradient(45deg, transparent 50%, $clSuccess 50%), linear-gradient(135deg, $clSuccess 50%, transparent 50%)
+
+  &.is-info
+    .select-input
+      border-color: $clInfo
+      color: $clInfo
+      background-image: linear-gradient(45deg, transparent 50%, $clInfo 50%), linear-gradient(135deg, $clInfo 50%, transparent 50%)
+
+  &.is-warning
+    .select-input
+      border-color: $clWarning
+      color: $clWarning
+      background-image: linear-gradient(45deg, transparent 50%, $clWarning 50%), linear-gradient(135deg, $clWarning 50%, transparent 50%)
+
+  &:disabled, &.is-disabled
+    cursor: not-allowed
+    opacity: 0.7
+
+  &.is-disabled
+    pointer-events: none
+    opacity: 0.7
 
   &-label
     display: inline-flex
@@ -12,15 +84,14 @@
     padding: $padding
     min-width: 37px
     border-radius: $borderRadius
-    background-color: $black
-    color: $white
+    background-color: $clBlack
+    color: $clWhite
     vertical-align: center
     line-height: 1
-    _icon-color: $black
+    _icon-color: $clBlack
     @extend $small
 
-  &-input,
-  &-searchInput
+  &-input, &-searchInput
     margin-bottom: $margin
     padding: $padding multiple($padding, 1.5)
     width: 100%
@@ -29,15 +100,14 @@
     -webkit-appearance: none
     -moz-appearance: none
     margin-bottom: 0
-    min-height: 47px
     text-align: left
+    outline: 0
 
   &-searchInput
-    @extends $tiny
+    @extend $tiny
 
-  &-input  
-    @extends $normal
-    &:after
+  &-input
+    &:before
       position: absolute
       top: 10px
       right: 5px
@@ -47,7 +117,7 @@
       height: 0
       border-width: 4px 4px 0 4px
       border-style: solid
-      border-color: $black transparent transparent transparent
+      border-color: $clBlack transparent transparent transparent
       content: ''
       transition: 0.5s
 
@@ -56,12 +126,11 @@
 
       :after
         border-width: 0 4px 4px 4px
-        border-color: transparent transparent $black transparent
+        border-color: transparent transparent $clBlack transparent
 
   &-search
     padding: 10px
     width: 100%
-  
 
   &-menu
     position: absolute
@@ -69,9 +138,9 @@
     width: 100%
     border-width: 0 2px 2px 2px
     border-style: solid
-    border-color: $black
+    border-color: $clBlack
     border-radius: 0 0 $borderRadius $borderRadius
-    background: $white
+    background: $clWhite
     font-size: $fontSmall
 
   &-list
@@ -93,15 +162,15 @@
     @extend $small
 
     &.is-selected
-      background-color: $black
-      color: $white
+      background-color: $clBlack
+      color: $clWhite
 
     &:not(.is-group)
       padding: $padding
 
       &:hover
-        background-color: $black
-        color: $white
+        background-color: $clBlack
+        color: $clWhite
         cursor: pointer
 
   &-childMenu
@@ -116,16 +185,16 @@
 
   &-childItem
     padding: $padding $padding $padding multiple($padding, 2)
-    color: $black
+    color: $clBlack
     cursor: pointer
 
     &.is-selected
-      background-color: $black
-      color: $white
+      background-color: $clBlack
+      color: $clWhite
 
     &:hover
-      background-color: $black
-      color: $white
+      background-color: $clBlack
+      color: $clWhite
 
   .is-visible
     display: block

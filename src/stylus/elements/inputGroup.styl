@@ -1,11 +1,10 @@
-$modifiers = 'tiny' 'small' 'normal' 'large' 'massive' 'rounded' 'black' 'inverse' 'disabled' 'blue' 'blue.is-inverse' 'green' 'green.is-inverse' 'red' 'red.is-inverse' 'white' 'white.is-inverse'
 
 .inputGroup
   display: flex
   margin-bottom: $margin
   generateSizes()
 
-  >*:not(.input-label)
+  >*:not(.inputGroup-label)
     margin-bottom: 0
 
   &-label
@@ -13,10 +12,10 @@ $modifiers = 'tiny' 'small' 'normal' 'large' 'massive' 'rounded' 'black' 'invers
     margin-bottom: $padding
     margin-{$endDir}: $margin
     white-space: nowrap
-    font-size: 1.7em
 
   &.has-label
     flex-wrap: wrap
+
   &.has-labelInline
     align-items: center
 
@@ -39,12 +38,15 @@ $modifiers = 'tiny' 'small' 'normal' 'large' 'massive' 'rounded' 'black' 'invers
     .input
       border-top-{$startDir}-radius: 0
       border-bottom-{$startDir}-radius: 0
+
   // generate all modifiers
   for modifier in $modifiers
     &.is-{modifier}
       >.button
-        @extends .button.is-{modifier}
+        @extend .button.is-{modifier} !optional
+
       >.input
-        @extends .input.is-{modifier} !optional
+        @extend .input.is-{modifier} !optional
+
       >.input-tag
-        @extends .input-tag.is-{modifier} !optional
+        @extend .input-tag.is-{modifier} !optional

@@ -8,55 +8,74 @@
   padding: $padding
   min-width: 37px
   border-radius: $borderRadius
-  background-color: $gray
-  color: $black
-  vertical-align: center
+  color: $clBlack
+  vertical-align: top
   line-height: 1
-  _icon-color: $black
+  _icon-color: $clBlack
   @extend $small
 
   img
     margin: -0.75em
     height: 2.5em
     vertical-align: top
+
   .icon
-    height: 14px
-  .icon:first-child:not(:last-child),
-  img:first-child:not(:last-child)
+    height: 1em
+    width: 1em
+
+  .icon:first-child:not(:last-child), img:first-child:not(:last-child)
     margin-{$endDir}: multiple($padding, (1 / 2))
 
-  .icon:last-child:not(:first-child),
-  img:last-child:not(:first-child)
+  .icon:last-child:not(:first-child), img:last-child:not(:first-child)
     margin-{$startDir}: multiple($padding, (1 / 2))
 
-  &,
-  &.is-black
-    background-color: $black
-    color: $white
-    _icon-color: $white
+  generateSizes()
 
-  &.is-green
-    background-color: $green
-    color: $white
-    _icon-color: $white
+  &, &.is-black
+    background-color: $clBlack
+    color: $clWhite
+    _icon-color: $clWhite
 
-  &.is-red
-    background-color: $red
-    color: $white
-    _icon-color: $white
+  &.is-success
+    background-color: $clSuccess
+    color: $clWhite
+    _icon-color: $clWhite
 
-  &.is-blue
-    background-color: $blue
-    color: $white
-    _icon-color: $white
+  &.is-danger
+    background-color: $clDanger
+    color: $clWhite
+    _icon-color: $clWhite
+
+  &.is-primary
+    background-color: $clPrimary
+    color: $clWhite
+    _icon-color: $clWhite
+
+  &.is-secondary
+    background-color: $clSecondary
+    color: $clWhite
+    _icon-color: $clWhite
+
+  &.is-info
+    background-color: $clInfo
+    color: $clWhite
+    _icon-color: $clWhite
+
+  &.is-warning
+    background-color: $clWarning
+    color: $clWhite
+    _icon-color: $clWhite
 
   &.is-white
-    background-color: $white
-    color: $black
-    _icon-color: $black
+    background-color: $clWhite
+    color: $clBlack
+    _icon-color: $clBlack
 
   &.is-rounded
     border-radius: 10em
+
+  &.is-block
+    display: flex
 
   &.is-float
     position: absolute

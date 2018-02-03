@@ -1,22 +1,20 @@
 .table
   overflow: hidden
   width: 100%
-  border: $border solid $black
+  border: $border solid $clBlack
   border-spacing: 0
   border-collapse: separate
   border-radius: $borderRadius
-  color: $black
-  text-align: left
+  color: $clBlack
+  text-align: $startDir
   @extend $normal
 
   &:not(:last-child)
     margin-bottom: $margin
 
-  th,
-  td    
-
+  th, td
     &:not(:last-child)
-      border-{$endDir}: $border solid $black
+      border-{$endDir}: $border solid $clBlack
 
       +mobile()
         border-right: 0
@@ -26,9 +24,10 @@
       width: 100%
 
   thead
-    background-color: $white
+    background-color: $clWhite
+
     th
-      border-bottom: $border solid $black
+      border-bottom: $border solid $clBlack
       padding: multiple($padding, 2) $padding
       font-weight: bold
 
@@ -36,20 +35,22 @@
         border-bottom: 0
 
   tfoot
-    background-color: $white
+    background-color: $clWhite
+
     th
-      border-top: $border solid $black
+      border-top: $border solid $clBlack
       padding: $padding
 
   tr
     +mobile()
       display: block
-      border-top: $border solid $black
+      border-top: $border solid $clBlack
 
   td
     padding: $padding
-    border-top: $border solid $black
-    background-color: $white
+    border-top: $border solid $clBlack
+    background-color: $clWhite
+
     +mobile()
       border: 0
 
@@ -59,21 +60,21 @@
     overflow-x: auto
     margin: $margin auto
     padding: $padding
-    border: $border solid $white
+    border: $border solid $clWhite
     border-radius: $borderRadius
-    background-color: $white
+    background-color: $clWhite
 
   &-sort
     float: right
-    border: $border solid $black
+    border: $border solid $clBlack
     border-radius: 50%
     padding: 0
     outline: 0
 
     &.is-active
-      background-color: $black
-      fill: $white
-      stroke: $white
+      background-color: $clBlack
+      fill: $clWhite
+      stroke: $clWhite
 
     &.is-desc
       transform: scaleY(-1)
@@ -81,21 +82,23 @@
   &.is-striped
     tr:nth-child(2n)
       td
-        background-color: $lightGray
+        background-color: lighten($clGray, 40%)
 
   &.is-relaxed
     border: 0
-    th,
-    td
-      border-right: 0
+
+    th, td
+      border-{$endDir}: 0
 
   &.is-center
     text-align: center
 
   &.is-top tbody
-      vertical-align: top
+    vertical-align: top
+
   &.is-bottom tbody
     vertical-align: bottom
+
   &.is-middle tbody
     vertical-align: middle
 
@@ -104,4 +107,3 @@
 
   &.is-large td
     padding: multiple($padding, 2) $padding
-

@@ -3,7 +3,7 @@
   margin: 0
   padding: 5px 10px
   width: 100%
-  background-color: $white
+  background-color: $clWhite
 
   &.is-fixed
     position: fixed
@@ -11,53 +11,57 @@
     left: 0
     right: 0
     transition: 0.4s
+
   &.is-inverse
-    background-color: $black
+    background-color: $clBlack
+
   &.is-hidden
     transform: translate3d(0, -100%, 0)
 
-  &-brand
-  &-start
-  &-end
+  &-brand, &-start, &-end
     display: flex
     flex-wrap: wrap
     align-items: center
 
   &-brand
-    padding: multiple($padding, 1/2) $padding
+    padding: multiple($padding, (1 / 2)) $padding
     height: multiple($font, 2.6875)
+
     img
       max-height: 100%
+
     &.is-white
       filter: brightness(0) invert(1)
+
   &-start
     flex: 1
 
   &-item
     display: block
     padding: $padding multiple($padding, 2)
-    color: $black
+    color: $clBlack
     text-decoration: none
     white-space: nowrap
     cursor: pointer
-    _icon-color: $black
-    @extends $normal
+    _icon-color: $clBlack
+    @extend $normal
+
     &.dropdown
       height: auto
-    &:hover,
-    &:focus
-      color: $blue
-      _icon-color: $blue
+
+    &:hover, &:focus
+      color: $clSecondary
+      _icon-color: $clSecondary
+
     ~/.is-inverse &
-      color: $white
-      _icon-color: $white
-      &:hover,
-      &:focus
-        color: $blue
-        _icon-color: $blue
-      
-    
+      color: $clWhite
+      _icon-color: $clWhite
+
+      &:hover, &:focus
+        color: $clSecondary
+        _icon-color: $clSecondary
+
     &.is-active
-      border-bottom: 4px solid $blue
+      border-bottom: 4px solid $clSecondary
       margin-bottom: -4px
-      color: $blue
+      color: $clSecondary

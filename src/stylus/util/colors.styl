@@ -1,29 +1,34 @@
 /**
- * colorful
+ * colors
  */
-$blue ?= #1700FF
-$lightBlue ?= lighten($blue, 80%)
-$green ?= #5FCA16
-$lightGreen ?= lighten($green, 80%)
-$red ?= #F42828
-$lightRed ?= lighten($red, 80%)
-
-$magenta ?= #EB008B
-$orange ?= #FF9600
-$purple ?= #A324EA
-$yellow ?= #FFD800
-$turquoise ?= #1DE9CF
-/**
- * gradient
- */
+$color ?= {
+  black: #000,
+  white: #fff,
+  magenta: #eb008b,
+  blue: #1a3aff,
+  cyan: #1de9cf,
+  green: #5fca16,
+  yellow: #ff9600,
+  red: #f42828,
+  gray: #cccccc,
+  purple: #a324ea
+}
 
 /**
- * grayscale
+ * theme colors
  */
-$white ?= #FFFFFF
-$gray ?= #AAAAAA
-$lightGray ?= lighten($gray, 80%)
-$black ?= #000000
-$shadow ?= alpha($black, 5%)
-
-$mainColor ?= $black
+$clPrimary ?= $color.magenta
+$clSecondary ?= $color.blue
+$clDanger ?= $color.red
+$clSuccess ?= $color.green
+$clWarning ?= $color.yellow
+$clInfo ?= $color.cyan
+$clBorder ?= $color.black
+$clBg ?= $color.white
+$clText ?= $color.black
+$clWhite ?= $color.white
+$clBlack ?= $color.black
+$clLink ?= $color.black
+$clLinkHover ?= $color.magenta
+$clPurple ?= $color.purple
+$clGray ?= $color.gray

@@ -1,41 +1,20 @@
 .radio
-  margin: multiple($margin, (1 / 2)) 0
-
-  &-label
-    display: inline-flex
-    color: $black
-    font-size: $font
-    line-height: 24px
-
-    &:hover
-      color: $mainColor
+  @extend .checkbox
 
   &-input
-    display: inline-flex
-    justify-content: center
-    align-items: center
-    width: 24px
-    height: 24px
-    border: 2px solid $black
-    border-radius: 50%
-    cursor: pointer
-    margin-{$endDir}: 12px
-    appearance: none
-    -webkit-appearance: none
-    -moz-appearance: none
-
-    &:focus
-      outline-color: $blue
-
-    &:checked:after
-      opacity: 1
-
     &:after
-      display: block
-      width: 8px
-      height: 8px
-      border-radius: 50%
-      background-color: $mainColor
-      content: ''
-      opacity: 0
+      width: 70%
+      height: 70%
+      background: $clBlack
+      transform: none
+      border: none
 
+    &:checked
+      background-color: $clWhite
+
+  &.is-rounded
+    .radio-input
+      border-radius: 10em
+
+      &:after
+        border-radius: 10em

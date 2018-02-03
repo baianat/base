@@ -1,10 +1,9 @@
-$modifiers = 'block' 'tiny' 'small' 'large' 'massive' 'rounded' 'black' 'inverse' 'disabled' 'blue' 'blue.is-inverse' 'green' 'green.is-inverse' 'red' 'red.is-inverse' 'white' 'white.is-inverse'
-
 .buttons
   display: flex
   flex-wrap: wrap
   align-items: center
   margin-bottom: $margin
+
   >.label
     z-index: 2
     margin: 0 -18.5px
@@ -12,10 +11,20 @@ $modifiers = 'block' 'tiny' 'small' 'large' 'massive' 'rounded' 'black' 'inverse
   +mobile()
     flex-direction: column
 
+  &.is-inverse
+    .button
+      &:not(:first-child):not(:last-child)
+        border-width: unitRes(2, 4)
+        border-{$startDir}-width: 0
+
+      &:last-child
+        border-{$startDir}-width: 0
+
   .button
     margin-bottom: 0
+
     &:not(:first-child):not(:last-child)
-      border-width: 2px 0
+      // border-width: unitRes(2, 4) 0
       border-radius: 0
 
     &:first-child
@@ -46,7 +55,7 @@ $modifiers = 'block' 'tiny' 'small' 'large' 'massive' 'rounded' 'black' 'inverse
   for modifier in $modifiers
     &.is-{modifier}
       >.button
-        @extend .button.is-{modifier}
+        @extend .button.is-{modifier} !optional
 
   &[disabled]
     >.button

@@ -10,12 +10,12 @@
   &-tag
     display: inline-flex
     padding: $padding multiple($padding, 1.5)
-    border: $border solid $black
+    border: $border solid $clBlack
     border-radius: $borderRadius
-    background-color: $black
+    background-color: $clBlack
     vertical-align: top
     text-align: center
-    _icon-color: $white
+    _icon-color: $clWhite
 
     .icon:first-child:not(:last-child)
       margin-right: multiple($padding, (1 / 2))
@@ -28,77 +28,120 @@
 
     &.is-rounded
       border-radius: 10em
+
     &.is-black
-      border-color: $black
-      background-color: $black
-      color: $black
-      _icon-color: $black
+      border-color: $clBlack
+      background-color: $clBlack
+      color: $clBlack
+      _icon-color: $clBlack
+
     &.is-white
-      border-color: $white
-      background-color: $white
-      color: $white
-      _icon-color: $white
-    &.is-blue
-      background-color: $blue
-      border-color: $blue
-      color: $blue
-      _icon-color: $blue
-    &.is-green
-      background-color: $green
-      border-color: $green
-      color: $green
-      _icon-color: $green
-    &.is-red
-      background-color: $red
-      border-color: $red
-      color: $red
-      _icon-color: $red
+      border-color: $clWhite
+      background-color: $clWhite
+      color: $clWhite
+      _icon-color: $clWhite
+
+    &.is-primary
+      border-color: $clPrimary
+      background-color: $clPrimary
+      color: $clPrimary
+      _icon-color: $clPrimary
+
+    &.is-secondary
+      border-color: $clSecondary
+      background-color: $clSecondary
+      color: $clSecondary
+      _icon-color: $clSecondary
+
+    &.is-danger
+      border-color: $clDanger
+      background-color: $clDanger
+      color: $clDanger
+      _icon-color: $clDanger
+
+    &.is-success
+      border-color: $clSuccess
+      background-color: $clSuccess
+      color: $clSuccess
+      _icon-color: $clSuccess
+
+    &.is-info
+      border-color: $clInfo
+      background-color: $clInfo
+      color: $clInfo
+      _icon-color: $clInfo
+
+    &.is-warning
+      border-color: $clWarning
+      background-color: $clWarning
+      color: $clWarning
+      _icon-color: $clWarning
+
     &.is-inverse
       background-color: transparent
-    &:not(.is-inverse):not(.is-clean),
-    .inputGroup:not(.is-inverse) >&:not(.is-clean)
-      color: $white
-      _icon-color: $white
+
+    &:not(.is-inverse):not(.is-clean), .inputGroup:not(.is-inverse) >&:not(.is-clean)
+      color: $clWhite
+      _icon-color: $clWhite
+
     &.is-clean
       position: relative
       background-color: white
       _icon-color: $gray
       border-{$endDir}: 0
       margin-{$endDir}: -2px
+
     &.is-disabled
-      opacity: 0.5
+      opacity: 0.9
       cursor: not-allowed
+
     generateSizes()
 
   /**
-    * modiffers
-    */
-  
+   * modiffers
+   */
   generateSizes()
 
   &.is-block
     width: 100%
 
   &.is-rounded
-    border-width: 2px
+    border-width: unitRes(2, 4)
     border-radius: 10em
 
   &.is-black
-    border-color: $black
-  &.is-blue
-    border-color: $blue
-  &.is-green
-    border-color: $green
-  &.is-red
-    border-color: $red
-  &.is-white
-    border-color: $white
+    border-color: $clBlack
 
-  &.is-disabled,
-  &[disabled]
-    opacity: 0.5
+  &.is-primary
+    border-color: $clPrimary
+
+  &.is-secondary
+    border-color: $clSecondary
+
+  &.is-info
+    border-color: $clInfo
+
+  &.is-success
+    border-color: $clSuccess
+
+  &.is-warning
+    border-color: $clWarning
+
+  &.is-danger
+    border-color: $clDanger
+
+  &.is-white
+    border-color: $clWhite
+
+  &:disabled, &.is-disabled
     cursor: not-allowed
+    background: $clBlack
+    color: $clWhite
+    border-color: $clBlack
+
+  &.is-disabled
+    pointer-events: none
 
   &:focus
     outline: none
-    border-color: $blue
+    border-color: $clSecondary

@@ -2,39 +2,56 @@
   display: block
   margin-bottom: $margin
   padding: $padding
-  width: 100%
+  min-width: 100%
+  max-width: 100%
   border: $border solid $mainColor
   border-radius: $borderRadius
   color: $mainColor
   text-align: $startDir
   line-height: 1.2
-  resize: none
 
   &:focus
     outline: 0
-    border-color: $blue
+    border-color: $clSecondary
 
   /**
-    * modiffers
-    */
+   * modiffers
+   */
   generateSizes()
 
   &.is-black
-    border-color: $black
-  &.is-blue
-    border-color: $blue
-  &.is-green
-    border-color: $green
-  &.is-red
-    border-color: $red
-  &.is-white
-    border-color: $white
+    border-color: $clBlack
 
-  &.is-disabled,
-  &[disabled]
-    opacity: 0.5
+  &.is-primary
+    border-color: $clPrimary
+
+  &.is-secondary
+    border-color: $clSecondary
+
+  &.is-info
+    border-color: $clInfo
+
+  &.is-success
+    border-color: $clSuccess
+
+  &.is-warning
+    border-color: $clWarning
+
+  &.is-danger
+    border-color: $clDanger
+
+  &.is-white
+    border-color: $clWhite
+
+  &:disabled, &.is-disabled
     cursor: not-allowed
+    background: $clBlack
+    color: $clWhite
+    border-color: $clBlack
+
+  &.is-disabled
+    pointer-events: none
 
   &:focus
     outline: none
-    border-color: $blue
+    border-color: $clSecondary
