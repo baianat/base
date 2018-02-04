@@ -2,19 +2,14 @@
   @extend .checkbox
 
   &-input
+    border-radius: 10em
     &:after
       width: 70%
       height: 70%
       background: $clBlack
       transform: none
       border: none
-
+      border-radius: 10em
+      
     &:checked
       background-color: $clWhite
-
-  &.is-rounded
-    .radio-input
-      border-radius: 10em
-
-      &:after
-        border-radius: 10em

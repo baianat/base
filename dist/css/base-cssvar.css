@@ -34,7 +34,6 @@
 .textarea.is-small,
 [tooltip]:after,
 .select.is-small,
-.select-label,
 .select-item {
   font-size: calc( 14px + 10 * (100vw - 320px) / 2240 );
 }
@@ -2228,10 +2227,6 @@ pre {
   display: inline-flex;
   margin-right: 0.8em;
 }
-.checkbox.is-rounded .checkbox-input,
-.radio.is-rounded .checkbox-input {
-  border-radius: 10em;
-}
 .checkbox.is-disabled,
 .radio.is-disabled,
 .checkbox[disabled],
@@ -2296,6 +2291,9 @@ pre {
   width: calc( 32px + 22 * (100vw - 320px) / 2240 );
   height: calc( 32px + 22 * (100vw - 320px) / 2240 );
 }
+.radio-input {
+  border-radius: 10em;
+}
 .radio-input:after {
   width: 70%;
   height: 70%;
@@ -2303,15 +2301,10 @@ pre {
   -ms-transform: none;
       transform: none;
   border: none;
+  border-radius: 10em;
 }
 .radio-input:checked {
   background-color: #fff;
-}
-.radio.is-rounded .radio-input {
-  border-radius: 10em;
-}
-.radio.is-rounded .radio-input:after {
-  border-radius: 10em;
 }
 .switcher {
   display: -ms-inline-flexbox;
@@ -2328,7 +2321,7 @@ pre {
   padding-right: 1.3em;
 }
 .switcher-input:checked + .switcher-body .switcher-handle {
-  left: calc(100% - 1.05em);
+  left: calc(100% - 1.3em);
 }
 .switcher-input:checked + .switcher-body .switcher-true {
   max-width: 40em;
@@ -2381,10 +2374,9 @@ pre {
 }
 .switcher-handle {
   position: absolute;
-  left: calc(0% + 0.25em);
-  top: 50%;
-  -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+  left: 0;
+  margin: 0.25em;
+  top: 0;
   display: block;
   width: 0.8em;
   height: 0.8em;
@@ -2826,6 +2818,8 @@ pre {
   -moz-appearance: none;
 }
 .select-input {
+  display: -ms-flexbox;
+  display: flex;
   background-color: transparent;
   font-size: inherit;
   width: 100%;
@@ -2833,6 +2827,7 @@ pre {
   height: 100%;
   border: 0;
   text-align: left;
+  min-height: 1em;
 }
 .select-input:focus {
   outline: 0;
@@ -2903,17 +2898,22 @@ pre {
   -ms-flex-align: center;
       align-items: center;
   overflow: hidden;
-  font-size: inherit;
-  padding: 0.15em;
-  margin: 0 2px;
-  margin-bottom: 4px;
+  font-size: 0.8em;
+  padding: 0.4em;
+  margin: 0.1em;
   border-radius: var(--borderRadius);
   background-color: #000;
   color: #fff;
-  vertical-align: center;
   line-height: 1;
-  fill: #000;
+  fill: #ccc;
   stroke-width: 0;
+}
+.select-labelDismiss {
+  width: 1em;
+  height: 1em;
+}
+.select-labelDismiss:hover {
+  fill: #f42828;
 }
 .select-search {
   padding: 10px;
@@ -2945,7 +2945,7 @@ pre {
   display: inline-flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 0.5em -0.3em -0.2em;
+  margin: -0.3em 0.5em -0.3em -0.5em;
   padding: 0;
 }
 .select-item {
