@@ -2364,11 +2364,11 @@ pre {
 .switcher-body p {
   font-size: 0.8em;
 }
-.switcher-body-true {
+.switcher-true {
   max-width: 0em;
   opacity: 0;
 }
-.switcher-body-false {
+.switcher-false {
   max-width: 40em;
   opacity: 1;
 }
