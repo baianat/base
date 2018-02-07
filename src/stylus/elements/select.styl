@@ -1,3 +1,14 @@
+$colors = {
+  primary: $clPrimary,
+  secondary: $clSecondary,
+  info: $clInfo,
+  success: $clSuccess,
+  warning: $clWarning,
+  danger: $clDanger,
+  white: $clWhite,
+  black: $clBlack
+}
+
 .select
   position: relative
   margin-bottom: $margin
@@ -19,28 +30,17 @@
 
   generateSizes()
 
-  &-searchInput
-    margin-bottom: $margin
-    margin-bottom: 0
-    padding: $padding multiple($padding, 1.5)
-    width: 100%
-    outline: 0
-    border: $border solid $clBlack
-    border-radius: $borderRadius
-    text-align: left
-    -webkit-appearance: none
-    -moz-appearance: none
-
   &-input
     display: flex
-    background-color: transparent
-    font-size: inherit
-    width: 100%
     padding: 0
-    height: 100%
     border: 0
+    background-color: transparent
+    color: inherit
     text-align: left
-    min-height: 1em
+    font-size: inherit
+    -webkit-appearance: textfield
+    -moz-appearance: none
+
     &:focus
       outline: 0
 
@@ -50,93 +50,43 @@
       opacity: 0.7
       cursor: not-allowed
 
-  &.is-black
-    border-color: $clBlack
-    background-image: linear-gradient(45deg, transparent 50%, $clBlack 50%), linear-gradient(135deg, $clBlack 50%, transparent 50%)
-    color: $clBlack
-
-  &.is-white
-    border-color: $clWhite
-    background-image: linear-gradient(45deg, transparent 50%, $clBlack 50%), linear-gradient(135deg, $clBlack 50%, transparent 50%)
-    color: $clBlack
-
-  &.is-primary
-    border-color: $clPrimary
-    background-image: linear-gradient(45deg, transparent 50%, $clPrimary 50%), linear-gradient(135deg, $clPrimary 50%, transparent 50%)
-    color: $clPrimary
-
-  &.is-danger
-    border-color: $clDanger
-    background-image: linear-gradient(45deg, transparent 50%, $clDanger 50%), linear-gradient(135deg, $clDanger 50%, transparent 50%)
-    color: $clDanger
-
-  &.is-success
-    border-color: $clSuccess
-    background-image: linear-gradient(45deg, transparent 50%, $clSuccess 50%), linear-gradient(135deg, $clSuccess 50%, transparent 50%)
-    color: $clSuccess
-
-  &.is-info
-    border-color: $clInfo
-    background-image: linear-gradient(45deg, transparent 50%, $clInfo 50%), linear-gradient(135deg, $clInfo 50%, transparent 50%)
-    color: $clInfo
-
-  &.is-warning
-    border-color: $clWarning
-    background-image: linear-gradient(45deg, transparent 50%, $clWarning 50%), linear-gradient(135deg, $clWarning 50%, transparent 50%)
-    color: $clWarning
-
-  &.is-secondary
-    border-color: $clSecondary
-    background-image: linear-gradient(45deg, transparent 50%, $clSecondary 50%), linear-gradient(135deg, $clSecondary 50%, transparent 50%)
-    color: $clSecondary
-
-  &.is-rounded
-    .select-input
-      border-radius: 10em
-
-  &:disabled,
-  &.is-disabled
-    opacity: 0.7
-    cursor: not-allowed
-
-  &.is-disabled
-    opacity: 0.7
-    pointer-events: none
+  &-labels
+    position: absolute
+    top: 0
+    left: 0
+    display: inline-flex
+    flex-wrap: wrap
+    margin-right: 2em
+    padding: 0
 
   &-label
     display: inline-flex
     justify-content: center
     align-items: center
     overflow: hidden
-    font-size: 0.8em
+    margin: 0.2em
     padding: 0.4em
-    margin: 0.1em
     border-radius: $borderRadius
     background-color: $clBlack
     color: $clWhite
+    font-size: 1em
     line-height: 1
-    _icon-color: $clGray
-  
+    _icon-color: currentColor
+
   &-labelDismiss
     width: 1em
     height: 1em
+
     &:hover
       fill: $clDanger
-
-  &-searchInput
-    @extends $tiny
-
-  &-search
-    padding: 10px
-    width: 100%
 
   &-menu
     position: absolute
     top: 100%
     right: 0
     left: 0
-    margin: 0 unitRes(-2, -4)
     z-index: 999
+    margin: 0 unitRes(-2, -4)
     border-width: 0 $border $border $border
     border-style: solid
     border-color: inherit
@@ -151,18 +101,9 @@
     max-height: 40vh
     list-style: none
 
-  &-labels
-    display: inline-flex
-    flex-wrap: wrap
-    margin: -0.3em 0.5em -0.3em -0.5em
-    padding: 0
-    
-
   &-item
     padding: 0
     width: 100%
-
-    @extends $small
 
     &.is-selected
       background-color: $clBlack
@@ -184,11 +125,10 @@
   &-childTitle
     display: block
     padding: $padding
-    color: $gray
+    color: $clGray
 
   &-childItem
     padding: $padding $padding $padding multiple($padding, 2)
-    color: $clBlack
     cursor: pointer
 
     &.is-selected
@@ -199,8 +139,33 @@
       background-color: $clBlack
       color: $clWhite
 
+  for $modifer, $clr in $colors
+    &.is-{$modifer}
+      border-color: $clr
+      background-image: linear-gradient(45deg, transparent 50%, $modifer == 'white' ? $clBlack : $clr 50%), linear-gradient(135deg, $modifer == 'white' ? $clBlack : $clr 50%, transparent 50%)
+      color: $modifer == 'white' ? $clBlack : $clr
+
+      .select-label,
+      .select-item.is-selected,
+      .select-item:not(.is-group):hover,
+      .select-childItem.is-selected,
+      .select-childItem:hover
+        background-color: $clr
+
   .is-visible
     display: block
 
   .is-hidden
     display: none
+
+  &.is-rounded
+    border-radius: 10em
+
+  &:disabled,
+  &.is-disabled
+    opacity: 0.7
+    cursor: not-allowed
+
+  &.is-disabled
+    opacity: 0.7
+    pointer-events: none
