@@ -1,6 +1,6 @@
 {
   "name": "@baianat/base.framework",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CSS framework based on Base design language",
   "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
   "main": "base.styl",
