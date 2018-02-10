@@ -1,15 +1,16 @@
 .radio
-  @extend .checkbox
+  @extends .checkbox
 
   &-input
     border-radius: 10em
+
     &:after
       width: 70%
       height: 70%
-      background: $clBlack
-      transform: none
       border: none
       border-radius: 10em
-      
+      background: $clBlack
+      transform: none
+
     &:checked
       background-color: $clWhite

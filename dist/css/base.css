@@ -14,7 +14,9 @@
 .radio.is-tiny,
 .switcher.is-tiny,
 .textarea.is-tiny,
-.select.is-tiny {
+.select.is-tiny,
+.pagination.is-tiny,
+.content.is-tiny {
   font-size: calc( 12px + 6 * (100vw - 320px) / 2240 );
 }
 .button.is-small,
@@ -32,7 +34,9 @@
 .switcher.is-small,
 .textarea.is-small,
 [tooltip]:after,
-.select.is-small {
+.select.is-small,
+.pagination.is-small,
+.content.is-small {
   font-size: calc( 14px + 10 * (100vw - 320px) / 2240 );
 }
 p,
@@ -66,7 +70,13 @@ body,
 .navbar-item,
 .pagination-item,
 .pagination-next,
-.pagination-prev {
+.pagination-prev,
+.pagination-first,
+.pagination-last,
+.pagination,
+.pagination.is-normal,
+.content,
+.content.is-normal {
   font-size: calc( 18px + 14 * (100vw - 320px) / 2240 );
 }
 .button.is-large,
@@ -82,7 +92,9 @@ body,
 .radio.is-large,
 .switcher.is-large,
 .textarea.is-large,
-.select.is-large {
+.select.is-large,
+.pagination.is-large,
+.content.is-large {
   font-size: calc( 24px + 18 * (100vw - 320px) / 2240 );
 }
 .button.is-massive,
@@ -98,7 +110,9 @@ body,
 .radio.is-massive,
 .switcher.is-massive,
 .textarea.is-massive,
-.select.is-massive {
+.select.is-massive,
+.pagination.is-massive,
+.content.is-massive {
   font-size: calc( 32px + 22 * (100vw - 320px) / 2240 );
 }
 html {
@@ -353,6 +367,15 @@ body {
 *::placeholder {
   color: #000;
   opacity: 1;
+}
+*::-webkit-input-placeholder:focus {
+  outline: 0;
+}
+*:-ms-input-placeholder:focus {
+  outline: 0;
+}
+*::placeholder:focus {
+  outline: 0;
 }
 html,
 input,
@@ -1280,8 +1303,8 @@ pre {
 .button.is-black,
 .buttons.is-black >.button,
 .inputGroup.is-black >.button {
-  border-color: #eb008b;
-  background-color: #eb008b;
+  border-color: #000;
+  background-color: #000;
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1299,17 +1322,17 @@ pre {
 .buttons.is-black >.button.is-active:not(.is-disabled):not([disabled]),
 .inputGroup.is-black >.button.is-active:not(.is-disabled):not([disabled]) {
   background-color: transparent;
-  color: #eb008b;
-  fill: #eb008b;
+  color: #000;
+  fill: #000;
   stroke-width: 0;
 }
 .button.is-inverse,
 .buttons.is-inverse >.button,
 .inputGroup.is-inverse >.button {
-  border-color: #eb008b;
+  border-color: #000;
   background-color: transparent;
-  color: #eb008b;
-  fill: #eb008b;
+  color: #000;
+  fill: #000;
   stroke-width: 0;
 }
 .button.is-inverse:hover:not(.is-disabled):not([disabled]),
@@ -1321,7 +1344,7 @@ pre {
 .button.is-inverse.is-active:not(.is-disabled):not([disabled]),
 .buttons.is-inverse >.button.is-active:not(.is-disabled):not([disabled]),
 .inputGroup.is-inverse >.button.is-active:not(.is-disabled):not([disabled]) {
-  background-color: #eb008b;
+  background-color: #000;
   color: #fff;
   fill: #fff;
   stroke-width: 0;
@@ -1905,7 +1928,7 @@ pre {
   margin-bottom: 10px;
   padding: 0.5em 0.75em;
   width: 100%;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #eb008b;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2265,11 +2288,11 @@ pre {
 .radio-input:after {
   width: 70%;
   height: 70%;
+  border: none;
+  border-radius: 10em;
   background: #000;
   -ms-transform: none;
       transform: none;
-  border: none;
-  border-radius: 10em;
 }
 .radio-input:checked {
   background-color: #fff;
@@ -2444,18 +2467,18 @@ pre {
   border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #fff;
   border-radius: 0;
   background-color: #fff;
+  width: 100%;
 }
 .table-sort {
   float: right;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
-  border-radius: 50%;
   padding: 0;
   outline: 0;
+  background: none;
+  border: none;
 }
 .table-sort.is-active {
-  background-color: #000;
-  fill: #fff;
-  stroke: #fff;
+  fill: #eb008b;
+  stroke: #eb008b;
 }
 .table-sort.is-desc {
   -ms-transform: scaleY(-1);
@@ -2495,9 +2518,8 @@ pre {
   padding: 0.5em;
   min-width: 100%;
   max-width: 100%;
-  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #eb008b;
+  border: calc( 2px + 2 * (100vw - 320px) / 2240 ) solid #000;
   border-radius: 0;
-  color: #eb008b;
   text-align: left;
   line-height: 1.2;
 /**
@@ -3117,41 +3139,38 @@ pre {
       justify-content: center;
   -ms-flex-align: stretch;
       align-items: stretch;
-  margin: 10px 0;
-  padding: 40px;
+  margin: 10px 8vw;
+  padding: calc( 20px + 40 * (100vw - 320px) / 2240 );
   width: 100%;
   border: 0;
   border-radius: 0;
   background-color: #fff;
+  max-height: calc(100vh - 40px);
 }
-.modal p {
-  margin: 0;
+.modal.is-small {
+  max-width: 800px;
 }
 .modal-header {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: calc( 20px + 40 * (100vw - 320px) / 2240 );
 }
 .modal-title {
   margin: 0;
 }
 .modal-body {
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   overflow: auto;
   padding: 0;
+  max-height: 50vh;
 }
 .modal-icon {
-  margin-right: 40px;
+  margin-right: calc( 20px + 40 * (100vw - 320px) / 2240 );
 }
 .modal-footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  margin-top: 40px;
+  margin-top: calc( 20px + 40 * (100vw - 320px) / 2240 );
+}
+.modal-footer .button {
+  margin-right: calc( 8px + 8 * (100vw - 320px) / 2240 );
 }
 .modal-footer >* {
   margin-bottom: 0;
@@ -3164,57 +3183,14 @@ pre {
   border: 0;
   background-color: transparent;
   right: 0;
+  cursor: pointer;
+  margin: calc( 16px + 16 * (100vw - 320px) / 2240 );
   fill: inherit;
   stroke-width: 0;
 }
 .modal-dismiss:hover {
-  fill: $gray;
+  fill: #eb008b;
   stroke-width: 0;
-}
-.modal,
-.modal.is-black {
-  border-color: #000;
-  background-color: #000;
-  color: #fff;
-  fill: #fff;
-  stroke-width: 0;
-}
-.modal.is-inverse {
-  border: 2px solid #000;
-  background-color: #fff;
-  color: #000;
-  fill: #000;
-  stroke-width: 0;
-}
-.modal.is-blue {
-  background-color: $lightBlue;
-  color: #1a3aff;
-  fill: #1a3aff;
-  stroke-width: 0;
-}
-.modal.is-blue.is-inverse {
-  border-color: #1a3aff;
-}
-.modal.is-red {
-  background-color: $lightRed;
-  color: $red;
-  fill: $red;
-  stroke-width: 0;
-}
-.modal.is-red.is-inverse {
-  border-color: $red;
-}
-.modal.is-success {
-  background-color: $lightGreen;
-  color: #5fca16;
-  fill: #5fca16;
-  stroke-width: 0;
-}
-.modal.is-success.is-inverse {
-  border-color: #5fca16;
-}
-.modal.is-inverse[class*='is-'] {
-  background-color: #fff;
 }
 .modal.is-hidden {
   display: none;
@@ -3236,7 +3212,8 @@ pre {
       align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: $shadow;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
 }
 .modal-container.is-hidden {
   display: none;
@@ -3275,10 +3252,6 @@ pre {
       flex-wrap: wrap;
   -ms-flex-align: center;
       align-items: center;
-}
-.navbar-brand {
-  padding: 0.25em 0.5em;
-  height: 43px;
 }
 .navbar-brand img {
   max-height: 100%;
@@ -3329,13 +3302,17 @@ pre {
 .pagination {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  -ms-flex-align: top;
+      align-items: top;
   margin: 10px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .pagination-item,
 .pagination-next,
-.pagination-prev {
+.pagination-prev,
+.pagination-first,
+.pagination-last {
   position: relative;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -3343,35 +3320,42 @@ pre {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  padding: 0.5em;
-  outline-width: 2px;
-  outline-offset: 1px;
-  border: 2px solid #000;
-  border-radius: 0;
-  color: #000;
-  text-align: center;
+  width: 2em;
+  height: 2em;
+  outline-width: 0;
+  outline-offset: 0;
+  border: none;
   text-decoration: none;
   cursor: pointer;
+  background: #fff;
+  font-size: inherit;
   fill: #000;
   stroke-width: 0;
 }
 .pagination-item.is-active,
 .pagination-next.is-active,
 .pagination-prev.is-active,
+.pagination-first.is-active,
+.pagination-last.is-active,
 .pagination-item:active,
 .pagination-next:active,
 .pagination-prev:active,
+.pagination-first:active,
+.pagination-last:active,
 .pagination-item:hover:not(.is-disabled),
 .pagination-next:hover:not(.is-disabled),
-.pagination-prev:hover:not(.is-disabled) {
-  background-color: #000;
-  color: #fff;
-  fill: #fff;
+.pagination-prev:hover:not(.is-disabled),
+.pagination-first:hover:not(.is-disabled),
+.pagination-last:hover:not(.is-disabled) {
+  color: #eb008b;
+  fill: #eb008b;
   stroke-width: 0;
 }
 .pagination-item.is-disabled,
 .pagination-next.is-disabled,
-.pagination-prev.is-disabled {
+.pagination-prev.is-disabled,
+.pagination-first.is-disabled,
+.pagination-last.is-disabled {
   border-color: $gray;
   color: $gray;
   fill: $gray;
@@ -3379,8 +3363,118 @@ pre {
 }
 .pagination-item:focus,
 .pagination-next:focus,
-.pagination-prev:focus {
-  outline-color: #1a3aff;
+.pagination-prev:focus,
+.pagination-first:focus,
+.pagination-last:focus {
+  outline-color: 0;
+}
+.pagination-item .icon,
+.pagination-next .icon,
+.pagination-prev .icon,
+.pagination-first .icon,
+.pagination-last .icon {
+  width: 1.4em;
+  height: 1.4em;
+}
+.content li + li {
+  margin-top: 0.25em;
+}
+.content p:not(:last-child),
+.content dl:not(:last-child),
+.content ol:not(:last-child),
+.content ul:not(:last-child),
+.content blockquote:not(:last-child),
+.content pre:not(:last-child),
+.content table:not(:last-child) {
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+.content h1 {
+  font-size: 2.4em;
+  margin-bottom: 0.5em;
+}
+.content h1:not(:first-child) {
+  margin-top: 1em;
+}
+.content h2 {
+  font-size: 2.2em;
+  margin-bottom: 0.5714em;
+}
+.content h2:not(:first-child) {
+  margin-top: 1.1428em;
+}
+.content h3 {
+  font-size: 2em;
+  margin-bottom: 0.6666em;
+}
+.content h3:not(:first-child) {
+  margin-top: 1.8em;
+}
+.content h4 {
+  font-size: 1.6em;
+  margin-bottom: 0.8em;
+}
+.content h5 {
+  font-size: 1.4em;
+  margin-bottom: 0.8888em;
+}
+.content h6 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.content blockquote {
+  border-left: 0.5em solid #eb008b;
+  padding: 0.5em;
+  margin: 0;
+}
+.content ol {
+  list-style: decimal outside;
+  margin-left: 1em;
+  margin-top: 1em;
+  padding: 0;
+}
+.content ul {
+  list-style: disc outside;
+  margin-left: 1em;
+  margin-top: 1em;
+  padding: 0;
+}
+.content ul ul {
+  list-style-type: circle;
+  margin-top: 0.5em;
+}
+.content ul ul ul {
+  list-style-type: square;
+}
+.content dd {
+  margin-left: 2em;
+}
+.content figure {
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: center;
+}
+.content figure:not(:first-child) {
+  margin-top: 2em;
+}
+.content figure:not(:last-child) {
+  margin-bottom: 2em;
+}
+.content figure img {
+  display: inline-block;
+}
+.content figure figcaption {
+  font-style: italic;
+}
+.content pre {
+  overflow-x: auto;
+  padding: 0.5em;
+  white-space: pre;
+  word-wrap: normal;
+}
+.content sup,
+.content sub {
+  font-size: 75%;
 }
 .add-sticky {
   position: -webkit-sticky;

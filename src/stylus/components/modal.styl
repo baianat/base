@@ -5,16 +5,17 @@
   flex-direction: column
   justify-content: center
   align-items: stretch
-  margin: $margin 0
+  margin: $margin $gutterFull
   padding: $modalSpacing
   width: 100%
   border: 0
   border-radius: $borderRadius
   background-color: $clWhite
+  max-height: calc(100vh - 40px)
   @extend $normal
 
-  p
-    margin: 0
+  &.is-small
+    max-width: 800px
 
   &-header
     position: relative
@@ -24,19 +25,19 @@
     margin: 0
 
   &-body
-    display: flex
     position: relative
     overflow: auto
     padding: 0
+    max-height: 50vh
 
   &-icon
     margin-{$endDir}: $modalSpacing
 
   &-footer
-    display: flex
-    flex-direction: row-reverse
-    justify-content: space-between
     margin-top: $modalSpacing
+
+    .button
+      margin-{$endDir}: unitRes(8, 16)
 
     >*
       margin-bottom: 0
@@ -49,49 +50,12 @@
     border: 0
     background-color: transparent
     {$endDir}: 0
+    cursor: pointer
+    margin: unitRes(16, 32)
     _icon-color: inherit
 
     &:hover
-      _icon-color: $gray
-
-  &, &.is-black
-    border-color: $clBlack
-    background-color: $clBlack
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-inverse
-    border: 2px solid $clBlack
-    background-color: $clWhite
-    color: $clBlack
-    _icon-color: $clBlack
-
-  &.is-blue
-    background-color: $lightBlue
-    color: $clSecondary
-    _icon-color: $clSecondary
-
-    &.is-inverse
-      border-color: $clSecondary
-
-  &.is-red
-    background-color: $lightRed
-    color: $red
-    _icon-color: $red
-
-    &.is-inverse
-      border-color: $red
-
-  &.is-success
-    background-color: $lightGreen
-    color: $clSuccess
-    _icon-color: $clSuccess
-
-    &.is-inverse
-      border-color: $clSuccess
-
-  &.is-inverse[class*='is-']
-    background-color: $clWhite
+      _icon-color: $clPrimary
 
   &.is-hidden
     display: none
@@ -109,7 +73,8 @@
     align-items: center
     width: 100%
     height: 100vh
-    background-color: $shadow
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 999
 
     &.is-hidden
       display: none

@@ -1,29 +1,29 @@
 .pagination
   display: flex
-  justify-content: space-between
+  align-items: top
   margin: $margin 0
+  flex-wrap: wrap
 
-  &-item, &-next, &-prev
+  &-item, &-next, &-prev, &-first, &-last
     position: relative
     display: inline-flex
     justify-content: center
     align-items: center
-    padding: $padding
-    outline-width: 2px
-    outline-offset: 1px
-    border: 2px solid $clBlack
-    border-radius: $borderRadius
-    color: $clBlack
-    text-align: center
+    width: 2em
+    height: 2em
+    outline-width: 0
+    outline-offset: 0
+    border: none
     text-decoration: none
     cursor: pointer
+    background: $clWhite
+    font-size: inherit
     _icon-color: $clBlack
     @extend $normal
 
     &.is-active, &:active, &:hover:not(.is-disabled)
-      background-color: $clBlack
-      color: $clWhite
-      _icon-color: $clWhite
+      color: $clPrimary
+      _icon-color: $clPrimary
 
     &.is-disabled
       border-color: $gray
@@ -31,4 +31,10 @@
       _icon-color: $gray
 
     &:focus
-      outline-color: $clSecondary
+      outline-color: 0
+
+    .icon
+      width: 1.4em
+      height: 1.4em
+
+  generateSizes()
