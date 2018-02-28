@@ -4,9 +4,7 @@
   "description": "CSS framework based on Base design language",
   "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
   "main": "base.styl",
-  "dependencies": {
-    "jstransformer-markdown-it": "^2.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.7",
     "del": "^3.0.0",
