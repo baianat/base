@@ -1,4 +1,5 @@
 .*
+Icon
 node_modules
 /test
 yarn.lock
