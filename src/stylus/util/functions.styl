@@ -20,5 +20,5 @@ _calc()
 
   return convert(arguments)
 
-unitRes(min, max, minScreen = 320, maxScreen = 2560)
+unitRes(min, max, minScreen = 768, maxScreen = 1920)
   'calc( %spx + %s * (100vw - %spx) / %s )' % (min (max - min) minScreen (maxScreen - minScreen))
