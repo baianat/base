@@ -2,7 +2,7 @@
   margin-bottom: $margin
   padding: $padding multiple($padding, 1.5)
   width: 100%
-  border: $border solid $clBlack
+  border: $border solid $black
   border-radius: $borderRadius
   -webkit-appearance: none
   -moz-appearance: none
@@ -10,12 +10,12 @@
   &-tag
     display: inline-flex
     padding: $padding multiple($padding, 1.5)
-    border: $border solid $clBlack
+    border: $border solid $black
     border-radius: $borderRadius
-    background-color: $clBlack
+    background-color: $black
     vertical-align: top
     text-align: center
-    _icon-color: $clWhite
+    _icon-color: $white
 
     .icon:first-child:not(:last-child)
       margin-right: multiple($padding, (1 / 2))
@@ -30,59 +30,59 @@
       border-radius: 10em
 
     &.is-black
-      border-color: $clBlack
-      background-color: $clBlack
-      color: $clBlack
-      _icon-color: $clBlack
+      border-color: $black
+      background-color: $black
+      color: $black
+      _icon-color: $black
 
     &.is-white
-      border-color: $clWhite
-      background-color: $clWhite
-      color: $clWhite
-      _icon-color: $clWhite
+      border-color: $white
+      background-color: $white
+      color: $white
+      _icon-color: $white
 
     &.is-primary
-      border-color: $clPrimary
-      background-color: $clPrimary
-      color: $clPrimary
-      _icon-color: $clPrimary
+      border-color: $primary
+      background-color: $primary
+      color: $primary
+      _icon-color: $primary
 
     &.is-secondary
-      border-color: $clSecondary
-      background-color: $clSecondary
-      color: $clSecondary
-      _icon-color: $clSecondary
+      border-color: $secondary
+      background-color: $secondary
+      color: $secondary
+      _icon-color: $secondary
 
     &.is-danger
-      border-color: $clDanger
-      background-color: $clDanger
-      color: $clDanger
-      _icon-color: $clDanger
+      border-color: $danger
+      background-color: $danger
+      color: $danger
+      _icon-color: $danger
 
     &.is-success
-      border-color: $clSuccess
-      background-color: $clSuccess
-      color: $clSuccess
-      _icon-color: $clSuccess
+      border-color: $success
+      background-color: $success
+      color: $success
+      _icon-color: $success
 
     &.is-info
-      border-color: $clInfo
-      background-color: $clInfo
-      color: $clInfo
-      _icon-color: $clInfo
+      border-color: $info
+      background-color: $info
+      color: $info
+      _icon-color: $info
 
     &.is-warning
-      border-color: $clWarning
-      background-color: $clWarning
-      color: $clWarning
-      _icon-color: $clWarning
+      border-color: $warning
+      background-color: $warning
+      color: $warning
+      _icon-color: $warning
 
     &.is-inverse
       background-color: transparent
 
     &:not(.is-inverse):not(.is-clean), .inputGroup:not(.is-inverse) >&:not(.is-clean)
-      color: $clWhite
-      _icon-color: $clWhite
+      color: $white
+      _icon-color: $white
 
     &.is-clean
       position: relative
@@ -110,38 +110,38 @@
     border-radius: 10em
 
   &.is-black
-    border-color: $clBlack
+    border-color: $black
 
   &.is-primary
-    border-color: $clPrimary
+    border-color: $primary
 
   &.is-secondary
-    border-color: $clSecondary
+    border-color: $secondary
 
   &.is-info
-    border-color: $clInfo
+    border-color: $info
 
   &.is-success
-    border-color: $clSuccess
+    border-color: $success
 
   &.is-warning
-    border-color: $clWarning
+    border-color: $warning
 
   &.is-danger
-    border-color: $clDanger
+    border-color: $danger
 
   &.is-white
-    border-color: $clWhite
+    border-color: $white
 
   &:disabled, &.is-disabled
     cursor: not-allowed
-    background: $clBlack
-    color: $clWhite
-    border-color: $clBlack
+    background: $black
+    color: $white
+    border-color: $black
 
   &.is-disabled
     pointer-events: none
 
   &:focus
     outline: none
-    border-color: $clSecondary
+    border-color: $secondary

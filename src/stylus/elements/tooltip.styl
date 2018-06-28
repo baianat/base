@@ -20,7 +20,7 @@
     height: 0
     border-width: 7px 7px 0 7px
     border-style: solid
-    border-color: $clBlack transparent transparent transparent
+    border-color: $black transparent transparent transparent
     content: ''
     opacity: 0
     transition: 0.4s
@@ -36,8 +36,8 @@
     visibility: hidden
     padding: $padding
     border-radius: $borderRadius
-    background-color: $clBlack
-    color: $clWhite
+    background-color: $black
+    color: $white
     content: attr(tooltip)
     white-space: nowrap
     opacity: 0
@@ -52,7 +52,7 @@
     top: initial
     bottom: -13px
     border-width: 0 7px 7px 7px
-    border-color: transparent transparent $clBlack transparent
+    border-color: transparent transparent $black transparent
 
   &:after
     top: auto
@@ -68,7 +68,7 @@
     top: 50%
     left: -13px
     border-width: 7px 0 7px 7px
-    border-color: transparent transparent transparent $clBlack
+    border-color: transparent transparent transparent $black
     transform: translate(0, -50%)
 
   &:after
@@ -83,7 +83,7 @@
     left: auto
     left: initial
     border-width: 7px 7px 7px 0
-    border-color: transparent $clBlack transparent transparent
+    border-color: transparent $black transparent transparent
     transform: translate(0, -50%)
 
   &:after
@@ -95,134 +95,134 @@
 
 [tooltip-color='primary']
   &:after
-    background: $clPrimary
+    background: $primary
 
   &:before
-    border-color: $clPrimary transparent transparent transparent
+    border-color: $primary transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clPrimary transparent
+      border-color: transparent transparent $primary transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clPrimary
+      border-color: transparent transparent transparent $primary
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clPrimary transparent transparent
+      border-color: transparent $primary transparent transparent
 
 [tooltip-color='secondary']
   &:after
-    background: $clSecondary
+    background: $secondary
 
   &:before
-    border-color: $clSecondary transparent transparent transparent
+    border-color: $secondary transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clSecondary transparent
+      border-color: transparent transparent $secondary transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clSecondary
+      border-color: transparent transparent transparent $secondary
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clSecondary transparent transparent
+      border-color: transparent $secondary transparent transparent
 
 [tooltip-color='info']
   &:after
-    background: $clInfo
+    background: $info
 
   &:before
-    border-color: $clInfo transparent transparent transparent
+    border-color: $info transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clInfo transparent
+      border-color: transparent transparent $info transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clInfo
+      border-color: transparent transparent transparent $info
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clInfo transparent transparent
+      border-color: transparent $info transparent transparent
 
 [tooltip-color='success']
   &:after
-    background: $clSuccess
+    background: $success
 
   &:before
-    border-color: $clSuccess transparent transparent transparent
+    border-color: $success transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clSuccess transparent
+      border-color: transparent transparent $success transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clSuccess
+      border-color: transparent transparent transparent $success
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clSuccess transparent transparent
+      border-color: transparent $success transparent transparent
 
 [tooltip-color='warning']
   &:after
-    background: $clWarning
+    background: $warning
 
   &:before
-    border-color: $clWarning transparent transparent transparent
+    border-color: $warning transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clWarning transparent
+      border-color: transparent transparent $warning transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clWarning
+      border-color: transparent transparent transparent $warning
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clWarning transparent transparent
+      border-color: transparent $warning transparent transparent
 
 [tooltip-color='danger']
   &:after
-    background: $clDanger
+    background: $danger
 
   &:before
-    border-color: $clDanger transparent transparent transparent
+    border-color: $danger transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clDanger transparent
+      border-color: transparent transparent $danger transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clDanger
+      border-color: transparent transparent transparent $danger
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clDanger transparent transparent
+      border-color: transparent $danger transparent transparent
 
 [tooltip-color='white']
   &:after
-    background: $clWhite
-    color: $clBlack
+    background: $white
+    color: $black
 
   &:before
-    border-color: $clWhite transparent transparent transparent
+    border-color: $white transparent transparent transparent
 
   &[tooltip-position='bottom']
     &:before
-      border-color: transparent transparent $clWhite transparent
+      border-color: transparent transparent $white transparent
 
   &[tooltip-position='left']
     &:before
-      border-color: transparent transparent transparent $clWhite
+      border-color: transparent transparent transparent $white
 
   &[tooltip-position='right']
     &:before
-      border-color: transparent $clWhite transparent transparent
+      border-color: transparent $white transparent transparent

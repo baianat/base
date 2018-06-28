@@ -15,7 +15,7 @@
   text-align: center
   text-decoration: none
   cursor: pointer
-  _icon-color: $clWhite
+  _icon-color: $white
 
   .icon
     font-size: 1em
@@ -38,7 +38,7 @@
     text-decoration: none
 
   &:focus
-    outline-color: $clSecondary
+    outline-color: $secondary
 
   /**
    * modiffers
@@ -53,58 +53,58 @@
     border-radius: 10em
 
   &, &.is-black
-    _button-color: $clBlack $clWhite
+    _button-color: $black $white
 
   &.is-inverse
-    _button-color: $clBlack $clWhite inverse
+    _button-color: $black $white inverse
 
   &.is-white
-    _button-color: $clWhite $clBlack
+    _button-color: $white $black
 
   &.is-white.is-inverse
-    _button-color: $clWhite $clBlack inverse
+    _button-color: $white $black inverse
 
   &.is-primary
-    _button-color: $clPrimary $clWhite
+    _button-color: $primary $white
 
   &.is-primary.is-inverse
-    _button-color: $clPrimary $clWhite inverse
+    _button-color: $primary $white inverse
 
   &.is-secondary
-    _button-color: $clSecondary $clWhite
+    _button-color: $secondary $white
 
   &.is-secondary.is-inverse
-    _button-color: $clSecondary $clWhite inverse
+    _button-color: $secondary $white inverse
 
   &.is-danger
-    _button-color: $clDanger $clWhite
+    _button-color: $danger $white
 
   &.is-danger.is-inverse
-    _button-color: $clDanger $clWhite inverse
+    _button-color: $danger $white inverse
 
   &.is-success
-    _button-color: $clSuccess $clWhite
+    _button-color: $success $white
 
   &.is-success.is-inverse
-    _button-color: $clSuccess $clWhite inverse
+    _button-color: $success $white inverse
 
   &.is-info
-    _button-color: $clInfo $clWhite
+    _button-color: $info $white
 
   &.is-info.is-inverse
-    _button-color: $clInfo $clWhite inverse
+    _button-color: $info $white inverse
 
   &.is-info
-    _button-color: $clInfo $clWhite
+    _button-color: $info $white
 
   &.is-info.is-inverse
-    _button-color: $clInfo $clWhite inverse
+    _button-color: $info $white inverse
 
   &.is-warning
-    _button-color: $clWarning $clWhite
+    _button-color: $warning $white
 
   &.is-warning.is-inverse
-    _button-color: $clWarning $clWhite inverse
+    _button-color: $warning $white inverse
 
   &.is-disabled, &[disabled]
     opacity: 0.9
@@ -114,8 +114,8 @@
     margin: 0
     border: 0
     background-color: transparent
-    color: $clBlack
-    _icon-color: $clBlack
+    color: $black
+    _icon-color: $black
 
   &.is-link
     padding-top: 0.3em
@@ -125,8 +125,8 @@
     padding-left: 0
     border: 0
     background-color: transparent
-    color: $clSecondary
-    _icon-color: $clSecondary
+    color: $secondary
+    _icon-color: $secondary
 
     &:after
       position: absolute
@@ -134,13 +134,13 @@
       content: ''
       width: 100%
       height: 0.15em
-      background-color: $clSecondary
+      background-color: $secondary
       bottom: 0
       left: 0
       right: 0
 
     &:hover:not(.is-disabled):not([disabled]), &:active:not(.is-disabled):not([disabled]), &.is-active:not(.is-disabled):not([disabled])
-      color: $clSecondary
+      color: $secondary
 
       &:after
         height: 0.25em

@@ -38,7 +38,7 @@ gulp.task('watch', () => {
  * Styles task
  */
 gulp.task('styles', () => {
-  gulp.src(['./base.styl', './base-cssvar.styl'])
+  gulp.src('./base.styl')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus({
@@ -84,8 +84,7 @@ gulp.task('production', sequence(
   'clean',
   'styles',
   'chnageEnv',
-  'styles',
-  'font'
+  'styles'
 ));
 
 /**

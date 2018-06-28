@@ -4,14 +4,14 @@
   padding: $padding
   min-width: 100%
   max-width: 100%
-  border: $border solid $clBlack
+  border: $border solid $black
   border-radius: $borderRadius
   text-align: $startDir
   line-height: 1.2
 
   &:focus
     outline: 0
-    border-color: $clSecondary
+    border-color: $secondary
 
   /**
    * modiffers
@@ -19,38 +19,38 @@
   generateSizes()
 
   &.is-black
-    border-color: $clBlack
+    border-color: $black
 
   &.is-primary
-    border-color: $clPrimary
+    border-color: $primary
 
   &.is-secondary
-    border-color: $clSecondary
+    border-color: $secondary
 
   &.is-info
-    border-color: $clInfo
+    border-color: $info
 
   &.is-success
-    border-color: $clSuccess
+    border-color: $success
 
   &.is-warning
-    border-color: $clWarning
+    border-color: $warning
 
   &.is-danger
-    border-color: $clDanger
+    border-color: $danger
 
   &.is-white
-    border-color: $clWhite
+    border-color: $white
 
   &:disabled, &.is-disabled
     cursor: not-allowed
-    background: $clBlack
-    color: $clWhite
-    border-color: $clBlack
+    background: $black
+    color: $white
+    border-color: $black
 
   &.is-disabled
     pointer-events: none
 
   &:focus
     outline: none
-    border-color: $clSecondary
+    border-color: $secondary
