@@ -1,13 +1,13 @@
-$headers = $header1 $header2 $header3 $header4 $header5 $header6
+$header-s = $header-1 $header-2 $header-3 $header-4 $header-5 $header-6
 
-for $header, $n in $headers
+for $header-, $n in $header-s
   h{$n + 1}, .h{$n + 1}
-    font-size: $header
+    font-size: $header-
 
 h1, h2, h3, h4, h5, h6
   margin: 0
   line-height: $lineheight
-  font-weight: $weightSuper
+  font-weight: $weight-super
 
 p, body
   @extend $normal

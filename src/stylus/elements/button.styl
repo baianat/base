@@ -23,10 +23,10 @@
     height: 1em
 
     &:first-child:not(:last-child)
-      margin-{$endDir}: multiple($padding, (1 / 2))
+      margin-{$dir-end}: multiple($padding, (1 / 2))
 
     &:last-child:not(:first-child)
-      margin-{$startDir}: multiple($padding, (1 / 2))
+      margin-{$dir-start}: multiple($padding, (1 / 2))
 
     &:only-child
       margin: 0 multiple($padding, (-1 / 2))
@@ -120,8 +120,8 @@
   &.is-link
     padding-top: 0.3em
     padding-bottom: 0.3em
-    padding-{$startDir}: 0
-    padding-{$endDir}: 0.7em
+    padding-{$dir-start}: 0
+    padding-{$dir-end}: 0.7em
     padding-left: 0
     border: 0
     background-color: transparent

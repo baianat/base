@@ -15,37 +15,40 @@ $paddingPx ?= 20px
 $modalSpacing ?= unitRes(20, 60)
 $borderRadius ?= 0
 $border ?= unitRes(2, 4)
-$fontTiny ?= 12px
-$fontSmall ?= 14px
+$font-tiny ?= 12px
+$font-small ?= 14px
 $font ?= 16px
-$fontLarge ?= 24px
-$fontMassive ?= 30px
+$font-large ?= 24px
+$font-massive ?= 30px
 $lineheight ?= 1.1875
-$header1 ?= unitRes(40, 200)
-$header2 ?= unitRes(30, 160)
-$header3 ?= unitRes(24, 120)
-$header4 ?= unitRes(20, 100)
-$header5 ?= unitRes(18, 80)
-$header6 ?= unitRes(14, 60)
-$weightDefault ?= 500
-$weightBold ?= 700
-$weightSuper ?= 900
-$sizing ?= {
-  tiny: unitRes(12, 18),
-  small: unitRes(14, 24),
-  normal: unitRes(18, 32),
-  large: unitRes(24, 42),
-  massive: unitRes(32, 54)
-}
+$header-1 ?= unitRes(40, 200)
+$header-2 ?= unitRes(30, 160)
+$header-3 ?= unitRes(24, 120)
+$header-4 ?= unitRes(20, 100)
+$header-5 ?= unitRes(18, 80)
+$header-6 ?= unitRes(14, 60)
+$weight-default ?= 500
+$weight-bold ?= 700
+$weight-super ?= 900
+
+/**
+ * elemets sizes
+ */
+$sizing-tiny ?= unitRes(12, 18)
+$size-small ?= unitRes(14, 24)
+$size-normal ?= unitRes(18, 32)
+$size-large ?= unitRes(24, 42)
+$size-massive ?= unitRes(32, 54)
+
 /**
  * grid
  */
 $columns ?= 12
-$direction ?= ltr
-$startDir ?= setDirection('start')
-$endDir ?= setDirection('end')
+$dir ?= ltr
+$dir-start ?= setDirection('start')
+$dir-end ?= setDirection('end')
 $gutter = 1.5625vw
-$gutterFull ?= 8vw
+$gutter-full ?= 8vw
 $container-mobile ?= calc(100% - 22px)
 $container-tablet ?= $tablet - (22 * 2)
 $container-desktop ?= $desktop - (22 * 3)

@@ -1,9 +1,9 @@
 /**
  * set the start and end direction based on
- * $direction variable
+ * $dir variable
  */
 setDirection(state)
-  if ($direction == 'ltr')
+  if ($dir == 'ltr')
     return state == 'start' ? left : right
 
   return state == 'start' ? right : left
