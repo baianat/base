@@ -1,6 +1,6 @@
 /**
  * set the start and end direction based on
- * $dir variable
+ * $dir variables
  */
 setDirection(state)
   if ($dir == 'ltr')
@@ -8,17 +8,30 @@ setDirection(state)
 
   return state == 'start' ? right : left
 
+/**
+ * use css calc fuction, if the cssVar is enabled
+ * when multiplication
+ */
 multiple(value, times)
   if ($cssVar == true)
     return 'calc(%s * %s)' % (value times)
 
   return value * times
 
-_calc()
-  if ($cssVar == true)
-    return arguments[1]
 
-  return convert(arguments)
+/**
+ * generate min and max values base on
+ * the current sacle ratio
+ */
+getMinMax(value)
+  $scaleRatio = 0.875
+  return {
+    min: value * $scaleRatio,
+    max: value
+  }
 
-unitRes(min, max, minScreen = 768, maxScreen = 1920)
+/**
+ * return the reponsive equation
+ */
+unitRes(min, max, minScreen = 768, maxScreen = 1360)
   'calc( %spx + %s * (100vw - %spx) / %s )' % (min (max - min) minScreen (maxScreen - minScreen))

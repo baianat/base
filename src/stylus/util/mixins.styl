@@ -46,27 +46,27 @@ _button-color(main, secondary, mode = 'default')
     color: mode == 'inverse' ? secondary : main
     _icon-color: mode == 'inverse' ? secondary : main
 
-_unit-min-max(unit, min, max)
+_unit-min-max(unit, size)
   &
-    {unit}: unitRes(min, max)
+    {unit}: unitRes(size.min, size.max)
     +mobile()
-      {unit}: unit(min, px)
-    +ultrawide()
-      {unit}: unit(max, px)
+      {unit}: unit(size.min, px)
+    +widescreen()
+      {unit}: unit(size.max, px)
 
 /**
  * modifiers mixins
  */
 $tiny
-  _unit-min-max: font-size $tiny-min $tiny-max
+  _unit-min-max: font-size $size-tiny
 $small
-  _unit-min-max: font-size $small-min $small-max
+  _unit-min-max: font-size $size-small
 $normal
-  _unit-min-max: font-size $normal-min $normal-max
+  _unit-min-max: font-size $size-normal
 $large
-  _unit-min-max: font-size $large-min $large-max
+  _unit-min-max: font-size $size-large
 $massive
-  _unit-min-max: font-size $massive-min $massive-max
+  _unit-min-max: font-size $size-massive
 
 generateSizes()
   &.is-tiny

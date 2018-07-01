@@ -10,21 +10,27 @@ $ultrawide ?= 1920px
 /**
  * elemets sizes
  */
-$tiny-min ?= 12
-$tiny-max ?= 18
-$small-min ?= 14
-$small-max ?= 24
-$normal-min ?= 18
-$normal-max ?= 32
-$large-min ?= 24
-$large-max ?= 42
-$massive-min ?= 32
-$massive-max ?= 54
+$size-tiny ?= getMinMax(12)
+$size-small ?= getMinMax(14)
+$size-normal ?= getMinMax(16)
+$size-large ?= getMinMax(20)
+$size-massive ?= getMinMax(24)
 
 
 /**
  * typography
  */
+$display-1 ?= getMinMax(68)
+$display-2 ?= getMinMax(60)
+$display-3 ?= getMinMax(52)
+$display-4 ?= getMinMax(48)
+$header-1 ?= getMinMax(40)
+$header-2 ?= getMinMax(32)
+$header-3 ?= getMinMax(28)
+$header-4 ?= $size-massive
+$header-5 ?= $size-large
+$header-6 ?= $size-normal
+
 $margin ?= 10px
 $padding ?= 0.5em
 $paddingPx ?= 20px
@@ -37,12 +43,6 @@ $font ?= 16px
 $font-large ?= 24px
 $font-massive ?= 30px
 $lineheight ?= 1.1875
-$header-1 ?= unitRes(40, 200)
-$header-2 ?= unitRes(30, 160)
-$header-3 ?= unitRes(24, 120)
-$header-4 ?= unitRes(20, 100)
-$header-5 ?= unitRes(18, 80)
-$header-6 ?= unitRes(14, 60)
 $weight-default ?= 500
 $weight-bold ?= 700
 $weight-super ?= 900
