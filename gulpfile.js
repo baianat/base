@@ -12,11 +12,6 @@ const gulpIf = require('gulp-if');
 
 const del = require('del');
 
-/**
- * browser Sync
- */
-const browserSync = require('browser-sync');
-const reload = browserSync.reload;
 
 let env = 'dev'
 
@@ -29,9 +24,6 @@ function isProduction() {
  */
 gulp.task('watch', () => {
   gulp.watch('./**/*.styl', ['styles']);
-  gulp.watch('./**/*.html', () => {
-    gulp.src('./**/*.html').pipe(reload({ stream: true }));
-  });
 });
 
 /**
@@ -50,7 +42,7 @@ gulp.task('styles', () => {
     .pipe(autoprefixer('last 5 version'))
     .pipe(gulpIf(!isProduction(), sourcemaps.write('.')))
     .pipe(gulp.dest('./dist/css'))
-    .pipe(reload({stream: true}));
+
 });
 
 /**
@@ -61,14 +53,6 @@ gulp.task('font', () => {
     .pipe(gulp.dest('./dist/font/'));
 });
 
-/**
- * Browser-sync task
- */
-gulp.task('browser-sync', () => {
-  browserSync.init({
-    proxy: 'base-framework.dev/test/index.html'
-  });
-})
 
 /**
  * Clean task
@@ -90,4 +74,4 @@ gulp.task('production', sequence(
 /**
  * Default task
  */
-gulp.task('default', ['styles', 'font', 'browser-sync', 'watch']);
+gulp.task('default', ['styles', 'watch']);

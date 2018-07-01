@@ -6,7 +6,6 @@
   "main": "base.styl",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.18.7",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
