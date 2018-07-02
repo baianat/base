@@ -2,7 +2,7 @@
   margin-bottom: $margin
   padding: $padding ($padding * 1.5)
   width: 100%
-  border: $border solid $black
+  border: $border solid $gray
   border-radius: $borderRadius
   -webkit-appearance: none
   -moz-appearance: none
@@ -10,9 +10,9 @@
   &-tag
     display: inline-flex
     padding: $padding ($padding * 1.5)
-    border: $border solid $black
+    border: $border solid $gray
     border-radius: $borderRadius
-    background-color: $black
+    background-color: $gray
     vertical-align: top
     text-align: center
     _icon-color: $white
@@ -26,61 +26,27 @@
     .icon:only-child
       margin: 0 ($padding * -0.5)
 
+    // generate size modifiers
+    generateSizes()
+
+    // generate color modifiers
+    for color in $modifiers-color
+      $color = lookup('$' + color)
+      &.is-{color}
+        border-color: $color
+        background-color: $color
+        color: $color
+        _icon-color: $color
+
+
     &.is-rounded
       border-radius: 10em
-
-    &.is-black
-      border-color: $black
-      background-color: $black
-      color: $black
-      _icon-color: $black
-
-    &.is-white
-      border-color: $white
-      background-color: $white
-      color: $white
-      _icon-color: $white
-
-    &.is-primary
-      border-color: $primary
-      background-color: $primary
-      color: $primary
-      _icon-color: $primary
-
-    &.is-secondary
-      border-color: $secondary
-      background-color: $secondary
-      color: $secondary
-      _icon-color: $secondary
-
-    &.is-danger
-      border-color: $danger
-      background-color: $danger
-      color: $danger
-      _icon-color: $danger
-
-    &.is-success
-      border-color: $success
-      background-color: $success
-      color: $success
-      _icon-color: $success
-
-    &.is-info
-      border-color: $info
-      background-color: $info
-      color: $info
-      _icon-color: $info
-
-    &.is-warning
-      border-color: $warning
-      background-color: $warning
-      color: $warning
-      _icon-color: $warning
 
     &.is-inverse
       background-color: transparent
 
-    &:not(.is-inverse):not(.is-clean), .inputGroup:not(.is-inverse) >&:not(.is-clean)
+    &:not(.is-inverse):not(.is-clean),
+    .inputGroup:not(.is-inverse) >&:not(.is-clean)
       color: $white
       _icon-color: $white
 
@@ -97,47 +63,26 @@
 
     generateSizes()
 
-  /**
-   * modiffers
-   */
+  // generate size modifiers
   generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      border-color: $color
 
   &.is-block
     width: 100%
 
   &.is-rounded
-    border-width: unitRes(2, 4)
+    border-width: $border
     border-radius: 10em
 
-  &.is-black
-    border-color: $black
-
-  &.is-primary
-    border-color: $primary
-
-  &.is-secondary
-    border-color: $secondary
-
-  &.is-info
-    border-color: $info
-
-  &.is-success
-    border-color: $success
-
-  &.is-warning
-    border-color: $warning
-
-  &.is-danger
-    border-color: $danger
-
-  &.is-white
-    border-color: $white
-
-  &:disabled, &.is-disabled
+  &:disabled,
+  &.is-disabled
     cursor: not-allowed
-    background: $black
-    color: $white
-    border-color: $black
+    background: $gray
 
   &.is-disabled
     pointer-events: none
