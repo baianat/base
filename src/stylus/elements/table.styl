@@ -28,7 +28,7 @@
 
     th
       border-bottom: $border solid $black
-      padding: multiple($padding, 2) $padding
+      padding: ($padding * 2) $padding
       font-weight: bold
 
       +mobile()
@@ -103,7 +103,7 @@
     vertical-align: middle
 
   &.is-small td
-    padding: multiple($padding, (1 / 2)) $padding
+    padding: ($padding * 0.5) $padding
 
   &.is-large td
-    padding: multiple($padding, 2) $padding
+    padding: ($padding * 2) $padding

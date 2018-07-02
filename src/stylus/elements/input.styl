@@ -1,6 +1,6 @@
 .input
   margin-bottom: $margin
-  padding: $padding multiple($padding, 1.5)
+  padding: $padding ($padding * 1.5)
   width: 100%
   border: $border solid $black
   border-radius: $borderRadius
@@ -9,7 +9,7 @@
 
   &-tag
     display: inline-flex
-    padding: $padding multiple($padding, 1.5)
+    padding: $padding ($padding * 1.5)
     border: $border solid $black
     border-radius: $borderRadius
     background-color: $black
@@ -18,13 +18,13 @@
     _icon-color: $white
 
     .icon:first-child:not(:last-child)
-      margin-right: multiple($padding, (1 / 2))
+      margin-right: ($padding * 0.5)
 
     .icon:last-child:not(:first-child)
-      margin-left: multiple($padding, (1 / 2))
+      margin-left: ($padding * 0.5)
 
     .icon:only-child
-      margin: 0 multiple($padding, (-1 / 2))
+      margin: 0 ($padding * -0.5)
 
     &.is-rounded
       border-radius: 10em

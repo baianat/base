@@ -13,7 +13,7 @@ $colors = {
   position: relative
   margin-bottom: $margin
   margin-bottom: 0
-  padding: $padding multiple($padding, 1.5)
+  padding: $padding ($padding * 1.5)
   max-width: 100%
   width: 100%
   outline: 0
@@ -128,7 +128,7 @@ $colors = {
     color: $gray
 
   &-childItem
-    padding: $padding $padding $padding multiple($padding, 2)
+    padding: $padding $padding $padding ($padding * 2)
     cursor: pointer
 
     &.is-selected

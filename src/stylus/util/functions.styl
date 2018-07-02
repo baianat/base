@@ -8,16 +8,6 @@ setDirection(state)
 
   return state == 'start' ? right : left
 
-/**
- * use css calc fuction, if the cssVar is enabled
- * when multiplication
- */
-multiple(value, times)
-  if ($cssVar == true)
-    return 'calc(%s * %s)' % (value times)
-
-  return value * times
-
 
 /**
  * generate min and max values base on

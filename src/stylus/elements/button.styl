@@ -4,7 +4,7 @@
   align-items: center
   justify-content: center
   margin-bottom: $margin
-  padding: $padding multiple($padding, 1.5)
+  padding: $padding ($padding * 1.5)
   outline-width: 2px
   outline-offset: 1px
   border-width: $border
@@ -30,16 +30,16 @@
 
   .icon
     &:first-child:not(:last-child)
-      margin-{$dir-end}: multiple($padding, 0.5)
+      margin-{$dir-end}: ($padding * 0.5)
 
     &:last-child:not(:first-child)
-      margin-{$dir-start}: multiple($padding, 0.5)
+      margin-{$dir-start}: ($padding * 0.5)
 
     &:only-child
-      margin: 0 multiple($padding, -0.5)
+      margin: 0 ($padding * -0.5)
 
   .label
-    margin: multiple($padding, -1) 0
+    margin: ($padding * -1) 0
 
   &.is-block
     width: 100%
