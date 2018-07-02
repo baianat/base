@@ -35,3 +35,13 @@ getMinMax(value)
  */
 unitRes(min, max, minScreen = 768, maxScreen = 1360)
   'calc( %spx + %s * (100vw - %spx) / %s )' % (min (max - min) minScreen (maxScreen - minScreen))
+
+
+/*
+ * check if the color name is a light color
+ */
+isLight(color)
+  if (color == 'white' || color == 'light' || color == 'gray' || color == 'secondary')
+    return true
+
+  return false

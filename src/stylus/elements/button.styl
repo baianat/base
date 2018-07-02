@@ -5,8 +5,8 @@
   justify-content: center
   margin-bottom: $margin
   padding: $padding multiple($padding, 1.5)
-  outline-width: 0
-  outline-offset: 0
+  outline-width: 2px
+  outline-offset: 1px
   border-width: $border
   border-style: solid
   border-radius: $borderRadius
@@ -15,35 +15,31 @@
   text-align: center
   text-decoration: none
   cursor: pointer
-  _icon-color: $white
+  transition: unit($transition-time, 's') unquote($transition-function)
+  _button-color: $primary $white
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+    &.is-{color}
+      _button-color: $accentColor $textColor
 
   .icon
-    font-size: 1em
-    width: 1em
-    height: 1em
-
     &:first-child:not(:last-child)
-      margin-{$dir-end}: multiple($padding, (1 / 2))
+      margin-{$dir-end}: multiple($padding, 0.5)
 
     &:last-child:not(:first-child)
-      margin-{$dir-start}: multiple($padding, (1 / 2))
+      margin-{$dir-start}: multiple($padding, 0.5)
 
     &:only-child
-      margin: 0 multiple($padding, (-1 / 2))
+      margin: 0 multiple($padding, -0.5)
 
   .label
     margin: multiple($padding, -1) 0
-
-  &:hover
-    text-decoration: none
-
-  &:focus
-    outline-color: $secondary
-
-  /**
-   * modiffers
-   */
-  generateSizes()
 
   &.is-block
     width: 100%
@@ -51,64 +47,6 @@
   &.is-rounded
     border-width: $border
     border-radius: 10em
-
-  &, &.is-black
-    _button-color: $black $white
-
-  &.is-inverse
-    _button-color: $black $white inverse
-
-  &.is-white
-    _button-color: $white $black
-
-  &.is-white.is-inverse
-    _button-color: $white $black inverse
-
-  &.is-primary
-    _button-color: $primary $white
-
-  &.is-primary.is-inverse
-    _button-color: $primary $white inverse
-
-  &.is-secondary
-    _button-color: $secondary $white
-
-  &.is-secondary.is-inverse
-    _button-color: $secondary $white inverse
-
-  &.is-danger
-    _button-color: $danger $white
-
-  &.is-danger.is-inverse
-    _button-color: $danger $white inverse
-
-  &.is-success
-    _button-color: $success $white
-
-  &.is-success.is-inverse
-    _button-color: $success $white inverse
-
-  &.is-info
-    _button-color: $info $white
-
-  &.is-info.is-inverse
-    _button-color: $info $white inverse
-
-  &.is-info
-    _button-color: $info $white
-
-  &.is-info.is-inverse
-    _button-color: $info $white inverse
-
-  &.is-warning
-    _button-color: $warning $white
-
-  &.is-warning.is-inverse
-    _button-color: $warning $white inverse
-
-  &.is-disabled, &[disabled]
-    opacity: 0.9
-    cursor: not-allowed
 
   &.is-clean
     margin: 0
@@ -122,11 +60,10 @@
     padding-bottom: 0.3em
     padding-{$dir-start}: 0
     padding-{$dir-end}: 0.7em
-    padding-left: 0
     border: 0
     background-color: transparent
-    color: $secondary
-    _icon-color: $secondary
+    color: $link
+    _icon-color: $link
 
     &:after
       position: absolute
@@ -134,13 +71,28 @@
       content: ''
       width: 100%
       height: 0.15em
-      background-color: $secondary
+      background-color: $link
       bottom: 0
       left: 0
       right: 0
 
-    &:hover:not(.is-disabled):not([disabled]), &:active:not(.is-disabled):not([disabled]), &.is-active:not(.is-disabled):not([disabled])
-      color: $secondary
+    &:hover
+    &:active
+    &.is-active
+      color: $link-hover
 
       &:after
+        background-color: $link-hover
         height: 0.25em
+
+  &:hover
+    text-decoration: none
+
+  &:focus
+    outline-color: $secondary
+    outline-style: solid
+
+  &.is-disabled
+  &[disabled]
+    opacity: 0.8
+    cursor: not-allowed

@@ -33,18 +33,30 @@ _icon-color(color)
   fill: color
   stroke-width: 0
 
-_button-color(main, secondary, mode = 'default')
-  border-color: main
-  background-color: mode == 'inverse' ? transparent : main
-  color: mode == 'inverse' ? main : secondary
-  _icon-color: mode == 'inverse' ? main : secondary
+_button-color(accent, text)
+  border-color: accent
+  background-color:  accent
+  color: text
+  _icon-color:  text
 
-  &:hover:not(.is-disabled):not([disabled]),
-  &:active:not(.is-disabled):not([disabled]),
-  &.is-active:not(.is-disabled):not([disabled])
-    background-color: mode == 'inverse' ? main : transparent
-    color: mode == 'inverse' ? secondary : main
-    _icon-color: mode == 'inverse' ? secondary : main
+  &.is-inverse
+    background-color: transparent
+    color: accent
+    _icon-color: accent
+
+  &:hover
+  &:active
+  &.is-active
+    border-color: darken(accent, 15%)
+    background-color: darken(accent, 15%)
+    color: text
+    _icon-color: text
+
+  &[disabled]
+    border-color: accent
+    background-color:  accent
+    color: text
+    _icon-color:  text
 
 _unit-min-max(unit, size)
   &

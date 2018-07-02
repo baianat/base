@@ -35,15 +35,15 @@ $margin ?= 10px
 $padding ?= 0.5em
 $paddingPx ?= 20px
 $modalSpacing ?= unitRes(20, 60)
-$borderRadius ?= 0
-$border ?= unitRes(2, 4)
+$borderRadius ?= 4px
+$border ?= 1px
 $font-tiny ?= 12px
 $font-small ?= 14px
 $font ?= 16px
 $font-large ?= 24px
 $font-massive ?= 30px
 $lineheight ?= 1.1875
-$weight-default ?= 500
+$weight-default ?= 400
 $weight-bold ?= 700
 $weight-super ?= 900
 
@@ -62,8 +62,21 @@ $container-tablet ?= $tablet - (22 * 2)
 $container-desktop ?= $desktop - (22 * 3)
 $container-widescreen ?= $widescreen - (22 * 4)
 $container-ultrawide ?= $ultrawide - (22 * 5)
+
+/**
+ * animation
+ */
+$transition-time ?= 0.4
+$transition-function ?= 'ease-in-out'
+
+/**
+ * modifiers
+ */
+$modifiers-size ?= 'tiny' 'small' 'normal' 'large' 'massive'
+$modifiers-style ?= 'block' 'disabled' 'rounded' 
+$modifiers-color ?= 'primary' 'secondary' 'info' 'success' 'warning' 'danger' 'black' 'white' 'dark' 'light'
+
 /**
  * Enable/Disable css variables
  */
 $cssVar ?= false
-$modifiers ?= 'block' 'tiny' 'small' 'normal' 'large' 'massive' 'rounded' 'black' 'inverse' 'disabled' 'primary' 'primary.is-inverse' 'secondary' 'secondary.is-inverse' 'info' 'info.is-inverse' 'success' 'success.is-inverse' 'warning' 'warning.is-inverse' 'danger' 'danger.is-inverse' 'white' 'white.is-inverse'
