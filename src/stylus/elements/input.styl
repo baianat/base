@@ -2,7 +2,8 @@
   margin-bottom: $margin
   padding: $padding ($padding * 1.5)
   width: 100%
-  border: $border solid $gray
+  outline: none
+  border: $border solid $gray-dark
   border-radius: $borderRadius
   -webkit-appearance: none
   -moz-appearance: none
@@ -70,13 +71,12 @@
   for color in $modifiers-color
     $color = lookup('$' + color)
     &.is-{color}
-      border-color: $color
+      _input-color: $color
 
   &.is-block
     width: 100%
 
   &.is-rounded
-    border-width: $border
     border-radius: 10em
 
   &:disabled,
@@ -88,5 +88,5 @@
     pointer-events: none
 
   &:focus
-    outline: none
-    border-color: $secondary
+    border-color: $primary
+    box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
