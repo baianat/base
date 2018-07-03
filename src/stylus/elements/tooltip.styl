@@ -11,7 +11,7 @@
 
   &:before
     position: absolute
-    top: -13px
+    top: 0
     left: 50%
     z-index: 99999
     display: block
@@ -24,12 +24,12 @@
     content: ''
     opacity: 0
     transition: 0.4s
-    transform: translate(-50%, 0)
+    transform: translateX(-50%) translateY(-100%)
     user-select: none
 
   &:after
     position: absolute
-    top: -64px
+    top: 0
     left: 50%
     z-index: 99999
     display: block
@@ -42,187 +42,56 @@
     white-space: nowrap
     opacity: 0
     transition: 0.4s
-    transform: translate(-50%, 0)
+    transform: translateX(-50%) translateY(-100%) translateY(-7px)
     user-select: none
-    @extend $small
+    @extends $small
 
 [tooltip-position='bottom']
   &:before
     top: auto
     top: initial
-    bottom: -13px
+    bottom: 0
     border-width: 0 7px 7px 7px
     border-color: transparent transparent $black transparent
+    transform: translateX(-50%) translateY(100%)
 
   &:after
     top: auto
     top: initial
-    bottom: -64px
+    bottom: 0
+    transform: translateX(-50%) translateY(100%) translateY(7px)
 
-[tooltip-rounded]
-  &:after
-    border-radius: 10em
 
 [tooltip-position='left']
   &:before
     top: 50%
-    left: -13px
+    left: 0
     border-width: 7px 0 7px 7px
     border-color: transparent transparent transparent $black
-    transform: translate(0, -50%)
+    transform: translateX(-100%) translateY(-50%)
 
   &:after
     top: 50%
-    left: -12px
-    transform: translate(-100%, -50%)
+    left: 0
+    transform: translateX(-100%) translateX(-7px) translateY(-50%)
 
 [tooltip-position='right']
   &:before
     top: 50%
-    right: -13px
+    right: 0
     left: auto
     left: initial
     border-width: 7px 7px 7px 0
     border-color: transparent $black transparent transparent
-    transform: translate(0, -50%)
+    transform: translateX(100%) translateY(-50%)
 
   &:after
     top: 50%
-    right: -12px
+    right: 0
     left: auto
     left: initial
-    transform: translate(100%, -50%)
+    transform: translateX(100%) translateX(7px) translateY(-50%)
 
-[tooltip-color='primary']
+[tooltip-rounded]
   &:after
-    background: $primary
-
-  &:before
-    border-color: $primary transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $primary transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $primary
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $primary transparent transparent
-
-[tooltip-color='secondary']
-  &:after
-    background: $secondary
-
-  &:before
-    border-color: $secondary transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $secondary transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $secondary
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $secondary transparent transparent
-
-[tooltip-color='info']
-  &:after
-    background: $info
-
-  &:before
-    border-color: $info transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $info transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $info
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $info transparent transparent
-
-[tooltip-color='success']
-  &:after
-    background: $success
-
-  &:before
-    border-color: $success transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $success transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $success
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $success transparent transparent
-
-[tooltip-color='warning']
-  &:after
-    background: $warning
-
-  &:before
-    border-color: $warning transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $warning transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $warning
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $warning transparent transparent
-
-[tooltip-color='danger']
-  &:after
-    background: $danger
-
-  &:before
-    border-color: $danger transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $danger transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $danger
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $danger transparent transparent
-
-[tooltip-color='white']
-  &:after
-    background: $white
-    color: $black
-
-  &:before
-    border-color: $white transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $white transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $white
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $white transparent transparent
+    border-radius: 10em
