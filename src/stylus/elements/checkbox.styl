@@ -1,5 +1,5 @@
 .checkbox
-  margin: unitRes(8, 16) 0
+  margin: $margin 0
   display: flex
   align-items: center
   cursor: pointer
@@ -14,16 +14,21 @@
     padding: 0
     width: 1.3em
     height: 1.3em
-    border: unitRes(2, 4) solid $black
+    border: $border solid $gray
     border-radius: $borderRadius
     cursor: pointer
     margin-{$dir-end}: 0.4em
+    outline: none
     appearance: none
     -webkit-appearance: none
     -moz-appearance: none
 
+    &:focus
+      border-color: $primary
+      box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
+
     &:checked
-      background-color: $black
+      background-color: $light
 
       &:after
         opacity: 1
@@ -33,25 +38,24 @@
       opacity: 0
       width: 0.2em
       height: 0.5em
-      border: solid $white
+      border: solid $primary
       border-width: 0 0.13em 0.13em 0
       content: ''
       transform: translate3d(0, -0.1em, 0) rotate(45deg)
 
-    &[disabled]
+    ~/.is-disabled &
+    ~/[disabled] &
       opacity: 0.6
       cursor: not-allowed
+      pointer-events: none
 
   &.is-inline
     display: inline-flex
     margin-{$dir-end}: 0.8em
 
-  &.is-disabled, &[disabled]
-    cursor: not-allowed
+  &.is-disabled
+  &[disabled]
     pointer-events: none
-
-    .checkbox-input, .radio-input
-      opacity: 0.6
-      cursor: not-allowed
+    cursor: not-allowed
 
   generateSizes()
