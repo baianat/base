@@ -7,7 +7,7 @@
   border-radius: $borderRadius
   color: $black
   text-align: $dir-start
-  @extend $normal
+  @extends $normal
 
   &:not(:last-child)
     margin-bottom: $margin
@@ -82,7 +82,7 @@
   &.is-striped
     tr:nth-child(2n)
       td
-        background-color: lighten($gray, 40%)
+        background-color: $light
 
   &.is-relaxed
     border: 0

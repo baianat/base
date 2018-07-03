@@ -52,11 +52,33 @@ _button-color(accent, text)
     color: text
     _icon-color: text
 
+  &:focus
+    box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
+
   &[disabled]
     border-color: accent
     background-color:  accent
     color: text
     _icon-color:  text
+
+_input-color(accent)
+  border-color: accent
+  &:focus
+    border-color: darken(accent, 15%)
+    box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
+
+_modal-color(accent, textColor)
+  background-color: lighten(accent, 90%)
+  color: textColor
+  _icon-color: textColor
+  &.is-outline
+    border-color: accent
+    color: accent
+    _icon-color: accent
+
+  &:focus
+    border-color: darken(accent, 15%)
+    box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
 
 _unit-min-max(unit, size)
   &
@@ -82,7 +104,7 @@ $massive
 
 generateSizes()
   &.is-tiny
-    @extend $tiny
+    @extends $tiny
   &.is-small
     @extends $small
   &,
@@ -91,4 +113,4 @@ generateSizes()
   &.is-large
     @extends $large
   &.is-massive
-    @extend $massive
+    @extends $massive

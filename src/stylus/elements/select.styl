@@ -1,14 +1,3 @@
-$colors = {
-  primary: $primary,
-  secondary: $secondary,
-  info: $info,
-  success: $success,
-  warning: $warning,
-  danger: $danger,
-  white: $white,
-  black: $black
-}
-
 .select
   position: relative
   margin-bottom: $margin
@@ -28,8 +17,9 @@ $colors = {
   -webkit-appearance: none
   -moz-appearance: none
 
-  generateSizes()
-
+  /*
+   * select elments
+   */
   &-input
     display: flex
     padding: 0
@@ -139,18 +129,24 @@ $colors = {
       background-color: $black
       color: $white
 
-  for $modifer, $clr in $colors
-    &.is-{$modifer}
-      border-color: $clr
-      background-image: linear-gradient(45deg, transparent 50%, $modifer == 'white' ? $black : $clr 50%), linear-gradient(135deg, $modifer == 'white' ? $black : $clr 50%, transparent 50%)
-      color: $modifer == 'white' ? $black : $clr
+  /*
+   * modifiers
+   */
+  generateSizes()
+
+  for color in $modifiers-color
+    $color = isLight(color) ? $black : lookup('$' + color)
+    &.is-{color}
+      border-color: $color
+      background-image: linear-gradient(45deg, transparent 50%, $color 50%), linear-gradient(135deg, $color 50%, transparent 50%)
+      color: $color
 
       .select-label,
       .select-item.is-selected,
       .select-item:not(.is-group):hover,
       .select-childItem.is-selected,
       .select-childItem:hover
-        background-color: $clr
+        background-color: $color
 
   .is-visible
     display: block
