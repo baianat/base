@@ -129,24 +129,14 @@
       background-color: $black
       color: $white
 
-  /*
-   * modifiers
-   */
+  // generate size modifiers
   generateSizes()
 
+  // generate color modifiers
   for color in $modifiers-color
     $color = isLight(color) ? $black : lookup('$' + color)
     &.is-{color}
-      border-color: $color
-      background-image: linear-gradient(45deg, transparent 50%, $color 50%), linear-gradient(135deg, $color 50%, transparent 50%)
-      color: $color
-
-      .select-label,
-      .select-item.is-selected,
-      .select-item:not(.is-group):hover,
-      .select-childItem.is-selected,
-      .select-childItem:hover
-        background-color: $color
+      _select-color: $color
 
   .is-visible
     display: block

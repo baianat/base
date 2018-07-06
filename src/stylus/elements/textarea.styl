@@ -5,31 +5,26 @@
   min-width: 100%
   max-width: 100%
   outline: none
-  border: $border solid $gray
+  border-width: $border
+  border-style: solid
   border-radius: $borderRadius
   text-align: $dir-start
   line-height: 1.2
-  /**
-   * modifiers
-   */
+  _textarea-color: $black
+
+  // generate size modifiers
   generateSizes()
 
+  // generate color modifiers
   for color in $modifiers-color
     $color = lookup('$' + color)
     &.is-{color}
-      border-color: $color
-      &:focus
-        border-color: $color
-        box-shadow: 0 0 0 $outline alpha($color, $outline-opacity)
+      _textarea-color: $color
 
   &:disabled, &.is-disabled
     cursor: not-allowed
     background: $gray
     color: $white
     pointer-events: none
-
-  &:focus
-    border-color: $primary
-    box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
 
 

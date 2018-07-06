@@ -10,8 +10,9 @@
   border-radius: $borderRadius
   color: $black
   vertical-align: top
+  font-weight: $weight-light 
   line-height: 1
-  _icon-color: $black
+  _label-color: $gray $white
   @extends $small
 
   img
@@ -29,47 +30,15 @@
   .icon:last-child:not(:first-child), img:last-child:not(:first-child)
     margin-{$dir-start}: ($padding * 0.5)
 
+  // generate size modifiers
   generateSizes()
 
-  &, &.is-black
-    background-color: $black
-    color: $white
-    _icon-color: $white
-
-  &.is-success
-    background-color: $success
-    color: $white
-    _icon-color: $white
-
-  &.is-danger
-    background-color: $danger
-    color: $white
-    _icon-color: $white
-
-  &.is-primary
-    background-color: $primary
-    color: $white
-    _icon-color: $white
-
-  &.is-secondary
-    background-color: $secondary
-    color: $white
-    _icon-color: $white
-
-  &.is-info
-    background-color: $info
-    color: $white
-    _icon-color: $white
-
-  &.is-warning
-    background-color: $warning
-    color: $white
-    _icon-color: $white
-
-  &.is-white
-    background-color: $white
-    color: $black
-    _icon-color: $black
+  // generate color modifiers
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+    &.is-{color}
+      _label-color: $accentColor $textColor
 
   &.is-rounded
     border-radius: 10em
