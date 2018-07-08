@@ -1,12 +1,16 @@
 .input-tag
   display: inline-flex
   padding: $padding ($padding * 1.5)
-  border: $border solid $gray
+  border-width: $border
+  border-style: solid
   border-radius: $borderRadius
-  background-color: $gray
   vertical-align: top
   text-align: center
-  _icon-color: $white
+  border-color: $gray
+  background-color: $gray
+  color: $dark
+  _icon-color: $dark
+
 
   .icon:first-child:not(:last-child)
     margin-right: ($padding * 0.5)
@@ -26,8 +30,8 @@
     &.is-{color}
       border-color: $color
       background-color: $color
-      color: $color
-      _icon-color: $color
+      color: $white
+      _icon-color: $white
 
 
   &.is-rounded
@@ -36,10 +40,6 @@
   &.is-inverse
     background-color: transparent
 
-  &:not(.is-inverse):not(.is-clean),
-  .inputGroup:not(.is-inverse) >&:not(.is-clean)
-    color: $white
-    _icon-color: $white
 
   &.is-clean
     position: relative
