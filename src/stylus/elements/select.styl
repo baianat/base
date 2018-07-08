@@ -5,8 +5,9 @@
   padding: $padding ($padding * 1.5)
   max-width: 100%
   width: 100%
-  outline: 0
-  border: $border solid $black
+  outline: none
+  border-width: $border
+  border-style: solid
   border-radius: $borderRadius
   background-color: $white
   background-image: linear-gradient(45deg, transparent 50%, $black 50%), linear-gradient(135deg, $black 50%, transparent 50%)
@@ -16,6 +17,7 @@
   text-align: left
   -webkit-appearance: none
   -moz-appearance: none
+  _select-color: $gray $primary
 
   /*
    * select elments
@@ -24,6 +26,7 @@
     display: flex
     padding: 0
     border: 0
+    outline: none
     background-color: transparent
     color: inherit
     text-align: left
@@ -31,14 +34,8 @@
     -webkit-appearance: textfield
     -moz-appearance: none
 
-    &:focus
-      outline: 0
-
-    &:disabled,
-    &.is-disabled
-      background: $white
-      opacity: 0.7
-      cursor: not-allowed
+  select
+    display: none
 
   &-labels
     position: absolute
@@ -66,9 +63,10 @@
   &-labelDismiss
     width: 1em
     height: 1em
+    color: currentColor
 
     &:hover
-      fill: $danger
+      fill: $gray
 
   &-menu
     position: absolute
@@ -76,7 +74,7 @@
     right: 0
     left: 0
     z-index: 999
-    margin: 0 unitRes(-2, -4)
+    margin: 0 (- $border)
     border-width: 0 $border $border $border
     border-style: solid
     border-color: inherit
@@ -95,17 +93,9 @@
     padding: 0
     width: 100%
 
-    &.is-selected
-      background-color: $black
-      color: $white
-
     &:not(.is-group)
       padding: $padding
-
-      &:hover
-        background-color: $black
-        color: $white
-        cursor: pointer
+      cursor: pointer
 
   &-childMenu
     margin: 0
@@ -120,14 +110,6 @@
   &-childItem
     padding: $padding $padding $padding ($padding * 2)
     cursor: pointer
-
-    &.is-selected
-      background-color: $black
-      color: $white
-
-    &:hover
-      background-color: $black
-      color: $white
 
   // generate size modifiers
   generateSizes()
@@ -151,6 +133,10 @@
   &.is-disabled
     opacity: 0.7
     cursor: not-allowed
+
+  &.is-active
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
 
   &.is-disabled
     opacity: 0.7
