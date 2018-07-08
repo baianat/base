@@ -11,7 +11,7 @@
 
   &:before
     position: absolute
-    top: -13px
+    top: 0
     left: 50%
     z-index: 99999
     display: block
@@ -20,209 +20,78 @@
     height: 0
     border-width: 7px 7px 0 7px
     border-style: solid
-    border-color: $clBlack transparent transparent transparent
+    border-color: $black transparent transparent transparent
     content: ''
     opacity: 0
     transition: 0.4s
-    transform: translate(-50%, 0)
+    transform: translateX(-50%) translateY(-100%)
     user-select: none
 
   &:after
     position: absolute
-    top: -64px
+    top: 0
     left: 50%
     z-index: 99999
     display: block
     visibility: hidden
     padding: $padding
     border-radius: $borderRadius
-    background-color: $clBlack
-    color: $clWhite
+    background-color: $black
+    color: $white
     content: attr(tooltip)
     white-space: nowrap
     opacity: 0
     transition: 0.4s
-    transform: translate(-50%, 0)
+    transform: translateX(-50%) translateY(-100%) translateY(-7px)
     user-select: none
-    @extend $small
+    @extends $small
 
 [tooltip-position='bottom']
   &:before
     top: auto
     top: initial
-    bottom: -13px
+    bottom: 0
     border-width: 0 7px 7px 7px
-    border-color: transparent transparent $clBlack transparent
+    border-color: transparent transparent $black transparent
+    transform: translateX(-50%) translateY(100%)
 
   &:after
     top: auto
     top: initial
-    bottom: -64px
+    bottom: 0
+    transform: translateX(-50%) translateY(100%) translateY(7px)
 
-[tooltip-rounded]
-  &:after
-    border-radius: 10em
 
 [tooltip-position='left']
   &:before
     top: 50%
-    left: -13px
+    left: 0
     border-width: 7px 0 7px 7px
-    border-color: transparent transparent transparent $clBlack
-    transform: translate(0, -50%)
+    border-color: transparent transparent transparent $black
+    transform: translateX(-100%) translateY(-50%)
 
   &:after
     top: 50%
-    left: -12px
-    transform: translate(-100%, -50%)
+    left: 0
+    transform: translateX(-100%) translateX(-7px) translateY(-50%)
 
 [tooltip-position='right']
   &:before
     top: 50%
-    right: -13px
+    right: 0
     left: auto
     left: initial
     border-width: 7px 7px 7px 0
-    border-color: transparent $clBlack transparent transparent
-    transform: translate(0, -50%)
+    border-color: transparent $black transparent transparent
+    transform: translateX(100%) translateY(-50%)
 
   &:after
     top: 50%
-    right: -12px
+    right: 0
     left: auto
     left: initial
-    transform: translate(100%, -50%)
+    transform: translateX(100%) translateX(7px) translateY(-50%)
 
-[tooltip-color='primary']
+[tooltip-rounded]
   &:after
-    background: $clPrimary
-
-  &:before
-    border-color: $clPrimary transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clPrimary transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clPrimary
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clPrimary transparent transparent
-
-[tooltip-color='secondary']
-  &:after
-    background: $clSecondary
-
-  &:before
-    border-color: $clSecondary transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clSecondary transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clSecondary
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clSecondary transparent transparent
-
-[tooltip-color='info']
-  &:after
-    background: $clInfo
-
-  &:before
-    border-color: $clInfo transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clInfo transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clInfo
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clInfo transparent transparent
-
-[tooltip-color='success']
-  &:after
-    background: $clSuccess
-
-  &:before
-    border-color: $clSuccess transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clSuccess transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clSuccess
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clSuccess transparent transparent
-
-[tooltip-color='warning']
-  &:after
-    background: $clWarning
-
-  &:before
-    border-color: $clWarning transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clWarning transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clWarning
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clWarning transparent transparent
-
-[tooltip-color='danger']
-  &:after
-    background: $clDanger
-
-  &:before
-    border-color: $clDanger transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clDanger transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clDanger
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clDanger transparent transparent
-
-[tooltip-color='white']
-  &:after
-    background: $clWhite
-    color: $clBlack
-
-  &:before
-    border-color: $clWhite transparent transparent transparent
-
-  &[tooltip-position='bottom']
-    &:before
-      border-color: transparent transparent $clWhite transparent
-
-  &[tooltip-position='left']
-    &:before
-      border-color: transparent transparent transparent $clWhite
-
-  &[tooltip-position='right']
-    &:before
-      border-color: transparent $clWhite transparent transparent
+    border-radius: 10em

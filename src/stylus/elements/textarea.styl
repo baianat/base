@@ -4,53 +4,27 @@
   padding: $padding
   min-width: 100%
   max-width: 100%
-  border: $border solid $clBlack
+  outline: none
+  border-width: $border
+  border-style: solid
   border-radius: $borderRadius
-  text-align: $startDir
+  text-align: $dir-start
   line-height: 1.2
+  _textarea-color: $gray $primary
 
-  &:focus
-    outline: 0
-    border-color: $clSecondary
-
-  /**
-   * modiffers
-   */
+  // generate size modifiers
   generateSizes()
 
-  &.is-black
-    border-color: $clBlack
-
-  &.is-primary
-    border-color: $clPrimary
-
-  &.is-secondary
-    border-color: $clSecondary
-
-  &.is-info
-    border-color: $clInfo
-
-  &.is-success
-    border-color: $clSuccess
-
-  &.is-warning
-    border-color: $clWarning
-
-  &.is-danger
-    border-color: $clDanger
-
-  &.is-white
-    border-color: $clWhite
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      _textarea-color: $color
 
   &:disabled, &.is-disabled
     cursor: not-allowed
-    background: $clBlack
-    color: $clWhite
-    border-color: $clBlack
-
-  &.is-disabled
+    background: $gray
+    color: $white
     pointer-events: none
 
-  &:focus
-    outline: none
-    border-color: $clSecondary
+

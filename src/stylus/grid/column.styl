@@ -21,7 +21,7 @@
 
     &.is-offset-{$n},
     &.is-offset-mobile-{$n}
-      margin-{$startDir}: ($n / $columns * 100) %
+      margin-{$dir-start}: ($n / $columns * 100) %
 
   +tablet()
     for $n in (0 .. $columns)
@@ -30,7 +30,7 @@
         min-width: ($n / $columns * 100) %
 
       &.is-offset-tablet-{$n}
-        margin-{$startDir}: ($n / $columns * 100) %
+        margin-{$dir-start}: ($n / $columns * 100) %
 
   +desktop()
     for $n in (0 .. $columns)
@@ -39,7 +39,7 @@
         min-width: ($n / $columns * 100) %
 
       &.is-offset-desktop-{$n}
-        margin-{$startDir}: ($n / $columns * 100) %
+        margin-{$dir-start}: ($n / $columns * 100) %
 
   +widescreen()
     for $n in (0 .. $columns)
@@ -48,7 +48,7 @@
         min-width: ($n / $columns * 100) %
 
       &.is-offset-widescreen-{$n}
-        margin-{$startDir}: ($n / $columns * 100) %
+        margin-{$dir-start}: ($n / $columns * 100) %
 
   +ultrawide()
     for $n in (0 .. $columns)
@@ -57,7 +57,7 @@
         min-width: ($n / $columns * 100) %
 
       &.is-offset-ultrawide-{$n}
-        margin-{$startDir}: ($n / $columns * 100) %
+        margin-{$dir-start}: ($n / $columns * 100) %
 
   &.is-middle
     align-self: center
@@ -69,5 +69,5 @@
     align-self: flex-end
 
   >.row
-    margin: 0 multiple($gutter, -1)
-    min-width: 'calc(100% + %s)' % multiple($gutter, 2)
+    margin: 0 ($gutter * -1)
+    min-width: 'calc(100% + %s)' % ($gutter * 2)

@@ -2,38 +2,19 @@
   display: inline
   vertical-align: middle
   line-height: inherit
+  font-size: 1em
+  width: 1em
+  height: 1em
 
-  &.is-green
-    _icon-color: $green
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      _icon-color: $color
 
-  &.is-blue
-    _icon-color: $clSecondary
-
-  &.is-red
-    _icon-color: $red
-
-  &.is-white
-    _icon-color: $clWhite
-
-  &.is-black
-    _icon-color: $clBlack
-
-  &.is-tiny
-    width: $sizing.tiny
-    height: $sizing.tiny
-
-  &.is-small
-    width: $sizing.small
-    height: $sizing.small
-
-  &, &.is-normal
-    width: $sizing.normal
-    height: $sizing.normal
-
-  &.is-large
-    width: $sizing.large
-    height: $sizing.large
-
-  &.is-massive
-    width: $sizing.massive
-    height: $sizing.massive
+  // generate size modifiers
+  for size in $modifiers-size
+    $size = lookup('$size-' + size)
+    &.is-{size}
+      _unit-min-max: width $size
+      _unit-min-max: height $size

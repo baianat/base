@@ -8,11 +8,12 @@
   padding: $padding
   min-width: 37px
   border-radius: $borderRadius
-  color: $clBlack
+  color: $black
   vertical-align: top
+  font-weight: $weight-light 
   line-height: 1
-  _icon-color: $clBlack
-  @extend $small
+  _label-color: $gray $white
+  @extends $small
 
   img
     margin: -0.75em
@@ -24,52 +25,20 @@
     width: 1em
 
   .icon:first-child:not(:last-child), img:first-child:not(:last-child)
-    margin-{$endDir}: multiple($padding, (1 / 2))
+    margin-{$dir-end}: ($padding * 0.5)
 
   .icon:last-child:not(:first-child), img:last-child:not(:first-child)
-    margin-{$startDir}: multiple($padding, (1 / 2))
+    margin-{$dir-start}: ($padding * 0.5)
 
+  // generate size modifiers
   generateSizes()
 
-  &, &.is-black
-    background-color: $clBlack
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-success
-    background-color: $clSuccess
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-danger
-    background-color: $clDanger
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-primary
-    background-color: $clPrimary
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-secondary
-    background-color: $clSecondary
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-info
-    background-color: $clInfo
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-warning
-    background-color: $clWarning
-    color: $clWhite
-    _icon-color: $clWhite
-
-  &.is-white
-    background-color: $clWhite
-    color: $clBlack
-    _icon-color: $clBlack
+  // generate color modifiers
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+    &.is-{color}
+      _label-color: $accentColor $textColor
 
   &.is-rounded
     border-radius: 10em
@@ -81,6 +50,6 @@
     position: absolute
     top: 0
     margin: 0
-    margin-top: multiple($padding, -2)
-    {$endDir}: 0
-    margin-{$endDir}: multiple($padding, -2)
+    margin-top: $padding * -2
+    {$dir-end}: 0
+    margin-{$dir-end}: $padding * -2

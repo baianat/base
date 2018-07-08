@@ -15,4 +15,7 @@ node_modules/
 .yarn-integrity
 
 # macOS folder icon
-Icon
+Icon/
+
+# dit folder
+dist

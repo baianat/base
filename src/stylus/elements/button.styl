@@ -4,9 +4,8 @@
   align-items: center
   justify-content: center
   margin-bottom: $margin
-  padding: $padding multiple($padding, 1.5)
-  outline-width: 0
-  outline-offset: 0
+  padding: $padding ($padding * 1.5)
+  outline: none
   border-width: $border
   border-style: solid
   border-radius: $borderRadius
@@ -15,35 +14,31 @@
   text-align: center
   text-decoration: none
   cursor: pointer
-  _icon-color: $clWhite
+  transition: unit($transition-time, 's') unquote($transition-function)
+  _button-color: $primary $white
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+    &.is-{color}
+      _button-color: $accentColor $textColor
 
   .icon
-    font-size: 1em
-    width: 1em
-    height: 1em
-
     &:first-child:not(:last-child)
-      margin-{$endDir}: multiple($padding, (1 / 2))
+      margin-{$dir-end}: ($padding * 0.5)
 
     &:last-child:not(:first-child)
-      margin-{$startDir}: multiple($padding, (1 / 2))
+      margin-{$dir-start}: ($padding * 0.5)
 
     &:only-child
-      margin: 0 multiple($padding, (-1 / 2))
+      margin: 0 ($padding * -0.5)
 
   .label
-    margin: multiple($padding, -1) 0
-
-  &:hover
-    text-decoration: none
-
-  &:focus
-    outline-color: $clSecondary
-
-  /**
-   * modiffers
-   */
-  generateSizes()
+    margin: ($padding * -1) 0
 
   &.is-block
     width: 100%
@@ -52,81 +47,22 @@
     border-width: $border
     border-radius: 10em
 
-  &, &.is-black
-    _button-color: $clBlack $clWhite
-
-  &.is-inverse
-    _button-color: $clBlack $clWhite inverse
-
-  &.is-white
-    _button-color: $clWhite $clBlack
-
-  &.is-white.is-inverse
-    _button-color: $clWhite $clBlack inverse
-
-  &.is-primary
-    _button-color: $clPrimary $clWhite
-
-  &.is-primary.is-inverse
-    _button-color: $clPrimary $clWhite inverse
-
-  &.is-secondary
-    _button-color: $clSecondary $clWhite
-
-  &.is-secondary.is-inverse
-    _button-color: $clSecondary $clWhite inverse
-
-  &.is-danger
-    _button-color: $clDanger $clWhite
-
-  &.is-danger.is-inverse
-    _button-color: $clDanger $clWhite inverse
-
-  &.is-success
-    _button-color: $clSuccess $clWhite
-
-  &.is-success.is-inverse
-    _button-color: $clSuccess $clWhite inverse
-
-  &.is-info
-    _button-color: $clInfo $clWhite
-
-  &.is-info.is-inverse
-    _button-color: $clInfo $clWhite inverse
-
-  &.is-info
-    _button-color: $clInfo $clWhite
-
-  &.is-info.is-inverse
-    _button-color: $clInfo $clWhite inverse
-
-  &.is-warning
-    _button-color: $clWarning $clWhite
-
-  &.is-warning.is-inverse
-    _button-color: $clWarning $clWhite inverse
-
-  &.is-disabled, &[disabled]
-    opacity: 0.9
-    cursor: not-allowed
-
   &.is-clean
     margin: 0
     border: 0
     background-color: transparent
-    color: $clBlack
-    _icon-color: $clBlack
+    color: $black
+    _icon-color: $black
 
   &.is-link
     padding-top: 0.3em
     padding-bottom: 0.3em
-    padding-{$startDir}: 0
-    padding-{$endDir}: 0.7em
-    padding-left: 0
+    padding-{$dir-start}: 0
+    padding-{$dir-end}: 0.7em
     border: 0
     background-color: transparent
-    color: $clSecondary
-    _icon-color: $clSecondary
+    color: $link
+    _icon-color: $link
 
     &:after
       position: absolute
@@ -134,13 +70,24 @@
       content: ''
       width: 100%
       height: 0.15em
-      background-color: $clSecondary
+      background-color: $link
       bottom: 0
       left: 0
       right: 0
 
-    &:hover:not(.is-disabled):not([disabled]), &:active:not(.is-disabled):not([disabled]), &.is-active:not(.is-disabled):not([disabled])
-      color: $clSecondary
+    &:hover
+    &:active
+    &.is-active
+      color: $link-hover
 
       &:after
+        background-color: $link-hover
         height: 0.25em
+
+  &:hover
+    text-decoration: none
+
+  &.is-disabled
+  &[disabled]
+    opacity: 0.8
+    cursor: not-allowed

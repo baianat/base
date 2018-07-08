@@ -6,53 +6,79 @@ $tablet ?= 768px
 $desktop ?= 991px
 $widescreen ?= 1360px
 $ultrawide ?= 1920px
+
+/**
+ * elemets sizes
+ */
+$size-tiny ?= getMinMax(12)
+$size-small ?= getMinMax(14)
+$size-normal ?= getMinMax(16)
+$size-large ?= getMinMax(20)
+$size-massive ?= getMinMax(24)
+
+
 /**
  * typography
  */
-$margin ?= 10px
-$padding ?= 0.5em
-$paddingPx ?= 20px
-$modalSpacing ?= unitRes(20, 60)
-$borderRadius ?= 0
-$border ?= unitRes(2, 4)
-$fontTiny ?= 12px
-$fontSmall ?= 14px
+$display-1 ?= getMinMax(68)
+$display-2 ?= getMinMax(60)
+$display-3 ?= getMinMax(52)
+$display-4 ?= getMinMax(48)
+$header-1 ?= getMinMax(40)
+$header-2 ?= getMinMax(32)
+$header-3 ?= getMinMax(28)
+$header-4 ?= $size-massive
+$header-5 ?= $size-large
+$header-6 ?= $size-normal
+
+$font-tiny ?= 12px
+$font-small ?= 14px
 $font ?= 16px
-$fontLarge ?= 24px
-$fontMassive ?= 30px
+$font-large ?= 24px
+$font-massive ?= 30px
 $lineheight ?= 1.1875
-$header1 ?= unitRes(40, 200)
-$header2 ?= unitRes(30, 160)
-$header3 ?= unitRes(24, 120)
-$header4 ?= unitRes(20, 100)
-$header5 ?= unitRes(18, 80)
-$header6 ?= unitRes(14, 60)
-$weightDefault ?= 500
-$weightBold ?= 700
-$weightSuper ?= 900
-$sizing ?= {
-  tiny: unitRes(12, 18),
-  small: unitRes(14, 24),
-  normal: unitRes(18, 32),
-  large: unitRes(24, 42),
-  massive: unitRes(32, 54)
-}
+$weight-light ?= 200
+$weight-default ?= 400
+$weight-bold ?= 700
+$weight-super ?= 900
+
+
 /**
  * grid
  */
 $columns ?= 12
-$direction ?= ltr
-$startDir ?= setDirection('start')
-$endDir ?= setDirection('end')
+$dir ?= ltr
+$dir-start ?= setDirection('start')
+$dir-end ?= setDirection('end')
 $gutter = 1.5625vw
-$gutterFull ?= 8vw
+$gutter-full ?= 8vw
 $container-mobile ?= calc(100% - 22px)
 $container-tablet ?= $tablet - (22 * 2)
 $container-desktop ?= $desktop - (22 * 3)
 $container-widescreen ?= $widescreen - (22 * 4)
 $container-ultrawide ?= $ultrawide - (22 * 5)
-/**
- * Enable/Disable css variables
+
+/*
+ * style
  */
-$cssVar ?= false
-$modifiers ?= 'block' 'tiny' 'small' 'normal' 'large' 'massive' 'rounded' 'black' 'inverse' 'disabled' 'primary' 'primary.is-inverse' 'secondary' 'secondary.is-inverse' 'info' 'info.is-inverse' 'success' 'success.is-inverse' 'warning' 'warning.is-inverse' 'danger' 'danger.is-inverse' 'white' 'white.is-inverse'
+$margin ?= 10px
+$padding ?= 0.5em
+$paddingPx ?= 20px
+$modal-spacing ?= 2.5em
+$borderRadius ?= 4px
+$border ?= 1px
+$outline ?= 3px
+$outline-opacity ?= 25%
+
+/**
+ * animation
+ */
+$transition-time ?= 0.4
+$transition-function ?= 'ease-in-out'
+
+/**
+ * modifiers
+ */
+$modifiers-size ?= 'tiny' 'small' 'normal' 'large' 'massive'
+$modifiers-style ?= 'block' 'disabled' 'rounded' 
+$modifiers-color ?= 'primary' 'secondary' 'info' 'success' 'warning' 'danger' 'black' 'white' 'dark' 'light'

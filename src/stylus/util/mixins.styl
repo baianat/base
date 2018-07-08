@@ -26,48 +26,31 @@ mobile()
     {block}
 
 
-/**
- * styling mixins
- */
-_icon-color(color)
-  fill: color
-  stroke-width: 0
-
-_button-color(main, secondary, mode = 'default')
-  border-color: main
-  background-color: mode == 'inverse' ? transparent : main
-  color: mode == 'inverse' ? main : secondary
-  _icon-color: mode == 'inverse' ? main : secondary
-
-  &:hover:not(.is-disabled):not([disabled]),
-  &:active:not(.is-disabled):not([disabled]),
-  &.is-active:not(.is-disabled):not([disabled])
-    background-color: mode == 'inverse' ? main : transparent
-    color: mode == 'inverse' ? secondary : main
-    _icon-color: mode == 'inverse' ? secondary : main
-
-flexCenter()
-  display: flex
-  justify-content: center
-  align-items: center
-
+_unit-min-max(unit, size)
+  &
+    {unit}: unitRes(size.min, size.max)
+    +mobile()
+      {unit}: unit(size.min, px)
+    +widescreen()
+      {unit}: unit(size.max, px)
 
 /**
  * modifiers mixins
  */
 $tiny
-  font-size: $sizing.tiny
+  _unit-min-max: font-size $size-tiny
 $small
-  font-size: $sizing.small
+  _unit-min-max: font-size $size-small
 $normal
-  font-size: $sizing.normal
+  _unit-min-max: font-size $size-normal
 $large
-  font-size: $sizing.large
+  _unit-min-max: font-size $size-large
 $massive
-  font-size: $sizing.massive
+  _unit-min-max: font-size $size-massive
+
 generateSizes()
   &.is-tiny
-    @extend $tiny
+    @extends $tiny
   &.is-small
     @extends $small
   &,
@@ -76,4 +59,4 @@ generateSizes()
   &.is-large
     @extends $large
   &.is-massive
-    @extend $massive
+    @extends $massive
