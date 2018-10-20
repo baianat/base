@@ -1,0 +1,105 @@
+.button-link
+  color: $clPrimary
+  position: relative
+  display: inline-block
+  transition: color 0.3s
+  border: none
+  padding: 0 unitRes(16, 32) unitRes(8, 16) 0
+  box-shadow: none
+  background: none
+  cursor: pointer
+
+  &:after
+    content: ''
+    width: 100%
+    height: unitRes(2, 8)
+    background: $clPrimary
+    position: absolute
+    left: 0
+    bottom: 0
+    transition: 200ms
+
+  &:before
+    content: ''
+    width: 100%
+    height: unitRes(2, 8)
+    background: $clSecondary
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    transform: scale(0, 1)
+    transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+    transform-origin: right top
+    z-index: 2
+
+  &:hover
+    color: $clSecondary
+
+    &:before
+      transform: scale(1, 1)
+      transform-origin: left top
+
+  &.is-black
+    color: $clBlack
+
+    &:after
+      background: $clBlack
+
+    &:before
+      background: $clPrimary
+
+    &:hover
+      color: $clPrimary
+
+      &:before
+        background: $clPrimary
+
+  &.is-small
+    font-size: $size-small
+    padding: 0 unitRes(8, 16) unitRes(4, 8) 0
+
+    &:after
+      height: unitRes(2, 4)
+
+    &:before
+      height: unitRes(2, 4)
+
+  &.is-medium
+    font-size: $size-medium
+    font-weight: $fontWeight-bold
+
+  &.is-large
+    font-size: unitRes(24, 120)
+    font-weight: $fontWeight-super
+    padding-bottom: unitRes(16, 32)
+
+    &:after
+      height: unitRes(8, 16)
+
+    &:before
+      height: unitRes(8, 16)
+
+  &.is-loading
+    cursor: progress
+
+    &:after
+      animation: 1s linear 0s normal none infinite running bi-gradient
+      background: transparent linear-gradient(to right, #eb008b, #1a3aff, #f42828, #ff9600) repeat scroll 0 0 / 500% auto !important
+      height: 0.3em
+
+    &:before
+      transform: scale(1, 1)
+      background: #fff
+      height: 100%
+      z-index: 0
+
+@keyframes bi-gradient
+  0%
+    background-position: 0 0
+
+  50%
+    background-position: 50% 0
+
+  100%
+    background-position: 0 0

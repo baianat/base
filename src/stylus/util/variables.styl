@@ -14,29 +14,34 @@ $padding ?= 0.5em
 $paddingPx ?= 20px
 $modalSpacing ?= unitRes(20, 60)
 $borderRadius ?= 0
-$border ?= unitRes(2, 4)
+$border ?= 2px
 $fontTiny ?= 12px
 $fontSmall ?= 14px
 $font ?= 16px
 $fontLarge ?= 24px
 $fontMassive ?= 30px
 $lineheight ?= 1.1875
-$header1 ?= unitRes(40, 200)
-$header2 ?= unitRes(30, 160)
-$header3 ?= unitRes(24, 120)
-$header4 ?= unitRes(20, 100)
-$header5 ?= unitRes(18, 80)
-$header6 ?= unitRes(14, 60)
-$weightDefault ?= 500
-$weightBold ?= 700
-$weightSuper ?= 900
-$sizing ?= {
-  tiny: unitRes(12, 18),
-  small: unitRes(14, 24),
-  normal: unitRes(18, 32),
-  large: unitRes(24, 42),
-  massive: unitRes(32, 54)
-}
+$header1 ?= unitRes(40, 140)
+$header2 ?= unitRes(32, 100)
+$header3 ?= unitRes(28, 86)
+$header4 ?= unitRes(24, 56)
+$header5 ?= unitRes(20, 48)
+$header6 ?= unitRes(16, 32)
+$fontWeight-normal ?= 500
+$fontWeight-bold ?= 700
+$fontWeight-super ?= 900
+$fontSize-small = unitRes(12, 16)
+$fontSize-normal = unitRes(14, 24)
+$fontSize-medium = unitRes(16, 32)
+$font-family = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+/**
+ * * elements size
+* */
+$size-tiny ?= unitRes(10, 12)
+$size-small ?= unitRes(12, 16)
+$size-normal ?= unitRes(14, 24)
+$size-large ?= unitRes(16, 32)
+$size-massive ?= unitRes(20, 40)
 /**
  * grid
  */
@@ -44,7 +49,7 @@ $columns ?= 12
 $direction ?= ltr
 $startDir ?= setDirection('start')
 $endDir ?= setDirection('end')
-$gutter ?= 1.5625vw
+$gutter ?= 3.125vw
 $gutterFull ?= 8vw
 $container-mobile ?= calc(100% - 22px)
 $container-tablet ?= $tablet - (22 * 2)

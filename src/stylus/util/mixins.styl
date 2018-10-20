@@ -25,7 +25,6 @@ mobile()
   @media screen and (max-width: (($tablet - 1)))
     {block}
 
-
 /**
  * styling mixins
  */
@@ -39,9 +38,7 @@ _button-color(main, secondary, mode = 'default')
   color: mode == 'inverse' ? main : secondary
   _icon-color: mode == 'inverse' ? main : secondary
 
-  &:hover:not(.is-disabled):not([disabled]),
-  &:active:not(.is-disabled):not([disabled]),
-  &.is-active:not(.is-disabled):not([disabled])
+  &:hover:not(.is-disabled):not([disabled]), &:active:not(.is-disabled):not([disabled]), &.is-active:not(.is-disabled):not([disabled])
     background-color: mode == 'inverse' ? main : transparent
     color: mode == 'inverse' ? secondary : main
     _icon-color: mode == 'inverse' ? secondary : main
@@ -51,29 +48,36 @@ flexCenter()
   justify-content: center
   align-items: center
 
-
 /**
  * modifiers mixins
  */
 $tiny
-  font-size: $sizing.tiny
+  font-size: $size-tiny
+
 $small
-  font-size: $sizing.small
+  font-size: $size-small
+
 $normal
-  font-size: $sizing.normal
+  font-size: $size-normal
+
 $large
-  font-size: $sizing.large
+  font-size: $size-large
+
 $massive
-  font-size: $sizing.massive
+  font-size: $size-massive
+
 generateSizes()
   &.is-tiny
     @extend $tiny
+
   &.is-small
-    @extends $small
-  &,
-  &.is-normal
-    @extends $normal
+    @extend $small
+
+  &, &.is-normal
+    @extend $normal
+
   &.is-large
-    @extends $large
+    @extend $large
+
   &.is-massive
     @extend $massive
