@@ -16,3 +16,6 @@ node_modules/
 
 # macOS folder icon
 Icon
+
+# dist folder
+dist
