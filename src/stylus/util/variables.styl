@@ -44,8 +44,8 @@ $size-massive ?= unitRes(20, 40)
  */
 $columns ?= 12
 $direction ?= ltr
-$startDir ?= setDirection('start')
-$endDir ?= setDirection('end')
+$startDir ?= $direction == 'ltr' ? left : right
+$endDir ?= $direction == 'ltr' ? right : left
 $gutter ?= 3.125vw
 $gutterFull ?= 8vw
 $container-mobile ?= calc(100% - 22px)
