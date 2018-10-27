@@ -3,7 +3,7 @@ $headers = $header1 $header2 $header3 $header4 $header5 $header6
 $heading
   margin: 0 0 unitRes(16, 24)
   line-height: 1
-  font-weight: $fontWeight-super
+  font-weight: $fontWeight-bold
 
 for $header, $n in $headers
   h{$n + 1}, .h{$n + 1}
@@ -13,6 +13,8 @@ for $header, $n in $headers
 p, body
   font-size: $size-normal
   margin: 0
+  letter-spacing: 0.03em
+  line-height: 1.3
 
 h4, .h4, h5, .h5, h6, .h6
   font-weight: $fontWeight-bold
