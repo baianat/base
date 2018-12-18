@@ -1,98 +1,117 @@
 .button-link
-  color: $clPrimary
-  position: relative
-  display: inline-block
-  transition: color 0.3s
-  border: none
-  padding: 0 unitRes(16, 32) unitRes(8, 16) 0
-  box-shadow: none
-  background: none
   cursor: pointer
-
-  &:after
-    content: ''
-    width: 100%
-    height: unitRes(2, 8)
-    background: $clPrimary
-    position: absolute
-    left: 0
-    bottom: 0
-    transition: 200ms
-
-  &:before
-    content: ''
-    width: 100%
-    height: unitRes(2, 8)
-    background: $clSecondary
-    position: absolute
-    left: 0
-    right: 0
-    bottom: 0
-    transform: scale(0, 1)
-    transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
-    transform-origin: right top
-    z-index: 2
+  position: relative
+  box-shadow: none
+  background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+  background-size: 100% 0.25em
+  background-position: 0px 100%
+  background-repeat: repeat-x
+  padding: 0 0.5em 0.2em 0
+  color: $clPrimary
+  font-weight: $fontWeight-bold
+  line-height: 1.4
+  font-size: $header4
+  border: 0
+  transition: background-size 0.2s ease-in-out
 
   &:hover
     color: $clSecondary
+    background-image: linear-gradient(to right, $clSecondary 0%, $clSecondary 100%)
+    background-size: 100% 0.32em
 
-    &:before
-      transform: scale(1, 1)
-      transform-origin: left top
+  &.is-tiny
+    font-size: $header6
+
+  &.is-small
+    font-size: $header5
+
+  &.is-large
+    font-size: $header3
+
+  &.is-massive
+    font-size: $header2
+
+  &:after
+    height: 0%
+    content: ''
+    display: block
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    transition: 0.2s ease-in-out
+    animation: 20s linear 0s normal none infinite running bi-gradient
+    background: transparent linear-gradient(to right, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828) repeat scroll 0 0 / 8000% auto !important
 
   &.is-black
     color: $clBlack
-
-    &:after
-      background: $clBlack
-
-    &:before
-      background: $clPrimary
+    background-image: linear-gradient(to right, $clBlack 0%, $clBlack 100%)
 
     &:hover
       color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
 
-      &:before
-        background: $clPrimary
+  &.is-white
+    color: $clWhite
+    background-image: linear-gradient(to right, $clWhite 0%, $clWhite 100%)
 
-  &.is-small
-    font-size: $size-small
-    padding: 0 unitRes(8, 16) unitRes(4, 8) 0
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
 
-    &:after
-      height: unitRes(2, 4)
+  &.is-secondary
+    color: $clSecondary
+    background-image: linear-gradient(to right, $clSecondary 0%, $clSecondary 100%)
 
-    &:before
-      height: unitRes(2, 4)
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
 
-  &.is-medium
-    font-size: $size-large
-    font-weight: $fontWeight-bold
+  &.is-success
+    color: $clSuccess
+    background-image: linear-gradient(to right, $clSuccess 0%, $clSuccess 100%)
 
-  &.is-large
-    font-size: unitRes(24, 120)
-    font-weight: $fontWeight-bold
-    padding-bottom: unitRes(16, 32)
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
 
-    &:after
-      height: unitRes(8, 16)
+  &.is-danger
+    color: $clDanger
+    background-image: linear-gradient(to right, $clDanger 0%, $clDanger 100%)
 
-    &:before
-      height: unitRes(8, 16)
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-danger
+    color: $clDanger
+    background-image: linear-gradient(to right, $clDanger 0%, $clDanger 100%)
+
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-warning
+    color: $clWarning
+    background-image: linear-gradient(to right, $clWarning 0%, $clWarning 100%)
+
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-yellow
+    color: $clYellow
+    background-image: linear-gradient(to right, $clYellow 0%, $clYellow 100%)
+
+    &:hover
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
 
   &.is-loading
     cursor: progress
 
     &:after
-      animation: 1s linear 0s normal none infinite running bi-gradient
-      background: transparent linear-gradient(to right, #eb008b, #1a3aff, #f42828, #ff9600) repeat scroll 0 0 / 500% auto !important
-      height: 0.3em
-
-    &:before
-      transform: scale(1, 1)
-      background: #fff
       height: 100%
-      z-index: 0
 
 @keyframes bi-gradient
   0%
@@ -103,3 +122,7 @@
 
   100%
     background-position: 0 0
+
+button.button-link
+  display: inline-block
+  padding-bottom: 0
