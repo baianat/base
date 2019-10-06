@@ -1,0 +1,52 @@
+
+.inputGroup
+  display: flex
+  margin-bottom: $margin
+  generateSizes()
+
+  >*:not(.inputGroup-label)
+    margin-bottom: 0
+
+  &-label
+    flex: 1
+    margin-bottom: $padding
+    margin-{$endDir}: $margin
+    white-space: nowrap
+
+  &.has-label
+    flex-wrap: wrap
+
+  &.has-labelInline
+    align-items: center
+
+  &.has-itemAfter
+    .button
+      border-top-{$startDir}-radius: 0
+      border-bottom-{$startDir}-radius: 0
+      border-{$startDir}: 0
+
+    .input
+      border-top-{$endDir}-radius: 0
+      border-bottom-{$endDir}-radius: 0
+
+  &.has-itemBefore
+    .input-tag
+      border-top-{$endDir}-radius: 0
+      border-bottom-{$endDir}-radius: 0
+      border-{$endDir}: 0
+
+    .input
+      border-top-{$startDir}-radius: 0
+      border-bottom-{$startDir}-radius: 0
+
+  // generate all modifiers
+  for modifier in $modifiers
+    &.is-{modifier}
+      >.button
+        @extend .button.is-{modifier} !optional
+
+      >.input
+        @extend .input.is-{modifier} !optional
+
+      >.input-tag
+        @extend .input-tag.is-{modifier} !optional

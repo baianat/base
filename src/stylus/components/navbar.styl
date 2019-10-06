@@ -1,0 +1,64 @@
+.navbar
+  display: flex
+  margin: 0
+  padding: 5px 10px
+  width: 100%
+  background-color: $clWhite
+
+  &.is-fixed
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    transition: 0.4s
+
+  &.is-inverse
+    background-color: $clBlack
+
+  &.is-hidden
+    transform: translate3d(0, -100%, 0)
+
+  &-brand, &-start, &-end
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+
+  &-brand
+    img
+      max-height: 100%
+
+    &.is-white
+      filter: brightness(0) invert(1)
+
+  &-start
+    flex: 1
+
+  &-item
+    display: block
+    padding: $padding multiple($padding, 2)
+    color: $clBlack
+    text-decoration: none
+    white-space: nowrap
+    cursor: pointer
+    _icon-color: $clBlack
+    @extend $normal
+
+    &.dropdown
+      height: auto
+
+    &:hover, &:focus
+      color: $clSecondary
+      _icon-color: $clSecondary
+
+    ~/.is-inverse &
+      color: $clWhite
+      _icon-color: $clWhite
+
+      &:hover, &:focus
+        color: $clSecondary
+        _icon-color: $clSecondary
+
+    &.is-active
+      border-bottom: 4px solid $clSecondary
+      margin-bottom: -4px
+      color: $clSecondary

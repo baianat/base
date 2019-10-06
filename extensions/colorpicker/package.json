@@ -1,0 +1,19 @@
+{
+  "name": "@baianat/colorpicker",
+  "version": "0.0.13",
+  "description": "ES6 colorpicker",
+  "author": "",
+  "main": "dist/js/colorpicker.js",
+  "module": "dist/js/colorpicker.esm.js",
+  "license": "MIT",
+  "keywords": [],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "color-fns": "^0.0.4"
+  }
+}

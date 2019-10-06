@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="dist/css/colorpicker.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <input id="myPicker">
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem consequuntur autem velit reiciendis quaerat asperiores nihil officia, voluptatum neque delectus voluptate quas quae harum, enim recusandae! Eum, veniam obcaecati? Deserunt?</p>
+
+  <script ></script>
+  <script src="dist/js/colorpicker.js"></script>
+  <script>
+    let SELECTION;
+    let picker = new Colorpicker('#myPicker', {
+        picker: {
+          mode: 'square',
+        },
+        menu: {
+          hideWhenSubmit: false,
+          draggable: false
+        },
+        model: 'rgb',
+        guideIcon: `
+          <svg viewBox="0 0 24 24">
+            <path d="M0 20h24v4H0z"/>
+            <path style="fill: #000" d="M11 3L5.5 17h2.25l1.12-3h6.25l1.12 3h2.25L13 3h-2zm-1.38 9L12 5.67 14.38 12H9.62z"/>
+          </svg>
+        `,
+      });
+  </script>
+</body>
+
+</html>

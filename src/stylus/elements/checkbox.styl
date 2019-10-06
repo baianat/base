@@ -1,0 +1,57 @@
+.checkbox
+  margin: unitRes(8, 16) 0
+  display: flex
+  align-items: center
+  cursor: pointer
+
+  &-label
+    vertical-align: middle
+
+  &-input
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    width: 1.3em
+    height: 1.3em
+    border: $border solid $clBlack
+    border-radius: $borderRadius
+    cursor: pointer
+    margin-{$endDir}: 0.4em
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
+
+    &:checked
+      background-color: $clBlack
+
+      &:after
+        opacity: 1
+
+    &:after
+      display: block
+      opacity: 0
+      width: 0.2em
+      height: 0.5em
+      border: solid $clWhite
+      border-width: 0 0.13em 0.13em 0
+      content: ''
+      transform: translate3d(0, -0.1em, 0) rotate(45deg)
+
+    &[disabled]
+      opacity: 0.6
+      cursor: not-allowed
+
+  &.is-inline
+    display: inline-flex
+    margin-{$endDir}: 0.8em
+
+  &.is-disabled, &[disabled]
+    cursor: not-allowed
+    pointer-events: none
+
+    .checkbox-input, .radio-input
+      opacity: 0.6
+      cursor: not-allowed
+
+  generateSizes()

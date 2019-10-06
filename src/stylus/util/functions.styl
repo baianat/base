@@ -1,0 +1,37 @@
+/**
+ * set the start and end direction based on
+ * $direction variable
+ */
+setDirection(state)
+  if ($direction == 'ltr')
+    return state == 'start' ? left : right
+
+  return state == 'start' ? right : left
+
+multiple(value, times)
+  if ($cssVar == true)
+    return 'calc(%s * %s)' % (value times)
+
+  return value * times
+
+_calc()
+  if ($cssVar == true)
+    return arguments[1]
+
+  return convert(arguments)
+
+/**
+ * return the reponsive values
+ * this is the core function in base framework
+ * it's just a liner equation that calculates the value
+ * based on the current viewport width
+ * y = mx + c
+ * y: font size
+ * x: viewport width
+ * m: how may font is grow for each pixel (slop)
+ * c: iniatal value before any adding
+ */
+unitRes(min, max, screen-min = 320, screen-max = 2560)
+  $slope = ((max - min) / (screen-max - screen-min))
+  $init = min - screen-min * $slope
+  'calc( %s + %s )' % (unit($slope * 100, 'vw') unit($init, 'px'))

@@ -1,0 +1,39 @@
+::selection
+  background: $clPrimary
+  color: $clWhite
+
+*::placeholder
+  color: $clBlack
+  opacity: 1
+
+  &:focus
+    outline: 0
+
+body
+  color: $clText
+
+html, input, button
+  direction: $direction
+  font-family: $font-family
+  font-weight: $fontWeight-normal
+
+a
+  color: inherit
+  cursor: pointer
+  text-decoration: none
+
+  &:hover
+    color: $clPrimary
+
+img
+  max-width: 100%
+  height: auto
+
+strong, b
+  font-weight: $weightSuper
+
+pre
+  direction: ltr
+
+*
+  box-sizing: border-box

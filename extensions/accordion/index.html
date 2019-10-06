@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>base.accordion</title>
+    <link rel="stylesheet" href="dist/css/accordion.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>accordion</h2>
+      <div class="grid">
+        <div class="column is-screen-6 is-mobile-12">
+          <ul class="accordion" id="accordion01">
+            <li class="accordion-item is-active">
+              <a class="accordion-title">
+                <span class="accordion-icon"></span>
+                Title 1
+              </a>
+              <div class="accordion-body">
+                <p> Awesome content! </p>
+              </div>
+            </li>
+          
+            <li class="accordion-item is-active">
+              <a class="accordion-title">
+                <span class="accordion-icon"></span>
+                Title 2
+              </a>
+              <div class="accordion-body">
+                <p> Awesome content! </p>
+              </div>
+            </li>
+          
+            <li class="accordion-item is-active">
+              <a class="accordion-title">
+                <span class="accordion-icon"></span>
+                Title 3
+              </a>
+              <div class="accordion-body">
+                <p> Awesome content! </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="column is-screen-6 is-mobile-12">
+          <ul class="accordion is-clean" id="accordion02">
+            <li class="accordion-item is-active"><a class="accordion-title">item 1</a>
+              <div class="accordion-body">
+                <div class="grid">
+                  <div class="column">
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae et, labore non soluta quaerat blanditiis architecto nesciunt? Ut magni accusantium nesciunt molestiae accusamus inventore eligendi dolorem quaerat quisquam! Voluptatum, provident?
+                    </p><a class="button is-primary is-block" href="#">click</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion-item"><a class="accordion-title">item 2</a>
+              <div class="accordion-body">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatibus sequi nulla nostrum quae animi molestias dolor praesentium itaque a dolore dolorem aliquam placeat earum adipisci quos totam molestiae. Commodi.
+                </p>
+              </div>
+            </li>
+            <li class="accordion-item"><a class="accordion-title">item 3</a>
+              <div class="accordion-body">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo et officiis rerum explicabo, veniam vel voluptatum. Commodi enim ullam voluptates error id, eligendi, culpa laborum aut neque dolores quasi! Aliquam.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nobis minus magnam sed sint quas, enim officia aspernatur qui, voluptatem adipisci! Modi eum quam veniam iusto vitae obcaecati? Ratione, sapiente?
+                </p>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate eaque praesentium aperiam fuga adipisci laborum est, dignissimos sit fugit consectetur alias vero quaerat eligendi libero numquam? Qui veritatis nihil ducimus?
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul class="accordion" id="accordion03">
+            <li class="accordion-item is-active">
+              <a class="accordion-title">
+                item 1
+                <span class="accordion-icon"></span>
+              </a>
+              <div class="accordion-body">
+                <ul class="accordion" id="accordion04">
+                  <li class="accordion-item">
+                    <a class="accordion-title">
+                      item 2
+                      <span class="accordion-icon"></span>
+                    </a>
+                    <div class="accordion-body">
+                      <ul class="accordion" id="accordion05">
+                        <li class="accordion-item">
+                          <a class="accordion-title">
+                            inner item 1
+                            <span class="accordion-icon"></span>
+                          </a>
+                          <div class="accordion-body">
+                            <p>Lorem ipsum dolor sit amet</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a class="accordion-title">
+                      inner item 2
+                      <span class="accordion-icon"></span>
+                    </a>
+                    <div class="accordion-body">
+                      <p>Awesome content!</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="accordion-item">
+              <a class="accordion-title">item 2 <span class="accordion-icon"></span></a>
+              <div class="accordion-body">
+                <p>Awesome content!</p>
+              </div>
+            </li>
+            <li class="accordion-item">
+              <a class="accordion-title">item 3 <span class="accordion-icon"></span></a>
+              <div class="accordion-body">
+                <p>Awesome content!</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="dist/js/accordion.js"></script>
+
+    <script>Accordion.create();</script>
+</body>
+</html>

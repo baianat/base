@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="dist/css/table.css">
+</head>
+
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos incidunt similique itaque non ullam adipisci dolorum alias sint repellat? Voluptatum facere quia beatae nesciunt unde officiis autem corrupti in magnam!</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Info</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th colspan="4">Total</th>
+      </tr>
+    </tfoot>
+
+    <tbody>
+
+    </tbody>
+  </table>
+  <div style="height: 1000px">
+
+  </div>
+
+
+  <script>
+    function createCell(row, data) {
+      let cell = document.createElement('td');
+      cell.innerHTML = data;
+      row.appendChild(cell);
+    }
+
+    let names = ['abdelrahman', 'ahmed', 'mohamed', 'khaled', 'mosaed', 'ahmed', 'mohamed', 'khaled', 'mosaed', 'awad', 'shehata',
+      'mosaed', 'ahmed', 'mohamed'];
+    let body = document.querySelector('.table >tbody');
+    for (var i = 0; i < 18; i++) {
+      let row = document.createElement('tr');
+      createCell(row, names[i]);
+      createCell(row, 'info');
+      createCell(row, Math.floor(Math.random() * 91) + 5);
+      createCell(row, '   ');
+      body.appendChild(row);
+    }
+  </script>
+
+  <script src="dist/js/table.js"></script>
+  <script>
+    let table = new Table('.table', {
+      fixedHeader: true,
+      pagination: true,
+      sortable: true,
+      editable: true,
+      density: true,
+      perPage: 10
+    });
+    table.el.addEventListener('beforeEdit', (e) => console.log(e.detail));
+    table.el.addEventListener('afterEdit', (e) => console.log(e.detail));
+    
+  </script>
+</body>
+
+</html>

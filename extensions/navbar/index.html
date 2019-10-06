@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="dist/css/navbar.css">
+</head>
+
+<body>
+  <nav class="navbar is-fixed" id="navbar">
+    <div class="dropdown is-left" data-nav-dropdown>
+      <a class="navbar-item" data-nav-button>
+        <svg class="icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </svg>
+      </a>
+      <div class="dropdown-menu" data-nav-menu></div>
+    </div>
+    <div class="navbar-start" data-nav-items>
+      <a class="navbar-item" data-nav-priority="high">Home</a>
+      <a class="navbar-item" >About</a>
+      <a class="navbar-item" data-nav-priority="medium">Company</a>
+      <a class="navbar-item">Products</a>
+      <div data-nav-priority="low" class="navbar-item dropdown">
+        <a>More</a>
+        <ul class="dropdown-menu">
+          <li><a class="navbar-item">sub menu 1</a></li>
+          <li><a class="navbar-item">sub menu 2</a></li>
+        </ul>
+      </div>
+      <a class="navbar-item">Even more</a>
+      <a class="navbar-item">The End</a>
+    </div>
+  </nav>
+
+  <div class="" style="height: 200vh">
+
+  </div>
+
+  <script src="dist/js/navbar.js"></script>
+  <script>
+    let navbar = new Navbar('#navbar');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+.button-link
+  cursor: pointer
+  position: relative
+  box-shadow: none
+  background-color: transparent
+  background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+  background-size: 100% 0.25em
+  background-position: 0px 100%
+  background-repeat: repeat-x
+  padding: 0 0.5em 0.2em 0
+  color: $clPrimary
+  font-weight: $fontWeight-bold
+  line-height: 1.4
+  font-size: $header4
+  border: 0
+  transition: 0.2s ease-in-out
+  text-align: initial
+  transition-property: background-size, color
+
+  &:hover, &.is-active
+    color: $clSecondary
+    background-image: linear-gradient(to right, $clSecondary 0%, $clSecondary 100%)
+    background-size: 100% 0.32em
+
+  &.is-tiny
+    font-size: $header6
+
+  &.is-small
+    font-size: $header5
+
+  &.is-large
+    font-size: $header3
+
+  &.is-massive
+    font-size: $header2
+
+  &:after
+    height: 0%
+    content: ''
+    display: block
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    transition: 0.2s ease-in-out
+    animation: 20s linear 0s normal none infinite running bi-gradient
+    background: transparent linear-gradient(to right, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828, #eb008b, #1a3aff, #f42828) repeat scroll 0 0 / 8000% auto !important
+
+  &.is-black
+    color: $clBlack
+    background-image: linear-gradient(to right, $clBlack 0%, $clBlack 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-white
+    color: $clWhite
+    background-image: linear-gradient(to right, $clWhite 0%, $clWhite 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-secondary
+    color: $clSecondary
+    background-image: linear-gradient(to right, $clSecondary 0%, $clSecondary 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-success
+    color: $clSuccess
+    background-image: linear-gradient(to right, $clSuccess 0%, $clSuccess 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-danger
+    color: $clDanger
+    background-image: linear-gradient(to right, $clDanger 0%, $clDanger 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-danger
+    color: $clDanger
+    background-image: linear-gradient(to right, $clDanger 0%, $clDanger 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-warning
+    color: $clWarning
+    background-image: linear-gradient(to right, $clWarning 0%, $clWarning 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-yellow
+    color: $clYellow
+    background-image: linear-gradient(to right, $clYellow 0%, $clYellow 100%)
+
+    &:hover, &.is-active
+      color: $clPrimary
+      background-image: linear-gradient(to right, $clPrimary 0%, $clPrimary 100%)
+
+  &.is-loading
+    cursor: progress
+
+    &:after
+      height: 100%
+
+@keyframes bi-gradient
+  0%
+    background-position: 0 0
+
+  50%
+    background-position: 50% 0
+
+  100%
+    background-position: 0 0
+
+button.button-link
+  display: inline-block
+  padding-bottom: 0

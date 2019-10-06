@@ -1,0 +1,169 @@
+$colors = {
+  primary: $clPrimary,
+  secondary: $clSecondary,
+  info: $clInfo,
+  success: $clSuccess,
+  warning: $clWarning,
+  danger: $clDanger,
+  white: $clWhite,
+  black: $clBlack
+}
+
+.select
+  position: relative
+  margin-bottom: $margin
+  margin-bottom: 0
+  padding: $padding multiple($padding, 1.5)
+  max-width: 100%
+  width: 100%
+  outline: 0
+  border: $border solid $clBlack
+  border-radius: $borderRadius
+  background-color: $clWhite
+  background-image: linear-gradient(45deg, transparent 50%, $clBlack 50%), linear-gradient(135deg, $clBlack 50%, transparent 50%)
+  background-position: calc(100% - 0.8em) calc(50% + 0.1em), calc(100% - 0.4em) calc(50% + 0.1em)
+  background-size: 0.4em 0.4em, 0.4em 0.4em
+  background-repeat: no-repeat
+  text-align: left
+  -webkit-appearance: none
+  -moz-appearance: none
+  generateSizes()
+
+  &-input
+    display: flex
+    padding: 0
+    border: 0
+    background-color: transparent
+    text-align: left
+    font-size: inherit
+    color: inherit
+    -webkit-appearance: textfield
+    -moz-appearance: none
+
+    &:focus
+      outline: 0
+
+    &:disabled,
+    &.is-disabled
+      background: $clWhite
+      opacity: 0.7
+      cursor: not-allowed
+
+  &-labels
+    position: absolute
+    top: 0
+    left: 0
+    display: inline-flex
+    flex-wrap: wrap
+    padding: 0
+    margin-right: 2em
+
+  &-label
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    margin: 0.2em
+    padding: 0.4em
+    border-radius: $borderRadius
+    background-color: $clBlack
+    color: $clWhite
+    font-size: 1em
+    line-height: 1
+    _icon-color: currentColor
+
+  &-labelDismiss
+    width: 1em
+    height: 1em
+
+    &:hover
+      fill: $clDanger
+
+  &-menu
+    position: absolute
+    top: 100%
+    right: 0
+    left: 0
+    z-index: 999
+    margin: 0 unitRes(-2, -4)
+    border-width: 0 $border $border $border
+    border-style: solid
+    border-color: inherit
+    border-radius: 0 0 $borderRadius $borderRadius
+    background: $clWhite
+    font-size: inherit
+
+  &-list
+    overflow: auto
+    margin: 0
+    padding: 0
+    max-height: 40vh
+    list-style: none
+
+  &-item
+    padding: 0
+    width: 100%
+
+    &.is-selected
+      background-color: $clBlack
+      color: $clWhite
+
+    &:not(.is-group)
+      padding: $padding
+
+      &:hover
+        background-color: $clBlack
+        color: $clWhite
+        cursor: pointer
+
+  &-childMenu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &-childTitle
+    display: block
+    padding: $padding
+    color: $clGray
+
+  &-childItem
+    padding: $padding $padding $padding multiple($padding, 2)
+    cursor: pointer
+
+    &.is-selected
+      background-color: $clBlack
+      color: $clWhite
+
+    &:hover
+      background-color: $clBlack
+      color: $clWhite
+
+  for $modifer, $clr in $colors
+    &.is-{$modifer}
+      border-color: $clr
+      background-image: linear-gradient(45deg, transparent 50%, $modifer == 'white'? $clBlack : $clr 50%), linear-gradient(135deg, $modifer == 'white'? $clBlack : $clr 50%, transparent 50%)
+      color: $modifer == 'white'? $clBlack : $clr
+      .select-label,
+      .select-item.is-selected,
+      .select-item:not(.is-group):hover,
+      .select-childItem.is-selected,
+      .select-childItem:hover
+          background-color: $clr
+
+  .is-visible
+    display: block
+
+  .is-hidden
+    display: none
+
+  &.is-rounded
+    border-radius: 10em
+
+  &:disabled,
+  &.is-disabled
+    opacity: 0.7
+    cursor: not-allowed
+
+  &.is-disabled
+    opacity: 0.7
+    pointer-events: none

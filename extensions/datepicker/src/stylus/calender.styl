@@ -1,0 +1,66 @@
+.calendar
+  position: absolute
+  top: 100%
+  left: 0
+  padding: 20px
+  border: $border solid $clBlack
+  border-radius: $borderRadius
+  background-color: $clWhite
+
+  generateSizes()
+
+  &.is-hidden
+    display: none
+
+  &-control
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+    select,
+    input
+      padding: 5px 10px
+      width: 50%
+      border-width: 0 0 $border 0
+      border-color: $clWhite
+      border-radius: 0
+      background-color: transparent
+      text-align: center
+      font-size: 0.7em
+      -webkit-appearance: none
+
+      &:hover,
+      &:focus
+        outline: 0
+        border-color: $clBlack
+
+  &-table
+    border-spacing: 0
+    text-align: center
+
+    td
+      padding: 0.25em
+      border-width: $border
+      border-style: solid
+      border-color: $clWhite
+      border-radius: $borderRadius
+      cursor: pointer
+
+      &.is-previous,
+      &.is-following
+        color: $clGray
+
+      &.is-active
+        border-color: $clBlack
+        background-color: $clBlack
+        color: $clWhite
+
+      &:hover,
+      &:focus
+        border-color: $clBlack
+
+    th
+      padding: 10px 5px
+      color: $clBlack
+      font-size: 0.7em

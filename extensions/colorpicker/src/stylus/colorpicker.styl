@@ -1,0 +1,124 @@
+.picker
+  position: relative
+  display: flex
+  justify-content: center
+  box-sizing: border-box
+
+  &-guide
+    width: 24px
+    height: 24px
+    padding: 0
+    border: 0
+    background: transparent
+
+    &:focus
+      outline: 0
+
+    svg
+      width: 100%
+      height: 100%
+      fill: inherit
+  &-wheel
+    position: relative
+    margin: 10px auto 20px
+    user-select: none
+
+  &-square
+    position: relative
+    margin: 10px auto 20px
+    user-select: none
+    display: flex
+    justify-content: center
+  &-squareStrip
+    margin: 0 5px
+
+  &-menu
+    position: absolute
+    top: 50px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: stretch
+    padding: 40px
+    width: 300px
+    border-radius: $borderRadius
+    background-color: $clWhite
+    box-shadow: 0 0 25px alpha($clBlack, 5%)
+    will-change: transform
+
+    &.is-hidden
+      display: none
+
+    &:focus
+      outline: none
+     
+
+  &-recent
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-end
+    align-items: center
+    width: 100%
+
+  &-color
+    margin: 4px
+    width: 28px
+    height: 28px
+    border-radius: 50%
+    background-color: $clBlack
+
+  &-value
+    padding: 0.6em
+    width: 100%
+    border: 2px solid $clBlack
+    border-radius: $borderRadius 0 0 $borderRadius
+    text-align: center
+    font-size: $fontTiny
+    -webkit-appearance: none
+    -moz-appearance: textfield
+    &:focus
+      outline: none
+      border-color: $clSecondary
+
+  &-cursor
+    position: absolute
+    top: 0
+    left: 0
+    margin: -6px
+    width: 10px
+    height: 10px
+    border: 2px solid $clWhite
+    border-radius: 50%
+    will-change: transform
+    pointer-events: none
+    background-color: transparent
+  &-input
+    display: flex
+    margin-bottom: $margin
+  &-submit
+    position: relative
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 0.4em 0.75em
+    outline-width: 2px
+    outline-offset: 1px
+    border-width: 2px
+    border-style: solid
+    border-radius: 0 $borderRadius $borderRadius 0
+    background-clip: border-box
+    vertical-align: top
+    text-align: center
+    text-decoration: none
+    cursor: pointer
+    background-color: $clBlack
+    border-color: $clBlack
+    >.icon
+      width: 22.5px
+      height: 18.5px
+      fill: $clWhite
+    &:hover
+      >.icon
+        fill: $clSecondary
+  .slider-fill
+    display: none

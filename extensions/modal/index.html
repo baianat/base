@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>base</title>
+    <link rel="stylesheet" href="dist/css/modal.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>modal</h2>      
+      <div class="grid is-shrink">
+        <div class="column"><button class="button is-primary" data-base-modal="#modal01">Show modal 1</button></div>        
+        <div class="column"><button class="button is-primary" data-base-modal="#modal02">Show modal 2</button></div>
+      </div>      
+      <div class="modal-container is-hidden" id="modal01">
+        <div class="modal">
+          <div class="modal-panel">
+              <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Hi I'm a modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>          
+            <div class="modal-footer"><a class="button is-green" href="">Ok</a>            <a class="button is-red is-inverse" href="">Cancel</a></div>
+          </div>
+        </div>      
+      </div>
+      <div class="modal-container is-hidden" id="modal02">
+        <div class="modal is-inverse">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>          
+            <div class="modal-footer"><a class="button is-green" href="">Ok</a>            <a class="button is-red is-inverse" href="">Cancel</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      
+    <script type="text/javascript" src="dist/js/modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+.table
+  overflow: hidden
+  width: 100%
+  border: $border solid $clBlack
+  border-spacing: 0
+  border-collapse: separate
+  border-radius: $borderRadius
+  color: $clBlack
+  text-align: $startDir
+  @extend $normal
+
+  &:not(:last-child)
+    margin-bottom: $margin
+
+  th, td
+    &:not(:last-child)
+      border-{$endDir}: $border solid $clBlack
+
+      +mobile()
+        border-right: 0
+
+    +mobile()
+      display: block
+      width: 100%
+
+  thead
+    background-color: $clWhite
+
+    th
+      border-bottom: $border solid $clBlack
+      padding: multiple($padding, 2) $padding
+      font-weight: bold
+
+      +mobile()
+        border-bottom: 0
+
+  tfoot
+    background-color: $clWhite
+
+    th
+      border-top: $border solid $clBlack
+      padding: $padding
+
+  tr
+    +mobile()
+      display: block
+      border-top: $border solid $clBlack
+
+  td
+    padding: $padding
+    border-top: $border solid $clBlack
+    background-color: $clWhite
+
+    +mobile()
+      border: 0
+
+  &-wrapper
+    position: relative
+    display: table
+    overflow-x: auto
+    margin: $margin auto
+    padding: $padding
+    border: $border solid $clWhite
+    border-radius: $borderRadius
+    background-color: $clWhite
+    width: 100%
+
+  &-sort
+    float: right
+    padding: 0
+    outline: 0
+    background: none
+    border: none
+
+    &.is-active
+      fill: $clPrimary
+      stroke: $clPrimary
+
+    &.is-desc
+      transform: scaleY(-1)
+
+  &.is-striped
+    tr:nth-child(2n)
+      td
+        background-color: lighten($clGray, 40%)
+
+  &.is-relaxed
+    border: 0
+
+    th, td
+      border-{$endDir}: 0
+
+  &.is-center
+    text-align: center
+
+  &.is-top tbody
+    vertical-align: top
+
+  &.is-bottom tbody
+    vertical-align: bottom
+
+  &.is-middle tbody
+    vertical-align: middle
+
+  &.is-small td
+    padding: multiple($padding, (1 / 2)) $padding
+
+  &.is-large td
+    padding: multiple($padding, 2) $padding
